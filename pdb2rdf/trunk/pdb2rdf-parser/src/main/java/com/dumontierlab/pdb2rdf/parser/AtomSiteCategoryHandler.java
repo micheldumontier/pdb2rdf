@@ -553,7 +553,7 @@ public class AtomSiteCategoryHandler extends ContentHandlerState {
 		Resource quality = createResource(Bio2RdfPdbUriPattern.CARTN_Z, pdbId, atomSiteId);
 		getRdfModel().add(getAtomLocationResource(), PdbOwlVocabulary.ObjectProperty.hasZCoordinate.property(), quality);
 		getRdfModel().add(quality, PdbOwlVocabulary.DataProperty.hasValue.property(), createDecimalLiteral(cartnZ));
-		getRdfModel().add(quality, RDF.type, PdbOwlVocabulary.Class.CartesianCoordinateComponent.resource());
+		getRdfModel().add(quality, RDF.type, PdbOwlVocabulary.Class.ZCartesianCoordinate.resource());
 		if (cartnZEsd != null) {
 			getRdfModel().add(quality, PdbOwlVocabulary.DataProperty.hasStandardDeviation.property(),
 					createDecimalLiteral(cartnZEsd));
@@ -564,7 +564,7 @@ public class AtomSiteCategoryHandler extends ContentHandlerState {
 		Resource quality = createResource(Bio2RdfPdbUriPattern.CARTN_Y, pdbId, atomSiteId);
 		getRdfModel().add(getAtomLocationResource(), PdbOwlVocabulary.ObjectProperty.hasYCoordinate.property(), quality);
 		getRdfModel().add(quality, PdbOwlVocabulary.DataProperty.hasValue.property(), createDecimalLiteral(cartnY));
-		getRdfModel().add(quality, RDF.type, PdbOwlVocabulary.Class.CartesianCoordinateComponent.resource());
+		getRdfModel().add(quality, RDF.type, PdbOwlVocabulary.Class.YCartesianCoordinate.resource());
 		if (cartnYEsd != null) {
 			getRdfModel().add(quality, PdbOwlVocabulary.DataProperty.hasStandardDeviation.property(),
 					createDecimalLiteral(cartnYEsd));
@@ -575,7 +575,7 @@ public class AtomSiteCategoryHandler extends ContentHandlerState {
 		Resource quality = createResource(Bio2RdfPdbUriPattern.CARTN_X, pdbId, atomSiteId);
 		getRdfModel().add(getAtomLocationResource(), PdbOwlVocabulary.ObjectProperty.hasXCoordinate.property(), quality);
 		getRdfModel().add(quality, PdbOwlVocabulary.DataProperty.hasValue.property(), createDecimalLiteral(cartnX));
-		getRdfModel().add(quality, RDF.type, PdbOwlVocabulary.Class.CartesianCoordinateComponent.resource());
+		getRdfModel().add(quality, RDF.type, PdbOwlVocabulary.Class.XCartesianCoordinate.resource());
 		if (cartnXEsd != null) {
 			getRdfModel().add(quality, PdbOwlVocabulary.DataProperty.hasStandardDeviation.property(),
 					createDecimalLiteral(cartnXEsd));
@@ -717,4 +717,5 @@ public class AtomSiteCategoryHandler extends ContentHandlerState {
 		}
 		return chainResource;
 	}
+
 }

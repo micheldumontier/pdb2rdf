@@ -229,7 +229,8 @@ public enum Bio2RdfPdbUriPattern implements UriPattern, Bio2RdfPdbNamespace {
 	MAXIUM_TORSION_ANGLE_CONSTRAINT_VIOLATION(ENSEMBLE.pattern + "/maximumTorsionAngleConstraintViolation"),
 	MAXIMUM_UPPER_DISTANCE_CONSTRAINT_VIOLATION(ENSEMBLE.pattern + "/maximumUpperDistanceConstraintViolation"),
 	REPRESENTATIVE_CONFORMER(ENSEMBLE.pattern + "/representativeConformer"),
-	TORSION_ANGLE_CONSTRAINT_VIOLATION_METHOD(ENSEMBLE.pattern + "/torsionAngleConstraintViolationMethod");
+	TORSION_ANGLE_CONSTRAINT_VIOLATION_METHOD(ENSEMBLE.pattern + "/torsionAngleConstraintViolationMethod"),
+	COORDINATE(ATOM_SPATIAL_LOCATION.pattern + "/coordinate");
 
 	private final String pattern;
 

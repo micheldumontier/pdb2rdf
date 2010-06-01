@@ -94,7 +94,10 @@ public class PdbOwlVocabulary {
 		TissueFraction(DEFAULT_NAMESPACE + "TissueFraction"),
 		CellularLocation(DEFAULT_NAMESPACE + "CellularLocation"),
 		IsotropicAtomicDisplacement(DEFAULT_NAMESPACE + "IsotropicAtomicDisplacement"),
-		CartesianCoordinateComponent(DEFAULT_NAMESPACE + "CartesianCoordinateComponent"),
+		CartesianCoordinate(DEFAULT_NAMESPACE + "CartesianCoordinate"),
+		XCartesianCoordinate(DEFAULT_NAMESPACE + "XCartesianCoordinate"),
+		YCartesianCoordinate(DEFAULT_NAMESPACE + "YCartesianCoordinate"),
+		ZCartesianCoordinate(DEFAULT_NAMESPACE + "ZCartesianCoordinate"),
 		PartialCharge(DEFAULT_NAMESPACE + "PartialCharge"),
 		Cosmid(DEFAULT_NAMESPACE + "Cosmid"),
 		Plasmid(DEFAULT_NAMESPACE + "Plasmid"),
@@ -516,7 +519,8 @@ public class PdbOwlVocabulary {
 		hasSolventModelParamBsol(DEFAULT_NAMESPACE + "hasSolventModelParamBsol"),
 		hasSolventModelParamKsol(DEFAULT_NAMESPACE + "hasSolventModelParamKsol"),
 		hasConformerSelectionCriteria(DEFAULT_NAMESPACE + "hasConformerSelectionCriteria"),
-		hasAverageConstraintViolationsPerResidue(DEFAULT_NAMESPACE + "hasAverageConstraintViolationsPerResidue");
+		hasAverageConstraintViolationsPerResidue(DEFAULT_NAMESPACE + "hasAverageConstraintViolationsPerResidue"),
+		hasCoordinate(DEFAULT_NAMESPACE + "hasCoordinate");
 
 		private final String uri;
 

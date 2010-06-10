@@ -15,9 +15,9 @@
 	</parent>
 
 	<scm>
-		<connection>scm:svn:http://s1.semanticscience.org/svn/repos/production/application/pdb2rdf/trunk</connection>
-		<developerConnection>scm:svn:http://s1.semanticscience.org/svn/repos/production/application/pdb2rdf/trunk</developerConnection>
-		<url>http://s1.semanticscience.org/svn/repos/production/application/pdb2rdf/trunk</url>
+		<connection>scm:svn:https://pdb2rdf.googlecode.com/svn/pdb2rdf/trunk</connection>
+		<developerConnection>scm:svn:https://pdb2rdf.googlecode.com/svn/pdb2rdf/trunk</developerConnection>
+		<url>http://code.google.com/p/pdb2rdf/source/browse/#svn/pdb2rdf/trunk</url>
 	</scm>
 
 	<modules>

@@ -60,7 +60,6 @@ public class ClusterController extends HttpServlet {
 				return;
 			}
 		}
-		requestCount.incrementAndGet();
 		InputStream xmlStream = null;
 		synchronized (monitor) {
 			if (!input.hasNext()) {
@@ -69,6 +68,7 @@ public class ClusterController extends HttpServlet {
 				return;
 			}
 			LOG.info("Assigning input file to: " + req.getRemoteHost());
+			requestCount.incrementAndGet();
 			xmlStream = input.next().getByteStream();
 		}
 		resp.setContentType("text/xml");

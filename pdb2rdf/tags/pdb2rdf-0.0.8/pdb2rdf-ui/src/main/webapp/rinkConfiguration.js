@@ -1,0 +1,1 @@
+var rinkConfig = { "serverUrl" : "http://bio2rdf.semanticscience.org:8018/sparql", "base" : "rink.html" };

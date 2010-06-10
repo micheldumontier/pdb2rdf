@@ -3,11 +3,11 @@
   <parent>
     <artifactId>pdb2rdf</artifactId>
     <groupId>com.dumontierlab</groupId>
-    <version>0.0.8-SNAPSHOT</version>
+    <version>0.0.8</version>
   </parent>
   <groupId>com.dumontierlab</groupId>
   <artifactId>pdb2rdf-cluster</artifactId>
-  <version>0.0.8-SNAPSHOT</version>
+  <version>0.0.8</version>
   
   <dependencies>
   		<dependency>

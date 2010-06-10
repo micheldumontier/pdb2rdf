@@ -4,7 +4,7 @@
 	<groupId>com.dumontierlab</groupId>
 	<artifactId>pdb2rdf</artifactId>
 	<name>PDB Rdfizer</name>
-	<version>0.0.8</version>
+	<version>0.0.9-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 
@@ -15,9 +15,9 @@
 	</parent>
 
 	<scm>
-		<connection>scm:svn:https://pdb2rdf.googlecode.com/svn/pdb2rdf/tags/pdb2rdf-0.0.8</connection>
-		<developerConnection>scm:svn:https://pdb2rdf.googlecode.com/svn/pdb2rdf/tags/pdb2rdf-0.0.8</developerConnection>
-		<url>http://code.google.com/p/pdb2rdf/source/browse/#svn/pdb2rdf/tags/pdb2rdf-0.0.8</url>
+		<connection>scm:svn:https://pdb2rdf.googlecode.com/svn/pdb2rdf/trunk</connection>
+		<developerConnection>scm:svn:https://pdb2rdf.googlecode.com/svn/pdb2rdf/trunk</developerConnection>
+		<url>http://code.google.com/p/pdb2rdf/source/browse/#svn/pdb2rdf/trunk</url>
 	</scm>
 
 	<modules>

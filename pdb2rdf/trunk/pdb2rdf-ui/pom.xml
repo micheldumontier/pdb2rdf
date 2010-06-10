@@ -3,12 +3,12 @@
   <parent>
     <artifactId>pdb2rdf</artifactId>
     <groupId>com.dumontierlab</groupId>
-    <version>0.0.8</version>
+    <version>0.0.9-SNAPSHOT</version>
   </parent>
   <groupId>com.dumontierlab</groupId>
   <artifactId>pdb2rdf-ui</artifactId>
   <packaging>war</packaging>
-  <version>0.0.8</version>
+  <version>0.0.9-SNAPSHOT</version>
   
   <dependencies>
 		<dependency>

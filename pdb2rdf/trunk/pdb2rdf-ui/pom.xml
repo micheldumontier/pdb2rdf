@@ -23,7 +23,6 @@
    </dependencies>
   
   <build>
-		<finalName>pdb2rdf-ui</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

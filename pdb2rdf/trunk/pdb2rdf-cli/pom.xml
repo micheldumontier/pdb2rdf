@@ -47,7 +47,6 @@
 	</dependencies>
 
 	<build>
-		<finalName>pdb2rdf</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

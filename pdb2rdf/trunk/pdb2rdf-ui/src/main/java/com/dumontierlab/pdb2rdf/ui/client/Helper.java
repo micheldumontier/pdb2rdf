@@ -77,10 +77,17 @@ public class Helper {
 
 	public void getRdf(String pdbId, AsyncCallback<String> callback) {
 		endpoint.executeConstructQuery(
-				"construct { ?a ?ap ?ao . ?s ?sp ?so . ?so ?p ?v} where { <http://bio2rdf.org/pdb:" + pdbId
-						+ "/model_1> <http://purl.org/dc/terms/hasPart> ?s.  ?a <"
-						+ "http://bio2rdf.org/pdb:hasSpatialLocation> ?s . ?a ?ap ?ao . ?s ?sp ?so . ?so ?p ?v}",
-				callback);
+				"PREFIX dc: <http://purl.org/dc/terms/> " + "PREFIX pdb: <http://bio2rdf.org/pdb:> " + "CONSTRUCT { "
+						+ "?atom a ?atomType. " + "?atom  pdb:hasSpatialLocation ?atom_sl. "
+						+ "?atom_sl pdb:hasXCoordinate ?xcoord. " + "?atom_sl pdb:hasYCoordinate ?ycoord. "
+						+ "?atom_sl pdb:hasZCoordinate ?zcoord. " + "?xcoord pdb:hasValue ?xval. "
+						+ "?ycoord pdb:hasValue ?yval. " + "?zcoord pdb:hasValue ?zval. " + "}WHERE{ "
+						+ "<http://bio2rdf.org/pdb:" + pdbId + "> dc:hasPart " + "?structure_deter. "
+						+ "?structure_deter pdb:hasProduct ?model. " + "?model dc:hasPart ?atom_sl. "
+						+ "?atom pdb:hasSpatialLocation ?atom_sl. " + "?atom_sl pdb:hasXCoordinate ?xcoord. "
+						+ "?atom_sl pdb:hasYCoordinate ?ycoord. " + "?atom_sl pdb:hasZCoordinate ?zcoord. "
+						+ "?xcoord pdb:hasValue ?xval. " + "?ycoord pdb:hasValue ?yval. "
+						+ "?zcoord pdb:hasValue ?zval. " + "}", callback);
 	}
 
 	public void getChemicalSubstances(String pdbId, final AsyncCallback<Collection<ChemicalSubstance>> callback) {

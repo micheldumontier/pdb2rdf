@@ -44,10 +44,16 @@ public class DataBlockHandler extends ContentHandlerState {
 
 	private String pdbId;
 	private final Map<String, Collection<Resource>> residues;
+	private final boolean parseAtomSites;
 
 	public DataBlockHandler(PdbRdfModel rdfModel, UriBuilder uriBuilder) {
+		this(rdfModel, uriBuilder, true);
+	}
+
+	public DataBlockHandler(PdbRdfModel rdfModel, UriBuilder uriBuilder, boolean parseAtomSites) {
 		super(rdfModel, uriBuilder);
 		residues = new HashMap<String, Collection<Resource>>();
+		this.parseAtomSites = parseAtomSites;
 	}
 
 	@Override
@@ -95,8 +101,7 @@ public class DataBlockHandler extends ContentHandlerState {
 				|| localName.equals(PdbXmlVocabulary.ENTITY_SOURCE_NATURAL_CATEGORY)
 				|| localName.equals(PdbXmlVocabulary.ATOM_SITE_CATEGORY)
 				|| localName.equals(PdbXmlVocabulary.STRUCT_CONFIG_CATEGORY)
-				|| localName.equals(PdbXmlVocabulary.CELL_CATEGORY) 
-				|| localName.equals(PdbXmlVocabulary.EXPTL_CATEGORY)
+				|| localName.equals(PdbXmlVocabulary.CELL_CATEGORY) || localName.equals(PdbXmlVocabulary.EXPTL_CATEGORY)
 				|| localName.equals(PdbXmlVocabulary.STRUCT_CATEGORY)
 				|| localName.equals(PdbXmlVocabulary.REFINE_CATEGORY)) {
 			setState(null);

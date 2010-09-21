@@ -33,8 +33,15 @@ import com.dumontierlab.pdb2rdf.parser.vocabulary.uri.UriBuilder;
  */
 public class PdbXmlContentHandler extends ContentHandlerState {
 
+	private final boolean parseAtomSites;
+
 	public PdbXmlContentHandler(PdbRdfModel model) {
+		this(model, true);
+	}
+
+	public PdbXmlContentHandler(PdbRdfModel model, boolean parseAtomSites) {
 		super(model, new UriBuilder());
+		this.parseAtomSites = parseAtomSites;
 		getRdfModel().setNsPrefix("dcterms", "http://purl.org/dc/terms/");
 		getRdfModel().setNsPrefix("ss", PdbOwlVocabulary.DEFAULT_NAMESPACE);
 		getRdfModel().setNsPrefix("pdb", PdbOwlVocabulary.DEFAULT_NAMESPACE);
@@ -43,7 +50,7 @@ public class PdbXmlContentHandler extends ContentHandlerState {
 	@Override
 	public void startElement(String uri, String localName, String name, Attributes atts) throws SAXException {
 		if (localName.equals(PdbXmlVocabulary.DATABLOCK)) {
-			setState(new DataBlockHandler(getRdfModel(), getUriBuilder()));
+			setState(new DataBlockHandler(getRdfModel(), getUriBuilder(), parseAtomSites));
 		}
 		super.startElement(uri, localName, name, atts);
 	}

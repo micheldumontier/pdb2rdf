@@ -20,4 +20,14 @@
     <servlet-name>RestletServlet</servlet-name>
     <url-pattern>/service/*</url-pattern>
   </servlet-mapping>
+  
+  <!-- Proxy -->
+	<servlet>
+		<servlet-name>RestProxy</servlet-name>
+		<servlet-class>com.jsos.restproxy.RestProxyServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RestProxy</servlet-name>
+		<url-pattern>/proxy</url-pattern>
+	</servlet-mapping>
 </web-app>

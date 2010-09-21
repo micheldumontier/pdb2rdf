@@ -84,10 +84,10 @@ public class Helper {
 						+ "?ycoord pdb:hasValue ?yval. " + "?zcoord pdb:hasValue ?zval. " + "}WHERE{ "
 						+ "<http://bio2rdf.org/pdb:" + pdbId + "> dc:hasPart " + "?structure_deter. "
 						+ "?structure_deter pdb:hasProduct ?model. " + "?model dc:hasPart ?atom_sl. "
-						+ "?atom pdb:hasSpatialLocation ?atom_sl. " + "?atom_sl pdb:hasXCoordinate ?xcoord. "
-						+ "?atom_sl pdb:hasYCoordinate ?ycoord. " + "?atom_sl pdb:hasZCoordinate ?zcoord. "
-						+ "?xcoord pdb:hasValue ?xval. " + "?ycoord pdb:hasValue ?yval. "
-						+ "?zcoord pdb:hasValue ?zval. " + "}", callback);
+						+ "?atom pdb:hasSpatialLocation ?atom_sl. ?atom a ?atomType. "
+						+ "?atom_sl pdb:hasXCoordinate ?xcoord. " + "?atom_sl pdb:hasYCoordinate ?ycoord. "
+						+ "?atom_sl pdb:hasZCoordinate ?zcoord. " + "?xcoord pdb:hasValue ?xval. "
+						+ "?ycoord pdb:hasValue ?yval. " + "?zcoord pdb:hasValue ?zval. " + "}", callback);
 	}
 
 	public void getChemicalSubstances(String pdbId, final AsyncCallback<Collection<ChemicalSubstance>> callback) {

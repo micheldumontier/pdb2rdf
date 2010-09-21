@@ -502,29 +502,38 @@ public class AtomSiteCategoryHandler extends ContentHandlerState {
 	}
 
 	private void createAtomType(String typeSymbol) {
-		Resource atomType = PeriodicTable.get(typeSymbol).resource();
-		getRdfModel().add(getAtomResource(), RDF.type, atomType);
+		if (getDetailLevel().hasAtom()) {
+			Resource atomType = PeriodicTable.get(typeSymbol).resource();
+			Resource atom = getAtomResource();
+			getRdfModel().add(atom, RDF.type, atomType);
+		}
 	}
 
 	private void createRdf() {
 		// createBEquivGeomMean();
-		if (bIsoOrEquiv != null) {
+		if (bIsoOrEquiv != null && getDetailLevel().hasAtomLocation()) {
 			createBIsoOrEquiv();
 		}
-		if (cartnX != null) {
+		if (cartnX != null && getDetailLevel().hasAtomLocation()) {
 			createCartnX();
 		}
-		if (cartnY != null) {
+		if (cartnY != null && getDetailLevel().hasAtomLocation()) {
 			createCartnY();
 		}
-		if (cartnZ != null) {
+		if (cartnZ != null && getDetailLevel().hasAtomLocation()) {
 			createCartnZ();
 		}
-		if (occupancy != null) {
+		if (occupancy != null && getDetailLevel().hasAtomLocation()) {
 			createOccupancy();
 		}
-		if (pdbxFormalCharge != null) {
+		if (pdbxFormalCharge != null && getDetailLevel().hasAtomLocation()) {
 			createFormalCharge();
+		}
+		// In the case where the detail level is at the residue deph then we
+		// need to explicit call getResidue() in order to generate the residue
+		// resource.
+		if (getDetailLevel().hasResidue()) {
+			getResidue();
 		}
 	}
 
@@ -596,21 +605,11 @@ public class AtomSiteCategoryHandler extends ContentHandlerState {
 
 	}
 
-	/*
-	 * private void createBEquivGeomMean() { Resource quality =
-	 * createResource(Bio2RdfPdbUriPattern.B_EQUIV_GEOM_MEAN, pdbId, chainId,
-	 * atomName, residueId, chainPosition, modelNumber);
-	 * getRdfModel().add(getAtomLocationResource(),
-	 * PdbOwlVocabulary.ObjectProperty.hasBEquivalentGeometricMean.property(),
-	 * quality); getRdfModel().add(quality, PdbOwlVocabulary.DataProperty
-	 * .hasValue.property(),getRdfModel().createTypedLiteral(bEquivGeomMean,
-	 * XSD.decimal.getURI()) ); getRdfModel().add(quality, RDF.type, ); }
-	 */
 	private Resource getAtomResource() {
 		assert chainId != null && atomName != null && residueId != null && chainPosition != null : "The chainId, atomName, residueId and chainPosition are needed for creating this resorce";
 		if (atomResource == null) {
-			atomResource = createResource(Bio2RdfPdbUriPattern.ATOM, pdbId, chainId, chainPosition, UriUtil
-					.urlEncode(UriUtil.replacePrimes(atomName)));
+			atomResource = createResource(Bio2RdfPdbUriPattern.ATOM, pdbId, chainId, chainPosition,
+					UriUtil.urlEncode(UriUtil.replacePrimes(atomName)));
 			if (!getRdfModel().containsResource(atomResource)) {
 				if (groupPDB.equals(PdbXmlVocabulary.PDB_GROUP_ATOM_VALUE)) {
 					getRdfModel().add(getResidue(), DCTerms.hasPart, atomResource);
@@ -698,12 +697,14 @@ public class AtomSiteCategoryHandler extends ContentHandlerState {
 	}
 
 	private void addResidue(Resource residue, String labelCompId) {
-		Collection<Resource> residuesResources = residues.get(labelCompId);
-		if (residuesResources == null) {
-			residuesResources = new HashSet<Resource>();
-			residues.put(labelCompId, residuesResources);
+		if (getDetailLevel().hasResidue()) {
+			Collection<Resource> residuesResources = residues.get(labelCompId);
+			if (residuesResources == null) {
+				residuesResources = new HashSet<Resource>();
+				residues.put(labelCompId, residuesResources);
+			}
+			residuesResources.add(residue);
 		}
-		residuesResources.add(residue);
 
 	}
 

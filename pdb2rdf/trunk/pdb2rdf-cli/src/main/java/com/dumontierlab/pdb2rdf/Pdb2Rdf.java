@@ -60,6 +60,7 @@ import com.bigdata.rdf.sail.BigdataSailRepository;
 import com.dumontierlab.pdb2rdf.dao.VirtuosoDaoFactory;
 import com.dumontierlab.pdb2rdf.model.PdbRdfModel;
 import com.dumontierlab.pdb2rdf.model.VirtPdbRdfModel;
+import com.dumontierlab.pdb2rdf.parser.DetailLevel;
 import com.dumontierlab.pdb2rdf.parser.PdbXmlParser;
 import com.dumontierlab.pdb2rdf.parser.vocabulary.PdbOwlVocabulary;
 import com.dumontierlab.pdb2rdf.parser.vocabulary.uri.Bio2RdfPdbUriPattern;
@@ -150,7 +151,7 @@ public class Pdb2Rdf {
 		PdbOwlVocabulary.getOntology().write(System.out);
 	}
 
-	private static void printRdf(CommandLine cmd) {
+	private static void printRdf(final CommandLine cmd) {
 		final File outDir = getOutputDirectory(cmd);
 		final RDFWriter writer = getWriter(cmd);
 
@@ -178,7 +179,18 @@ public class Pdb2Rdf {
 					PdbXmlParser parser = new PdbXmlParser();
 					PdbRdfModel model = null;
 					try {
-						model = parser.parse(input);
+						if (cmd.hasOption("detailLevel")) {
+							try {
+								DetailLevel detailLevel = Enum.valueOf(DetailLevel.class,
+										cmd.getOptionValue("detailLevel"));
+								model = parser.parse(input, new PdbRdfModel(), detailLevel);
+							} catch (IllegalArgumentException e) {
+								LOG.fatal("Invalid argument value for detailLevel option", e);
+								System.exit(1);
+							}
+						} else {
+							model = parser.parse(input, new PdbRdfModel());
+						}
 						if (outDir != null) {
 							File directory = new File(outDir, model.getPdbId().substring(1, 3));
 							synchronized (lock) {
@@ -239,6 +251,16 @@ public class Pdb2Rdf {
 		String password = "dba";
 		String host = "localhost";
 		int port = 1111;
+		DetailLevel detailLevel = null;
+		if (cmd.hasOption("detailLevel")) {
+			try {
+				detailLevel = Enum.valueOf(DetailLevel.class, cmd.getOptionValue("detailLevel"));
+			} catch (IllegalArgumentException e) {
+				LOG.fatal("Invalid argument value for detailLevel option", e);
+				System.exit(1);
+			}
+		}
+		final DetailLevel f_detailLevel = detailLevel;
 
 		if (cmd.hasOption("username")) {
 			username = cmd.getOptionValue("username");
@@ -280,7 +302,11 @@ public class Pdb2Rdf {
 					try {
 						model = new VirtPdbRdfModel(factory, Bio2RdfPdbUriPattern.PDB_GRAPH, uriBuilder, factory
 								.getTripleStoreDao());
-						parser.parse(input, model);
+						if (f_detailLevel != null) {
+							model = parser.parse(input, new PdbRdfModel(), f_detailLevel);
+						} else {
+							parser.parse(input, model);
+						}
 						if (monitor != null) {
 							monitor.setProgress(progressCount.incrementAndGet(), inputSize);
 						}
@@ -295,7 +321,18 @@ public class Pdb2Rdf {
 
 	}
 
-	private static void loadBigData(CommandLine cmd) {
+	private static void loadBigData(final CommandLine cmd) {
+		DetailLevel detailLevel = null;
+		if (cmd.hasOption("detailLevel")) {
+			try {
+				detailLevel = Enum.valueOf(DetailLevel.class, cmd.getOptionValue("detailLevel"));
+			} catch (IllegalArgumentException e) {
+				LOG.fatal("Invalid argument value for detailLevel option", e);
+				System.exit(1);
+			}
+		}
+		final DetailLevel f_detailLevel = detailLevel;
+
 		String filePath = cmd.getOptionValue("bigdata");
 		if (filePath == null) {
 			LOG.fatal("You need to specify the path the BigData DB file");
@@ -343,7 +380,11 @@ public class Pdb2Rdf {
 					PdbXmlParser parser = new PdbXmlParser();
 					PdbRdfModel model = null;
 					try {
-						model = parser.parse(input);
+						if (f_detailLevel != null) {
+							model = parser.parse(input, new PdbRdfModel(), f_detailLevel);
+						} else {
+							model = parser.parse(input, new PdbRdfModel());
+						}
 						RepositoryConnection cxn = repo.getConnection();
 						cxn.setAutoCommit(false);
 						try {
@@ -451,43 +492,48 @@ public class Pdb2Rdf {
 	private static Options createOptions() {
 		Options options = new Options();
 		options.addOption("load", false, "Load the resulting RDF into a Virtuoso triple store");
-		Option userOption = OptionBuilder.withArgName("value").hasOptionalArgs(1).withDescription(
-				"Virtuoso username (default: dba)").hasArg(true).create("username");
+		Option userOption = OptionBuilder.withArgName("value").hasOptionalArgs(1)
+				.withDescription("Virtuoso username (default: dba)").hasArg(true).create("username");
 		options.addOption(userOption);
-		Option passwordOption = OptionBuilder.withArgName("value").hasOptionalArgs(1).withDescription(
-				"Virtuoso password (default: dba)").hasArg(true).create("password");
+		Option passwordOption = OptionBuilder.withArgName("value").hasOptionalArgs(1)
+				.withDescription("Virtuoso password (default: dba)").hasArg(true).create("password");
 		options.addOption(passwordOption);
-		Option hostOption = OptionBuilder.withArgName("value").hasOptionalArgs(1).withDescription(
-				"Virtuoso host address (default: localhost)").hasArg(true).create("host");
+		Option hostOption = OptionBuilder.withArgName("value").hasOptionalArgs(1)
+				.withDescription("Virtuoso host address (default: localhost)").hasArg(true).create("host");
 		options.addOption(hostOption);
-		Option portOption = OptionBuilder.withArgName("value").hasOptionalArgs(1).withDescription(
-				"Virtuoso iSQL port number (default: 1111)").hasArg(true).create("port");
+		Option portOption = OptionBuilder.withArgName("value").hasOptionalArgs(1)
+				.withDescription("Virtuoso iSQL port number (default: 1111)").hasArg(true).create("port");
 		options.addOption(portOption);
 		options.addOption("help", false, "Print this message");
-		Option formatOption = OptionBuilder.withArgName("RDF/XML|N-TRIPLE|N3").hasOptionalArgs(1).withDescription(
-				"RDF output format (default: RDF/XMl)").hasArg(true).create("format");
+		Option formatOption = OptionBuilder.withArgName("RDF/XML|N-TRIPLE|N3").hasOptionalArgs(1)
+				.withDescription("RDF output format (default: RDF/XMl)").hasArg(true).create("format");
 		options.addOption(formatOption);
 		Option dirOption = OptionBuilder.withArgName("path").withDescription("Directory where input files are located")
 				.hasArg(true).create("dir");
 		options.addOption(dirOption);
-		Option clusterOption = OptionBuilder.withArgName("URL").withDescription(
-				"URL of the cluster head where input will be acquired").hasArg(true).create("cluster");
+		Option clusterOption = OptionBuilder.withArgName("URL")
+				.withDescription("URL of the cluster head where input will be acquired").hasArg(true).create("cluster");
 		options.addOption(clusterOption);
 
 		Option fileOption = OptionBuilder.withArgName("path").withDescription("Input file").hasArg(true).create("file");
 		options.addOption(fileOption);
 		options.addOption("gzip", false, "Input is given as gzip file(s)");
-		Option outDirOption = OptionBuilder.withArgName("path").withDescription(
-				"Directory where output RDF files will be created").hasArg(true).create("out");
+		Option outDirOption = OptionBuilder.withArgName("path")
+				.withDescription("Directory where output RDF files will be created").hasArg(true).create("out");
 		options.addOption(outDirOption);
 		options.addOption("ontology", false, "Prints the ontology for the PDB namespace");
-		Option threadsOption = OptionBuilder.withArgName("number").withDescription(
-				"Number of threads (default: number of processing units * 2)").hasArg(true).create("threads");
+		Option threadsOption = OptionBuilder.withArgName("number")
+				.withDescription("Number of threads (default: number of processing units * 2)").hasArg(true)
+				.create("threads");
 		options.addOption(threadsOption);
-		Option bigdataOption = OptionBuilder.withArgName("DB path").withDescription(
-				"Load the triples into a BigData journal file.").hasArg(true).create("bigdata");
+		Option bigdataOption = OptionBuilder.withArgName("DB path")
+				.withDescription("Load the triples into a BigData journal file.").hasArg(true).create("bigdata");
 		options.addOption(bigdataOption);
 		options.addOption("stats", false, "Print statistics only");
+		Option noAtomSitesOption = OptionBuilder.hasArg(true)
+				.withDescription("Specify detail level: COMPLETE | ATOM | RESIDUE | EXPERIMENT | METADATA ")
+				.create("detailLevel");
+		options.addOption(noAtomSitesOption);
 		return options;
 	}
 

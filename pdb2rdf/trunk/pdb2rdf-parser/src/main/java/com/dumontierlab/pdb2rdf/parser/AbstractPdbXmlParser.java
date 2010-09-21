@@ -39,19 +39,40 @@ public abstract class AbstractPdbXmlParser {
 		return parse(pdbId, new PdbRdfModel());
 	}
 
+	public PdbRdfModel parse(String pdbId, DetailLevel detailLevel) throws IOException, SAXException {
+		return parse(pdbId, new PdbRdfModel(), detailLevel);
+	}
+
 	public PdbRdfModel parse(String pdbId, PdbRdfModel model) throws IOException, SAXException {
 		PdbHttpClient client = new PdbHttpClient();
-		return parse(client.getPdbXml(pdbId), model);
+		return parse(client.getPdbXml(pdbId), model, null);
+	}
+
+	public PdbRdfModel parse(String pdbId, PdbRdfModel model, DetailLevel detailLevel) throws IOException, SAXException {
+		PdbHttpClient client = new PdbHttpClient();
+		return parse(client.getPdbXml(pdbId), model, detailLevel);
 	}
 
 	public PdbRdfModel parse(InputSource input) throws IOException, SAXException {
-		return parse(input, new PdbRdfModel());
+		return parse(input, new PdbRdfModel(), null);
+	}
+
+	public PdbRdfModel parse(InputSource input, DetailLevel detailLevel) throws IOException, SAXException {
+		return parse(input, new PdbRdfModel(), detailLevel);
 	}
 
 	public PdbRdfModel parse(InputSource input, PdbRdfModel model) throws IOException, SAXException {
+		return parse(input, model, null);
+	}
+
+	public PdbRdfModel parse(InputSource input, PdbRdfModel model, DetailLevel detailLevel) throws IOException,
+			SAXException {
 
 		XMLReader parser = XMLReaderFactory.createXMLReader();
 		ContentHandlerState handler = getContentHandler(model);
+		if (detailLevel != null) {
+			handler.setDetailLevel(detailLevel);
+		}
 		parser.setContentHandler(handler);
 		parser.parse(input);
 

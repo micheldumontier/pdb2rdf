@@ -48,6 +48,7 @@ public class ContentHandlerState implements ContentHandler {
 	private final PdbRdfModel rdfModel;
 	private final UriBuilder uriBuilder;
 	protected StringBuilder buffer;
+	private DetailLevel detailLevel = DetailLevel.DEFAULT;
 
 	public ContentHandlerState(PdbRdfModel rdfModel, UriBuilder uriBuilder) {
 		this.uriBuilder = uriBuilder;
@@ -162,7 +163,18 @@ public class ContentHandlerState implements ContentHandler {
 		}
 	}
 
+	public void setDetailLevel(DetailLevel detailLevel) {
+		this.detailLevel = detailLevel;
+	}
+
+	public DetailLevel getDetailLevel() {
+		return detailLevel;
+	}
+
 	protected void setState(ContentHandlerState state) {
+		if (state != null) {
+			state.setDetailLevel(getDetailLevel());
+		}
 		this.state = state;
 	}
 

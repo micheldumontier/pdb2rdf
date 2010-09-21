@@ -1,1 +1,1 @@
-var rinkConfig = { "serverUrl" : "http://bio2rdf.semanticscience.org:8018/sparql", "base" : "rink.html" };
+var rinkConfig = { "serverUrl" : "http://quebec.pdb.bio2rdf.org/sparql", "base" : "rink.html" };

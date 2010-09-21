@@ -27,6 +27,7 @@
 		<module>pdb2rdf-gae</module>
 		<module>pdb2rdf-service</module>
 		<module>pdb2rdf-ui</module>
+		<module>pdb2rdf-tools</module>
 	</modules>
 
 	<dependencyManagement>

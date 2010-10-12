@@ -19,7 +19,6 @@
 		<dependency>
 			<groupId>com.dumontierlab.capac</groupId>
 			<artifactId>rink</artifactId>
-			<version>0.0.4-SNAPSHOT</version>
 		</dependency>
    </dependencies>
   

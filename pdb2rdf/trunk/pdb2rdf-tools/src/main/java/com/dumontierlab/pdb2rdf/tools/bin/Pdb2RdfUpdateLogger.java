@@ -1,5 +1,6 @@
 /**
- * 
+ * This class does several things
+ * - 
  */
 package com.dumontierlab.pdb2rdf.tools.bin;
 
@@ -23,5 +24,52 @@ public class Pdb2RdfUpdateLogger {
 		rsyncParser = new RsyncParser();
 	}
 	
+	public Pdb2RdfUpdateLogger(DbConnector aDb, RunRsync aRsyncRunner, RsyncParser aRsyncParser){
+		db = aDb;
+		rsyncParser = aRsyncParser;
+		rsyncRunner = aRsyncRunner;
+	}
 	
+
+	/**
+	 * @return the db
+	 */
+	public DbConnector getDb() {
+		return db;
+	}
+
+	/**
+	 * @param db the db to set
+	 */
+	public void setDb(DbConnector db) {
+		this.db = db;
+	}
+
+	/**
+	 * @return the rsyncParser
+	 */
+	public RsyncParser getRsyncParser() {
+		return rsyncParser;
+	}
+
+	/**
+	 * @param rsyncParser the rsyncParser to set
+	 */
+	public void setRsyncParser(RsyncParser rsyncParser) {
+		this.rsyncParser = rsyncParser;
+	}
+
+	/**
+	 * @return the rsyncRunner
+	 */
+	public RunRsync getRsyncRunner() {
+		return rsyncRunner;
+	}
+
+	/**
+	 * @param rsyncRunner the rsyncRunner to set
+	 */
+	public void setRsyncRunner(RunRsync rsyncRunner) {
+		this.rsyncRunner = rsyncRunner;
+	}
 }

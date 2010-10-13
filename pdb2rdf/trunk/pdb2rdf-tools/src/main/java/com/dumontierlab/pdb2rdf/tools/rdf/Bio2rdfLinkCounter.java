@@ -18,7 +18,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.dumontierlab.pdb2rdf.tools;
+package com.dumontierlab.pdb2rdf.tools.rdf;
 
 import java.text.MessageFormat;
 import java.util.HashSet;

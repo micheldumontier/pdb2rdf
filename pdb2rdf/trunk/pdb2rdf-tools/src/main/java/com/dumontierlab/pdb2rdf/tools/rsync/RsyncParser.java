@@ -1,4 +1,4 @@
-package com.dumontierlab.pdb2rdf.tools;
+package com.dumontierlab.pdb2rdf.tools.rsync;
 
 import java.io.BufferedReader;
 import java.io.DataInputStream;

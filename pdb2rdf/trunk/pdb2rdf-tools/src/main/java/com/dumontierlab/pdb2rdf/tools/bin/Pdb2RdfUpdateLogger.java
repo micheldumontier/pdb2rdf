@@ -17,7 +17,10 @@ public class Pdb2RdfUpdateLogger {
 	RunRsync rsyncRunner;
 	
 	public Pdb2RdfUpdateLogger(){
-		
+		//initialize everything
+		db = new DbConnector();
+		rsyncRunner = new RunRsync();
+		rsyncParser = new RsyncParser();
 	}
 	
 	

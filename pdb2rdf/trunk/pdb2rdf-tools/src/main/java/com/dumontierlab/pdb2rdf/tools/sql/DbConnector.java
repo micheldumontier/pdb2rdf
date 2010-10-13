@@ -36,10 +36,8 @@ public class DbConnector {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (InstantiationException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (NullPointerException e) {
 			e.printStackTrace();
@@ -67,15 +65,12 @@ public class DbConnector {
 	public ResultSet executeQuery(String aQry) {
 		ResultSet returnMe = null;
 		Statement st = null;
-		// Statements allow to issue SQL queries to the database
 		try {
 			st = this.getConnect().createStatement();
-			// Result set get the result of the SQL query
 			returnMe = st.executeQuery(aQry);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
 		return returnMe;
 	}
 
@@ -86,8 +81,6 @@ public class DbConnector {
 	 * @return column names
 	 */
 	public ArrayList<String> getColumnNames(ResultSet resultSet) {
-		// Now get some metadata from the database
-		// Result set get the result of the SQL query
 		ArrayList<String> returnMe = new ArrayList<String>();
 
 		try {

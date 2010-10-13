@@ -73,6 +73,18 @@ public class DbConnector {
 		}
 		return returnMe;
 	}
+	
+	public int executeUpdate(String aQry){
+		int returnMe = -1;
+		Statement st = null;
+		try{
+			st = this.getConnect().createStatement();
+			returnMe = st.executeUpdate(aQry);
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return returnMe;
+	}
 
 	/**
 	 * This method returns the column names for a result set

@@ -16,7 +16,11 @@ public class RunRsync {
 	public String[] cmdArr = new String[8];
 	File mirrorDirectory;
 	File logFile;
-				
+	
+	/**
+	 * @param aLogFile Log File which will be used to store the output of the rsync execution
+	 * @param mirrorDir Directory where you wish to store the mirror of PDB
+	 */
 	public RunRsync(File aLogFile, File mirrorDir){
 		if(aLogFile == null){
 			System.out.println("a log file has not been specified");
@@ -46,6 +50,18 @@ public class RunRsync {
 		} catch(InterruptedException e){
 			System.out.println("cacaca");
 			System.exit(-1);
+		}
+	}
+	
+	public RunRsync(){
+		//check if Rsync is available to the path
+		try {
+			Process p = Runtime.getRuntime().exec("/usr/bin/rsync");
+			p.waitFor();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
 		}
 	}
 

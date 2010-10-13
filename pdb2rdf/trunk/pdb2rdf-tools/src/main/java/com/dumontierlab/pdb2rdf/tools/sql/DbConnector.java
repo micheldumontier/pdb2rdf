@@ -1,8 +1,13 @@
 /**
  * This class creates a jdbc connection to a mysql server
+ * If no username is specified the defaults are
+ * user: pdb_user
+ * pass: pdb_password!
+ * 
  * SeeAlso: http://www.vogella.de/articles/MySQLJava/article.html#jdbc
  */
 package com.dumontierlab.pdb2rdf.tools.sql;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -10,9 +15,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Date;
-
-
 
 public class DbConnector {
 	private Connection connection = null;
@@ -20,96 +22,46 @@ public class DbConnector {
 	private PreparedStatement preparedStatement = null;
 	private ResultSet resultSet = null;
 	private static final String DRIVER = "com.mysql.jdbc.Driver";
-	private static final String DB_URL = "jdbc:mysql://localhost/";
-	private static final String username = "";
-	private static final String password = "";
-	
-	public DbConnector(){
+	private static final String DB_URL = "jdbc:mysql://localhost/pdb_updates";
+	private static final String username = "pdb_user";
+	private static final String password = "pdb_password!";
+
+	public DbConnector() {
 		try {
-			Class.forName(DRIVER);
-			connection = DriverManager.getConnection(DB_URL, username, password);
+			Class.forName(DRIVER).newInstance();
+			this.connection = DriverManager.getConnection(DB_URL, username,
+					password);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NullPointerException e) {
+			e.printStackTrace();
 		}
 	}
-	
-	public DbConnector(String dbURL, String user, String passwd){
-		
+
+	public DbConnector(String dbURL, String user, String passwd) {
 		try {
 			Class.forName(DRIVER);
 			this.connection = DriverManager.getConnection(dbURL, user, passwd);
 		} catch (SQLException e1) {
+			System.out.println("caca");
 			e1.printStackTrace();
 		} catch (ClassNotFoundException e) {
+			System.out.println("caca2");
 			e.printStackTrace();
 		}
 	}
-	
-/*	public void readDataBase() throws Exception {
-		try {
-			// This will load the MySQL driver, each DB has its own driver
-			Class.forName(DRIVER);
-			// Setup the connection with the DB
-			connection = DriverManager
-					.getConnection(DB_URL, "root", "Negro7h!");
 
-			// Statements allow to issue SQL queries to the database
-			statement = connection.createStatement();
-			// Result set get the result of the SQL query
-			resultSet = statement
-					.executeQuery("select * from input_acc");
-			
-			ResultSetMetaData md = resultSet.getMetaData();
-			int numOfCols = md.getColumnCount();
-			while(resultSet.next()){
-				for(int i=1;i<=numOfCols;i++){
-					System.out.print(resultSet.getObject(i)+"\t");
-				}System.exit(1);
-			}
-			//writeResultSet(resultSet);
-
-			// PreparedStatements can use variables and are more efficient
-			preparedStatement = connection
-					.prepareStatement("insert into  FEEDBACK.COMMENTS values (default, ?, ?, ?, ? , ?, ?)");
-			// "myuser, webpage, datum, summery, COMMENTS from FEEDBACK.COMMENTS");
-			// Parameters start with 1
-			preparedStatement.setString(1, "Test");
-			preparedStatement.setString(2, "TestEmail");
-			preparedStatement.setString(3, "TestWebpage");
-		//	preparedStatement.setDate(4, new Date());
-			preparedStatement.setString(5, "TestSummary");
-			preparedStatement.setString(6, "TestComment");
-			preparedStatement.executeUpdate();
-
-			preparedStatement = connection
-					.prepareStatement("SELECT myuser, webpage, datum, summery, COMMENTS from FEEDBACK.COMMENTS");
-			resultSet = preparedStatement.executeQuery();
-			writeResultSet(resultSet);
-
-			// Remove again the insert comment
-			preparedStatement = connection
-			.prepareStatement("delete from FEEDBACK.COMMENTS where myuser= ? ; ");
-			preparedStatement.setString(1, "Test");
-			preparedStatement.executeUpdate();
-			
-			resultSet = statement
-			.executeQuery("select * from FEEDBACK.COMMENTS");
-			writeMetaData(resultSet);
-			
-		
-			
-		} catch (Exception e) {
-			throw e;
-		} finally {
-			close();
-		}
-
-	}
-*/
 	/**
 	 * This method creates a statement and executes it on the Server.
+	 * 
 	 * @return ResultSet
 	 */
 	public ResultSet executeQuery(String aQry) {
@@ -123,22 +75,23 @@ public class DbConnector {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		return returnMe;
 	}
-	
+
 	/**
 	 * This method returns the column names for a result set
+	 * 
 	 * @param resultSet
 	 * @return column names
 	 */
 	public ArrayList<String> getColumnNames(ResultSet resultSet) {
-		// 	Now get some metadata from the database
+		// Now get some metadata from the database
 		// Result set get the result of the SQL query
 		ArrayList<String> returnMe = new ArrayList<String>();
-		
+
 		try {
-			for  (int i = 1; i<= resultSet.getMetaData().getColumnCount(); i++){
+			for (int i = 1; i <= resultSet.getMetaData().getColumnCount(); i++) {
 				returnMe.add(resultSet.getMetaData().getColumnClassName(i));
 			}
 		} catch (SQLException e) {
@@ -146,29 +99,7 @@ public class DbConnector {
 		}
 		return returnMe;
 	}
-	
-	/*
-	private void writeResultSet(ResultSet resultSet) throws SQLException {
-		// ResultSet is initially before the first data set
-		while (resultSet.next()) {
-			// It is possible to get the columns via name
-			// also possible to get the columns via the column number
-			// which starts at 1
-			// e.g. resultSet.getSTring(2);
-			String user = resultSet.getString("myuser");
-			String website = resultSet.getString("webpage");
-			String summery = resultSet.getString("summery");
-			Date date = resultSet.getDate("datum");
-			String comment = resultSet.getString("comments");
-			System.out.println("User: " + user);
-			System.out.println("Website: " + website);
-			System.out.println("Summery: " + summery);
-			System.out.println("Date: " + date);
-			System.out.println("Comment: " + comment);
-		}
-	}*/
 
-	
 	public void close() {
 		try {
 			if (resultSet != null) {
@@ -183,44 +114,54 @@ public class DbConnector {
 				connection.close();
 			}
 		} catch (Exception e) {
-			System.out.println("closing stuff problem\nThey are obviously chasing you!");
+			System.out
+					.println("closing stuff problem\nThey are obviously chasing you!");
 		}
 	}
+
 	/**
 	 * @return the connection
 	 */
 	public Connection getConnect() {
 		return connection;
 	}
+
 	/**
-	 * @param connection the connection to set
+	 * @param connection
+	 *            the connection to set
 	 */
 	public void setConnect(Connection connect) {
 		this.connection = connect;
 	}
+
 	/**
 	 * @return the statement
 	 */
 	public Statement getStatement() {
 		return statement;
 	}
+
 	/**
-	 * @param statement the statement to set
+	 * @param statement
+	 *            the statement to set
 	 */
 	public void setStatement(Statement statement) {
 		this.statement = statement;
 	}
+
 	/**
 	 * @return the resultSet
 	 */
 	public ResultSet getResultSet() {
 		return resultSet;
 	}
+
 	/**
-	 * @param resultSet the resultSet to set
+	 * @param resultSet
+	 *            the resultSet to set
 	 */
 	public void setResultSet(ResultSet resultSet) {
 		this.resultSet = resultSet;
 	}
-	
+
 }

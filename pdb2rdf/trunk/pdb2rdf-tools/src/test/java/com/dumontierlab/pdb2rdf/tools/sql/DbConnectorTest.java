@@ -65,6 +65,7 @@ public class DbConnectorTest {
 	public void testInsertRow(){
 		String pdb_id = "AAAA";
 		int revision = 1;
+		int new_revision = -1;
 		boolean insertflag1 = false;
 		boolean insertflag2 = false;
 		
@@ -97,24 +98,38 @@ public class DbConnectorTest {
 			}
 			//else if you get a result then add it with a new revision
 			else if(rowCount > 0){
+				//get the largest revision for the input pdb_id
+				String qry = "SELECT revision FROM change_history WHERE pdb_id='"
+							  +pdb_id+"' AND revision=(SELECT MAX(revision) FROM change_history)";
 				
+				ResultSet rs2 = db.executeQuery(qry);
+				rs2.next();
+				int a_revision = rs2.getInt(1);
+				new_revision = ++a_revision;
+				
+				//now we are ready to add a new entry with a new revision
+				String qry3 = "INSERT INTO change_history VALUES('"+new_revision
+						 	+"','"+pdb_id+"','"+currentDate+"')";
+				db.executeUpdate(qry3);
+				insertflag2 = true;
+				rs2.close();
 			}
-			
-			
 			rs.close();
+						
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
-		/**/
-		
-			
 		
 		//finally check the insertion flags to remove any added rows
 		if(insertflag1 == true){
 			//then remove the inserted row by insertQry
 			String deleteQry = "DELETE from change_history WHERE pdb_id='"+pdb_id+"' AND revision='"+revision+"'";
 			db.executeUpdate(deleteQry);
+		}
+		if(insertflag2 == true){
+			//then remove the inserted row by qry3
+			String deleteQry = "DELETE from change_history WHERE pdb_id='"+pdb_id+"' AND revision='"+new_revision+"'";
+			db.executeUpdate(deleteQry);			
 		}
 	}
 	

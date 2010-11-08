@@ -371,7 +371,8 @@ public class PdbOwlVocabulary {
 		SolventModelParamBsol(DEFAULT_NAMESPACE + "SolventModelParamBsol"),
 		SolventModelParamKsol(DEFAULT_NAMESPACE + "SolventModelParamKsol"),
 		ConformerSelectionCriteria(DEFAULT_NAMESPACE + "ConformerSelectionCriteria"),
-		AverageConstraintViolationsPerResidue(DEFAULT_NAMESPACE + "AverageConstraintViolationsPerResidue");
+		AverageConstraintViolationsPerResidue(DEFAULT_NAMESPACE + "AverageConstraintViolationsPerResidue"),
+		Refinement(DEFAULT_NAMESPACE + "Refinement");
 
 		private final String uri;
 

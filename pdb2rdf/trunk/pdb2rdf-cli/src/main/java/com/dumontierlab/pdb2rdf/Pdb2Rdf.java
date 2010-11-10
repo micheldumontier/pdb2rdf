@@ -21,9 +21,11 @@
 package com.dumontierlab.pdb2rdf;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -88,7 +90,7 @@ public class Pdb2Rdf {
 
 	static final Logger LOG = Logger.getLogger(Pdb2Rdf.class);
 
-	private static ThreadPoolExecutor threadPool;
+	private static final String STATSFILE_NAME = "pdb2rdf-stats.txt";
 
 	public static void main(String[] args) {
 
@@ -99,16 +101,29 @@ public class Pdb2Rdf {
 			CommandLine cmd = parser.parse(options, args);
 			if (cmd.hasOption("help")) {
 				printUsage();
-			} else if (cmd.hasOption("stats")) {
-				printStats(cmd);
-			} else if (cmd.hasOption("load")) {
-				load(cmd);
+			}
+
+			Map<String, Double> stats = null;
+			if (cmd.hasOption("stats")) {
+				stats = new HashMap<String, Double>();
+			}
+
+			if (cmd.hasOption("load")) {
+				load(cmd, stats);
 			} else if (cmd.hasOption("bigdata")) {
-				loadBigData(cmd);
+				loadBigData(cmd, stats);
 			} else if (cmd.hasOption("ontology")) {
 				printOntology();
 			} else {
-				printRdf(cmd);
+				printRdf(cmd, stats);
+			}
+
+			if (stats != null) {
+				try {
+					outputStats(cmd, stats);
+				} catch (FileNotFoundException e) {
+					LOG.warn("Unable to write statistics file", e);
+				}
 			}
 
 		} catch (ParseException e) {
@@ -119,30 +134,35 @@ public class Pdb2Rdf {
 
 	}
 
-	private static void printStats(CommandLine cmd) {
-		Pdb2RdfInputIterator i = processInput(cmd);
-
+	private static void updateStats(Map<String, Double> stats, PdbRdfModel model) {
 		Statistics statsFactory = new Statistics();
-		Map<String, Double> stats = new HashMap<String, Double>();
-
-		while (i.hasNext()) {
-			InputSource input = i.next();
-			PdbXmlParser parser = new PdbXmlParser();
-			PdbRdfModel model = null;
-			try {
-				model = parser.parse(input);
-				statsFactory.mergeStats(statsFactory.getStatistics(model), stats);
-			} catch (Exception e) {
-				String id = null;
-				if (model != null) {
-					id = model.getPdbId();
-				}
-				LOG.error("Unable to parse input for PDB: " + id, e);
+		try {
+			statsFactory.mergeStats(statsFactory.getStatistics(model), stats);
+		} catch (Exception e) {
+			String id = null;
+			if (model != null) {
+				id = model.getPdbId();
 			}
+			LOG.error("Unable to count statistics for PDB: " + id, e);
 		}
+	}
 
-		for (Map.Entry<String, Double> stat : stats.entrySet()) {
-			System.out.println(stat.getKey() + ": " + stat.getValue());
+	private static void outputStats(CommandLine cmd, Map<String, Double> stats) throws FileNotFoundException {
+		File outputDir = getOutputDirectory(cmd);
+		File statsFile = null;
+		if (outputDir != null) {
+			statsFile = new File(outputDir, STATSFILE_NAME);
+		} else {
+			statsFile = new File(STATSFILE_NAME);
+		}
+		PrintWriter out = new PrintWriter(statsFile);
+		try {
+			for (Map.Entry<String, Double> stat : stats.entrySet()) {
+				out.println(stat.getKey() + ": " + stat.getValue());
+			}
+			out.flush();
+		} finally {
+			out.close();
 		}
 
 	}
@@ -152,6 +172,10 @@ public class Pdb2Rdf {
 	}
 
 	private static void printRdf(final CommandLine cmd) {
+		printRdf(cmd, null);
+	}
+
+	private static void printRdf(final CommandLine cmd, final Map<String, Double> stats) {
 		final File outDir = getOutputDirectory(cmd);
 		final RDFWriter writer = getWriter(cmd);
 
@@ -202,6 +226,9 @@ public class Pdb2Rdf {
 							out = new GZIPOutputStream(new FileOutputStream(file));
 						}
 						writer.write(model, out, null);
+						if (stats != null) {
+							updateStats(stats, model);
+						}
 						if (monitor != null) {
 							monitor.setProgress(progressCount.incrementAndGet(), inputSize);
 						}
@@ -222,7 +249,13 @@ public class Pdb2Rdf {
 			});
 		}
 		pool.shutdown();
-
+		while (!pool.isTerminated()) {
+			try {
+				pool.awaitTermination(1, TimeUnit.SECONDS);
+			} catch (InterruptedException e) {
+				break;
+			}
+		}
 	}
 
 	private static RDFWriter getWriter(CommandLine cmd) {
@@ -247,6 +280,10 @@ public class Pdb2Rdf {
 	}
 
 	private static void load(CommandLine cmd) {
+		load(cmd, null);
+	}
+
+	private static void load(CommandLine cmd, final Map<String, Double> stats) {
 		String username = "dba";
 		String password = "dba";
 		String host = "localhost";
@@ -303,9 +340,12 @@ public class Pdb2Rdf {
 						model = new VirtPdbRdfModel(factory, Bio2RdfPdbUriPattern.PDB_GRAPH, uriBuilder, factory
 								.getTripleStoreDao());
 						if (f_detailLevel != null) {
-							model = parser.parse(input, new PdbRdfModel(), f_detailLevel);
+							parser.parse(input, model, f_detailLevel);
 						} else {
 							parser.parse(input, model);
+						}
+						if (stats != null) {
+							updateStats(stats, model);
 						}
 						if (monitor != null) {
 							monitor.setProgress(progressCount.incrementAndGet(), inputSize);
@@ -318,10 +358,20 @@ public class Pdb2Rdf {
 			});
 		}
 		pool.shutdown();
-
+		while (!pool.isTerminated()) {
+			try {
+				pool.awaitTermination(1, TimeUnit.SECONDS);
+			} catch (InterruptedException e) {
+				break;
+			}
+		}
 	}
 
 	private static void loadBigData(final CommandLine cmd) {
+		loadBigData(cmd, null);
+	}
+
+	private static void loadBigData(final CommandLine cmd, final Map<String, Double> stats) {
 		DetailLevel detailLevel = null;
 		if (cmd.hasOption("detailLevel")) {
 			try {
@@ -385,6 +435,7 @@ public class Pdb2Rdf {
 						} else {
 							model = parser.parse(input, new PdbRdfModel());
 						}
+
 						RepositoryConnection cxn = repo.getConnection();
 						cxn.setAutoCommit(false);
 						try {
@@ -421,7 +472,9 @@ public class Pdb2Rdf {
 							// close the repository connection
 							cxn.close();
 						}
-
+						if (stats != null) {
+							updateStats(stats, model);
+						}
 						if (monitor != null) {
 							monitor.setProgress(progressCount.incrementAndGet(), inputSize);
 						}
@@ -431,6 +484,15 @@ public class Pdb2Rdf {
 					}
 				}
 			});
+		}
+
+		pool.shutdown();
+		while (!pool.isTerminated()) {
+			try {
+				pool.awaitTermination(1, TimeUnit.SECONDS);
+			} catch (InterruptedException e) {
+				break;
+			}
 		}
 	}
 
@@ -529,7 +591,10 @@ public class Pdb2Rdf {
 		Option bigdataOption = OptionBuilder.withArgName("DB path")
 				.withDescription("Load the triples into a BigData journal file.").hasArg(true).create("bigdata");
 		options.addOption(bigdataOption);
-		options.addOption("stats", false, "Print statistics only");
+		options.addOption(
+				"stats",
+				false,
+				"Outputs statistics to file pdb2rdf-stats.txt (in output directory, if one is specified, or in the current directory otherwise)");
 		Option noAtomSitesOption = OptionBuilder.hasArg(true)
 				.withDescription("Specify detail level: COMPLETE | ATOM | RESIDUE | EXPERIMENT | METADATA ")
 				.create("detailLevel");
@@ -555,7 +620,7 @@ public class Pdb2Rdf {
 		final Object monitor = new Object();
 		int numberOfThreads = getNumberOfThreads(cmd);
 		LOG.info("Using " + numberOfThreads + " threads.");
-		ThreadPoolExecutor pool = new ThreadPoolExecutor(numberOfThreads, numberOfThreads, 10, TimeUnit.MINUTES,
+		ThreadPoolExecutor threadPool = new ThreadPoolExecutor(numberOfThreads, numberOfThreads, 10, TimeUnit.MINUTES,
 				new ArrayBlockingQueue<Runnable>(1), new RejectedExecutionHandler() {
 					@Override
 					public void rejectedExecution(Runnable r, ThreadPoolExecutor executor) {
@@ -577,7 +642,8 @@ public class Pdb2Rdf {
 				super.afterExecute(r, t);
 			}
 		};
-		return pool;
+
+		return threadPool;
 	}
 
 }

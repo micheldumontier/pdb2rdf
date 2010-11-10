@@ -339,8 +339,7 @@ public class RefineCategoryHandler extends ContentHandlerState {
 		Resource x = createResource(Bio2RdfPdbUriPattern.SOLVENT_MODEL_PARAM_KSOL, pdbId);
 		getRdfModel().add(x, RDF.type, PdbOwlVocabulary.Class.SolventModelParamKsol.resource());
 		getRdfModel()
-				.add(
-						x,
+				.add(x,
 						RDFS.label,
 						"The value of the KSOL solvent-model parameter describing the ratio of the electron density in the bulk solvent to the electron density in the molecular solute.",
 						"en");
@@ -352,8 +351,7 @@ public class RefineCategoryHandler extends ContentHandlerState {
 		Resource x = createResource(Bio2RdfPdbUriPattern.SOLVENT_MODEL_PARAM_BSOL, pdbId);
 		getRdfModel().add(x, RDF.type, PdbOwlVocabulary.Class.SolventModelParamBsol.resource());
 		getRdfModel()
-				.add(
-						x,
+				.add(x,
 						RDFS.label,
 						"The value of the BSOL solvent-model parameter describing the average isotropic displacement parameter of disordered solvent atoms.",
 						"en");
@@ -390,8 +388,7 @@ public class RefineCategoryHandler extends ContentHandlerState {
 		Resource x = createResource(Bio2RdfPdbUriPattern.STARTING_MODEL, pdbId);
 		getRdfModel().add(x, RDF.type, PdbOwlVocabulary.Class.StartingModel.resource());
 		getRdfModel()
-				.add(
-						x,
+				.add(x,
 						RDFS.label,
 						"Starting model for refinement.  Starting model for molecular replacement should refer to a previous structure or experiment.",
 						"en");
@@ -488,8 +485,7 @@ public class RefineCategoryHandler extends ContentHandlerState {
 		Resource x = createResource(Bio2RdfPdbUriPattern.ISOTROPIC_THERMAL_MODEL, pdbId);
 		getRdfModel().add(x, RDF.type, PdbOwlVocabulary.Class.IsotropicThermalModel.resource());
 		getRdfModel()
-				.add(
-						x,
+				.add(x,
 						RDFS.label,
 						"Whether the structure was refined with indvidual isotropic, anisotropic or overall temperature factor.",
 						"en");
@@ -534,8 +530,7 @@ public class RefineCategoryHandler extends ContentHandlerState {
 		Resource x = createResource(Bio2RdfPdbUriPattern.OVERALL_SU_R_FREE, pdbId);
 		getRdfModel().add(x, RDF.type, PdbOwlVocabulary.Class.OverallSURFree.resource());
 		getRdfModel()
-				.add(
-						x,
+				.add(x,
 						RDFS.label,
 						"The overall standard uncertainty (estimated standard deviation) of the displacement parameters based on the free R value.",
 						"en");
@@ -547,8 +542,7 @@ public class RefineCategoryHandler extends ContentHandlerState {
 		Resource x = createResource(Bio2RdfPdbUriPattern.OVERALL_SU_R_CRUICKSHANK_DPI, pdbId);
 		getRdfModel().add(x, RDF.type, PdbOwlVocabulary.Class.OverallSURCruishankDPI.resource());
 		getRdfModel()
-				.add(
-						x,
+				.add(x,
 						RDFS.label,
 						"The overall standard uncertainty (estimated standard deviation) of the displacement parameters based on the crystallographic R value, expressed in a formalism known as the dispersion precision indicator (DPI).",
 						"en");
@@ -560,8 +554,7 @@ public class RefineCategoryHandler extends ContentHandlerState {
 		Resource x = createResource(Bio2RdfPdbUriPattern.OVERALL_SU_ML, pdbId);
 		getRdfModel().add(x, RDF.type, PdbOwlVocabulary.Class.OverallSUML.resource());
 		getRdfModel()
-				.add(
-						x,
+				.add(x,
 						RDFS.label,
 						"The overall standard uncertainty (estimated standard deviation)of the positional parameters based on a maximum likelihood residual.",
 						"en");
@@ -573,8 +566,7 @@ public class RefineCategoryHandler extends ContentHandlerState {
 		Resource x = createResource(Bio2RdfPdbUriPattern.OVERALL_SU_B, pdbId);
 		getRdfModel().add(x, RDF.type, PdbOwlVocabulary.Class.OverallSUB.resource());
 		getRdfModel()
-				.add(
-						x,
+				.add(x,
 						RDFS.label,
 						"The overall standard uncertainty (estimated standard deviation)of the displacement parameters based on a maximum-likelihood residual",
 						"en");
@@ -620,8 +612,7 @@ public class RefineCategoryHandler extends ContentHandlerState {
 		Resource x = createResource(Bio2RdfPdbUriPattern.LS_WR_FACTOR_R_WORK, pdbId);
 		getRdfModel().add(x, RDF.type, PdbOwlVocabulary.Class.LsWRFactorRWork.resource());
 		getRdfModel()
-				.add(
-						x,
+				.add(x,
 						RDFS.label,
 						"Weighted residual factor wR for reflections that satisfy the resolution limits established by attribute ls_d_res_high in category refine and  attribute ls_d_res_low in category refine and the observation limit established by attribute observed_criterion in category reflns, and that were used as the working reflections (i.e. were included in the refinement) when the refinement included the calculation of a &apos;free&apos; R factor.Details of how reflections were assigned to the working andtest sets are given in attribute R_free_details.",
 						"en");
@@ -633,8 +624,7 @@ public class RefineCategoryHandler extends ContentHandlerState {
 		Resource x = createResource(Bio2RdfPdbUriPattern.LS_WR_FACTOR_R_FREE, pdbId);
 		getRdfModel().add(x, RDF.type, PdbOwlVocabulary.Class.LsWRFactorRFree.resource());
 		getRdfModel()
-				.add(
-						x,
+				.add(x,
 						RDFS.label,
 						"Weighted residual factor wR for reflections that satisfy the resolution limits established by attribute ls_d_res_high in category refine and  attribute ls_d_res_low in category refine and the observation limit established by attribute observed_criterion in category reflns, and that were used as the test reflections (i.e. were excluded from the refinement) when the refinement included the calculation of a &apos;free&apos; R factor. Details of how reflections were assigned to the working and test sets are given in attribute R_free_details.",
 						"en");
@@ -646,8 +636,7 @@ public class RefineCategoryHandler extends ContentHandlerState {
 		Resource x = createResource(Bio2RdfPdbUriPattern.LS_REDUNDANCY_REFLNS_OBS, pdbId);
 		getRdfModel().add(x, RDF.type, PdbOwlVocabulary.Class.LsRedundancyReflnsObs.resource());
 		getRdfModel()
-				.add(
-						x,
+				.add(x,
 						RDFS.label,
 						"The ratio of the total number of observations of the reflections that satisfy the resolution limits established by _refine.ls_d_res_high and _refine.ls_d_res_low and the observation limit established by attribute observed_criterion in category reflns to  the number of crystallographically unique reflections that satisfy the same limits.",
 						"en");
@@ -659,8 +648,7 @@ public class RefineCategoryHandler extends ContentHandlerState {
 		Resource x = createResource(Bio2RdfPdbUriPattern.LS_PERCENT_REFLNS_OBS, pdbId);
 		getRdfModel().add(x, RDF.type, PdbOwlVocabulary.Class.LsPercentReflnsObs.resource());
 		getRdfModel()
-				.add(
-						x,
+				.add(x,
 						RDFS.label,
 						"The number of reflections that satisfy the resolution limits established by _refine.ls_d_res_high and _refine.ls_d_res_low and the observation limit established by attribute observed_criterion in category reflns, expressed as a percentage of the  number of geometrically observable reflections that satisfy the resolution limits.",
 						"en");
@@ -672,8 +660,7 @@ public class RefineCategoryHandler extends ContentHandlerState {
 		Resource x = createResource(Bio2RdfPdbUriPattern.LS_PERCENT_REFLNS_R_FREE, pdbId);
 		getRdfModel().add(x, RDF.type, PdbOwlVocabulary.Class.LsPercentReflnsRFree.resource());
 		getRdfModel()
-				.add(
-						x,
+				.add(x,
 						RDFS.label,
 						"The number of reflections that satisfy the resolution limits established by _refine.ls_d_res_high and _refine.ls_d_res_low and the observation limit established by attribute observed_criterion in category reflns, and that were used as the test reflections (i.e. were excluded from the refinement) when the refinement included the calculation of a &apos;free&apos; R factor, expressed as a percentage of the number of geometrically observable reflections that satisfy the resolution limits.",
 						"en");
@@ -693,8 +680,7 @@ public class RefineCategoryHandler extends ContentHandlerState {
 		Resource x = createResource(Bio2RdfPdbUriPattern.LS_NUMBER_REFLNS_OBS, pdbId);
 		getRdfModel().add(x, RDF.type, PdbOwlVocabulary.Class.LsNumberReflnsObs.resource());
 		getRdfModel()
-				.add(
-						x,
+				.add(x,
 						RDFS.label,
 						"The number of reflections that satisfy the resolution limits established by _refine.ls_d_res_high and _refine.ls_d_res_low and the observation limit established by attribute observed_criterion in category reflns. ",
 						"en");
@@ -706,8 +692,7 @@ public class RefineCategoryHandler extends ContentHandlerState {
 		Resource x = createResource(Bio2RdfPdbUriPattern.LS_NUMBER_REFLNS_ALL, pdbId);
 		getRdfModel().add(x, RDF.type, PdbOwlVocabulary.Class.LsNumberReflnsAll.resource());
 		getRdfModel()
-				.add(
-						x,
+				.add(x,
 						RDFS.label,
 						"The number of reflections that satisfy the resolution limits established by _refine.ls_d_res_high and _refine.ls_d_res_low.",
 						"en");
@@ -719,8 +704,7 @@ public class RefineCategoryHandler extends ContentHandlerState {
 		Resource x = createResource(Bio2RdfPdbUriPattern.LS_NUMBER_REFLNS_R_FREE, pdbId);
 		getRdfModel().add(x, RDF.type, PdbOwlVocabulary.Class.LsNumberReflnsRFree.resource());
 		getRdfModel()
-				.add(
-						x,
+				.add(x,
 						RDFS.label,
 						"The number of reflections that satisfy the resolution limits established by _refine.ls_d_res_high and _refine.ls_d_res_low and the observation limit established by attribute observed_criterion in category reflns, and that were used as the test  reflections.",
 						"en");
@@ -740,8 +724,7 @@ public class RefineCategoryHandler extends ContentHandlerState {
 		Resource x = createResource(Bio2RdfPdbUriPattern.LS_D_RES_LOW, pdbId);
 		getRdfModel().add(x, RDF.type, PdbOwlVocabulary.Class.LsDResLow.resource());
 		getRdfModel()
-				.add(
-						x,
+				.add(x,
 						RDFS.label,
 						"The largest value for the interplanar spacings for the reflection data used in the refinement in angstroms. This is called the lowest resolution.",
 						"en");
@@ -753,8 +736,7 @@ public class RefineCategoryHandler extends ContentHandlerState {
 		Resource x = createResource(Bio2RdfPdbUriPattern.LS_D_RES_HIGH, pdbId);
 		getRdfModel().add(x, RDF.type, PdbOwlVocabulary.Class.LsDResHigh.resource());
 		getRdfModel()
-				.add(
-						x,
+				.add(x,
 						RDFS.label,
 						"The smallest value for the interplanar spacings for the reflection data used in the refinement in angstroms. This is called the highest resolution.",
 						"en");
@@ -767,8 +749,7 @@ public class RefineCategoryHandler extends ContentHandlerState {
 		Resource x = createResource(Bio2RdfPdbUriPattern.LS_R_FACTOR_OBS, pdbId);
 		getRdfModel().add(x, RDF.type, PdbOwlVocabulary.Class.LsRFactorObs.resource());
 		getRdfModel()
-				.add(
-						x,
+				.add(x,
 						RDFS.label,
 						"Residual factor R for reflections that satisfy the resolution limits established by attribute ls_d_res_high in category refine and attribute ls_d_res_low in category refine and the observation limit established by attribute observed_criterion.",
 						"en");
@@ -780,8 +761,7 @@ public class RefineCategoryHandler extends ContentHandlerState {
 		Resource x = createResource(Bio2RdfPdbUriPattern.LS_R_FACTOR_ALL, pdbId);
 		getRdfModel().add(x, RDF.type, PdbOwlVocabulary.Class.LsRFactorAll.resource());
 		getRdfModel()
-				.add(
-						x,
+				.add(x,
 						RDFS.label,
 						"Residual factor R for all reflections that satisfy the resolution limits established by attribute ls_d_res_high in category refine and attribute ls_d_res_low.",
 						"en");
@@ -793,8 +773,7 @@ public class RefineCategoryHandler extends ContentHandlerState {
 		Resource lsRFactorRWork = createResource(Bio2RdfPdbUriPattern.LS_R_FACTOR_R_WORK, pdbId);
 		getRdfModel().add(lsRFactorRWork, RDF.type, PdbOwlVocabulary.Class.LsRFactorRWork.resource());
 		getRdfModel()
-				.add(
-						lsRFactorRWork,
+				.add(lsRFactorRWork,
 						RDFS.label,
 						"Residual factor R for reflections that satisfy the resolution limits established by attribute ls_d_res_high in category refine and  attribute ls_d_res_low in category refine and the observation limit established by attribute observed_criterion in category reflns, and that were used as the working reflections (i.e. were included in the refinement)  when the refinement included the calculation of a R factor. ",
 						"en");
@@ -812,8 +791,7 @@ public class RefineCategoryHandler extends ContentHandlerState {
 		Resource lsRFactorRFreeError = createResource(Bio2RdfPdbUriPattern.LS_R_FACTOR_R_FREE_ERROR, pdbId);
 		getRdfModel().add(lsRFactorRFreeError, RDF.type, PdbOwlVocabulary.Class.LsRFactorRFreeError.resource());
 		getRdfModel()
-				.add(
-						lsRFactorRFreeError,
+				.add(lsRFactorRFreeError,
 						RDFS.label,
 						"The estimated error in attribute ls_R_factor_R_free. in category refine The method used to estimate the error is described in the item attribute ls_R_factor_R_free_error_details in category refine. ",
 						"en");
@@ -827,8 +805,7 @@ public class RefineCategoryHandler extends ContentHandlerState {
 		Resource lsRFactorRFree = createResource(Bio2RdfPdbUriPattern.LS_R_FACTOR_R_FREE, pdbId);
 		getRdfModel().add(lsRFactorRFree, RDF.type, PdbOwlVocabulary.Class.LsRFactorRFree.resource());
 		getRdfModel()
-				.add(
-						lsRFactorRFree,
+				.add(lsRFactorRFree,
 						RDFS.label,
 						"Residual factor R for reflections that satisfy the resolution limits established by attribute ls_d_res_high in category refine and  attribute ls_d_res_low in category refine and the observation limit established by  attribute observed_criterion in category reflns, and that were used as the test  reflections (i.e. were excluded from the refinement) when the refinement included the calculation of a &apos;free&apos; R factor. Details of how reflections were assigned to the working and test sets are given in attribute R_free_details.",
 						"en");
@@ -850,8 +827,7 @@ public class RefineCategoryHandler extends ContentHandlerState {
 		Resource ccFtoFcFree = createResource(Bio2RdfPdbUriPattern.CORRELATION_COEFFICIENT_FO_TO_FC_FREE, pdbId);
 		getRdfModel().add(ccFtoFcFree, RDF.type, PdbOwlVocabulary.Class.CorrelationCoefficientFoToFcFree.resource());
 		getRdfModel()
-				.add(
-						ccFtoFcFree,
+				.add(ccFtoFcFree,
 						RDFS.label,
 						"The correlation coefficient between the observed and calculated structure factors for reflections not included in the refinement (free reflections)",
 						"en");
@@ -864,8 +840,7 @@ public class RefineCategoryHandler extends ContentHandlerState {
 		Resource ccFtoFc = createResource(Bio2RdfPdbUriPattern.CORRELATION_COEFFICIENT_FO_TO_FC, pdbId);
 		getRdfModel().add(ccFtoFc, RDF.type, PdbOwlVocabulary.Class.CorrelationCoefficientFoToFc.resource());
 		getRdfModel()
-				.add(
-						ccFtoFc,
+				.add(ccFtoFc,
 						RDFS.label,
 						"The correlation coefficient between the observed and calculated structure factors for reflections included in the refinement",
 						"en");
@@ -896,8 +871,7 @@ public class RefineCategoryHandler extends ContentHandlerState {
 		Resource Aniso_B33 = createResource(Bio2RdfPdbUriPattern.ANISO_B33, pdbId);
 		getRdfModel().add(Aniso_B33, RDF.type, PdbOwlVocabulary.Class.AnisoB33.resource());
 		getRdfModel()
-				.add(
-						Aniso_B33,
+				.add(Aniso_B33,
 						RDFS.label,
 						"The [3][3] element of the matrix that defines the overall anisotropic displacement model if one was refined for this structure",
 						"en");
@@ -909,8 +883,7 @@ public class RefineCategoryHandler extends ContentHandlerState {
 		Resource Aniso_B23 = createResource(Bio2RdfPdbUriPattern.ANISO_B23, pdbId);
 		getRdfModel().add(Aniso_B23, RDF.type, PdbOwlVocabulary.Class.AnisoB23.resource());
 		getRdfModel()
-				.add(
-						Aniso_B23,
+				.add(Aniso_B23,
 						RDFS.label,
 						"The [2][3] element of the matrix that defines the overall anisotropic displacement model if one was refined for this structure",
 						"en");
@@ -922,8 +895,7 @@ public class RefineCategoryHandler extends ContentHandlerState {
 		Resource Aniso_B22 = createResource(Bio2RdfPdbUriPattern.ANISO_B22, pdbId);
 		getRdfModel().add(Aniso_B22, RDF.type, PdbOwlVocabulary.Class.AnisoB22.resource());
 		getRdfModel()
-				.add(
-						Aniso_B22,
+				.add(Aniso_B22,
 						RDFS.label,
 						"The [2][2] element of the matrix that defines the overall anisotropic displacement model if one was refined for this structure",
 						"en");
@@ -935,8 +907,7 @@ public class RefineCategoryHandler extends ContentHandlerState {
 		Resource Aniso_B13 = createResource(Bio2RdfPdbUriPattern.ANISO_B13, pdbId);
 		getRdfModel().add(Aniso_B13, RDF.type, PdbOwlVocabulary.Class.AnisoB13.resource());
 		getRdfModel()
-				.add(
-						Aniso_B13,
+				.add(Aniso_B13,
 						RDFS.label,
 						"The [1][3] element of the matrix that defines the overall anisotropic displacement model if one was refined for this structure",
 						"en");
@@ -948,8 +919,7 @@ public class RefineCategoryHandler extends ContentHandlerState {
 		Resource Aniso_B12 = createResource(Bio2RdfPdbUriPattern.ANISO_B12, pdbId);
 		getRdfModel().add(Aniso_B12, RDF.type, PdbOwlVocabulary.Class.AnisoB12.resource());
 		getRdfModel()
-				.add(
-						Aniso_B12,
+				.add(Aniso_B12,
 						RDFS.label,
 						"The [1][2] element of the matrix that defines the overall anisotropic displacement model if one was refined for this structure",
 						"en");
@@ -961,8 +931,7 @@ public class RefineCategoryHandler extends ContentHandlerState {
 		Resource Aniso_B11 = createResource(Bio2RdfPdbUriPattern.ANISO_B11, pdbId);
 		getRdfModel().add(Aniso_B11, RDF.type, PdbOwlVocabulary.Class.AnisoB11.resource());
 		getRdfModel()
-				.add(
-						Aniso_B11,
+				.add(Aniso_B11,
 						RDFS.label,
 						"The [1][1] element of the matrix that defines the overall anisotropic displacement model if one was refined for this structure",
 						"en");
@@ -987,8 +956,8 @@ public class RefineCategoryHandler extends ContentHandlerState {
 	private void createRefinement() {
 		Resource structureDetermination = createResource(Bio2RdfPdbUriPattern.STRUCTURE_DETERMINATION, pdbId);
 		refinement = createResource(Bio2RdfPdbUriPattern.REFINEMENT, pdbId);
-		// TODO add type
-		// TODO add label
+		getRdfModel().add(refinement, RDF.type, PdbOwlVocabulary.Class.Refinement.resource());
+		getRdfModel().add(refinement, RDFS.label, "Refinement of " + pdbId, "en");
 		getRdfModel().add(structureDetermination, DCTerms.hasPart, refinement);
 	}
 }

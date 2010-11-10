@@ -22,13 +22,19 @@ package com.dumontierlab.pdb2rdf.parser;
 
 import java.io.IOException;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.xml.sax.SAXException;
 
 import com.dumontierlab.pdb2rdf.model.PdbRdfModel;
+import com.dumontierlab.pdb2rdf.parser.vocabulary.PdbOwlVocabulary;
+import com.dumontierlab.pdb2rdf.parser.vocabulary.uri.Bio2RdfPdbUriPattern;
 import com.dumontierlab.pdb2rdf.parser.vocabulary.uri.UriBuilder;
+import com.hp.hpl.jena.query.QueryExecution;
+import com.hp.hpl.jena.query.QueryExecutionFactory;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
+import com.hp.hpl.jena.vocabulary.RDF;
 
 /**
  * @author Alexander De Leon
@@ -37,6 +43,8 @@ public class RefineCategoryHandlerTest extends AbstractPdbXmlParserTest {
 
 	private static final String TEST_PDB_ID = "1Y26";
 	private static final String TEST_FILE = "1Y26_refineCategory.xml";
+
+	private static final UriBuilder URI_BUILDER = new UriBuilder();
 
 	@Test
 	public void testRdf() throws IOException, SAXException {
@@ -48,6 +56,17 @@ public class RefineCategoryHandlerTest extends AbstractPdbXmlParserTest {
 		// now just print it
 		model.write(System.out, "RDF/XML");
 
+	}
+
+	@Test
+	public void testRefinementType() throws IOException, SAXException {
+		Model model = ModelFactory.createDefaultModel();
+		parseTestFile(TEST_FILE, model);
+
+		QueryExecution exec = QueryExecutionFactory.create(
+				"ASK { <" + URI_BUILDER.buildUri(Bio2RdfPdbUriPattern.REFINEMENT, TEST_PDB_ID) + "> <" + RDF.type
+						+ ">  <" + PdbOwlVocabulary.Class.Refinement.uri() + ">}", model);
+		Assert.assertTrue(exec.execAsk());
 	}
 
 	@Override

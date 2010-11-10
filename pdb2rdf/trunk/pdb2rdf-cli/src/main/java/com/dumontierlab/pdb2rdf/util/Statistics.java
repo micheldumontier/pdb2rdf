@@ -39,7 +39,7 @@ public class Statistics {
 	public Map<String, Double> getStatistics(Model model) {
 		Map<String, Double> stats = new HashMap<String, Double>();
 		mergeStats(getClassCounts(model), stats);
-		mergeStats(getRelationshipCounts(model), stats);
+		// mergeStats(getRelationshipCounts(model), stats);
 		stats.put("TotalNumberOfTriples", getNumberOfTriples(model));
 		return stats;
 	}

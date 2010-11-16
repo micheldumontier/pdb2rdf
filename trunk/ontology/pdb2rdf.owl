@@ -1,0 +1,2063 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY pdb "http://bio2rdf.org/pdb:" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="file:/C:/Users/Michel%20Dumontier/Desktop/pdb2rdf.owl#"
+     xml:base="file:/C:/Users/Michel%20Dumontier/Desktop/pdb2rdf.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:pdb="http://bio2rdf.org/pdb:">
+    <owl:Ontology rdf:about=""/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&pdb;description"/>
+    <owl:AnnotationProperty rdf:about="&pdb;modification"/>
+    <owl:AnnotationProperty rdf:about="&pdb;mutation"/>
+    <owl:AnnotationProperty rdf:about="&pdb;experimentalMethod"/>
+    <owl:AnnotationProperty rdf:about="&pdb;details"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://bio2rdf.org/pdb:beginsAt -->
+
+    <owl:ObjectProperty rdf:about="&pdb;beginsAt"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:endsAt -->
+
+    <owl:ObjectProperty rdf:about="&pdb;endsAt"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasAngleAlpha -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasAngleAlpha"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasAngleBeta -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasAngleBeta"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasAngleGamma -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasAngleGamma"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasAuthor -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasAuthor"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasChainPosition -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasChainPosition"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasChemicalFormula -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasChemicalFormula"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasChemicalSubstanceAmount -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasChemicalSubstanceAmount"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasCoefficientMu -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasCoefficientMu"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasCountryOfPublication -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasCountryOfPublication"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasDOI -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasDOI"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasDevelopmentStage -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasDevelopmentStage"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasDocumentSection -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasDocumentSection"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasEdgeALength -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasEdgeALength"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasEdgeBLength -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasEdgeBLength"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasEdgeCLength -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasEdgeCLength"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasExperimentalFormulaWeight -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasExperimentalFormulaWeight"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasFirstPageNumber -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasFirstPageNumber"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasFormalCharge -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasFormalCharge"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasHelixLegth -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasHelixLegth"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasISBN -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasISBN"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasISSN -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasISSN"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasIsotropicAtomicDisplacement -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasIsotropicAtomicDisplacement"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasJournalAbbreviation -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasJournalAbbreviation"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasLanguage -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasLanguage"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasLastPageNumber -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasLastPageNumber"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasMaximumTransmissionFactor -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasMaximumTransmissionFactor"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasMedlineId -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasMedlineId"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasMinimumTransmissionFactor -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasMinimumTransmissionFactor"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasName -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasName"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasNumberOfAtoms -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasNumberOfAtoms"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasNumberOfMonomers -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasNumberOfMonomers"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasNumberOfNonHydrogenAtoms -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasNumberOfNonHydrogenAtoms"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasOccupancy -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasOccupancy"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasParticipant -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasParticipant"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasPolymerSequence -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasPolymerSequence"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasProduct -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasProduct"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasPublication -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasPublication"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasPublicationYear -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasPublicationYear"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasPublisher -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasPublisher"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasPubmedId -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasPubmedId"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasReciprocalAngleAlpha -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasReciprocalAngleAlpha"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasReciprocalAngleBeta -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasReciprocalAngleBeta"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasReciprocalAngleGamma -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasReciprocalAngleGamma"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasReciprocalEdgeALength -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasReciprocalEdgeALength"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasReciprocalEdgeBLength -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasReciprocalEdgeBLength"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasReciprocalEdgeCLength -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasReciprocalEdgeCLength"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasSource -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasSource"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasSpatialLocation -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasSpatialLocation"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasTheoreticalFormulaWeight -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasTheoreticalFormulaWeight"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasTitle -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasTitle"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasUnitCell -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasUnitCell"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasVolume -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasVolume"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasVolumeNumber -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasVolumeNumber"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasXCoordinate -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasXCoordinate"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasYCoordinate -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasYCoordinate"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasZCoordinate -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasZCoordinate"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:isDerivedFrom -->
+
+    <owl:ObjectProperty rdf:about="&pdb;isDerivedFrom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:isImmediatelyBefore -->
+
+    <owl:ObjectProperty rdf:about="&pdb;isImmediatelyBefore"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:isParticipantIn -->
+
+    <owl:ObjectProperty rdf:about="&pdb;isParticipantIn"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:isProducedBy -->
+
+    <owl:ObjectProperty rdf:about="&pdb;isProducedBy"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:isPublishedIn -->
+
+    <owl:ObjectProperty rdf:about="&pdb;isPublishedIn"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasStandardDeviation -->
+
+    <owl:DatatypeProperty rdf:about="&pdb;hasStandardDeviation"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasValue -->
+
+    <owl:DatatypeProperty rdf:about="&pdb;hasValue"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Abstract -->
+
+    <owl:Class rdf:about="&pdb;Abstract"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:ActiniumAtom -->
+
+    <owl:Class rdf:about="&pdb;ActiniumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:AluminumAtom -->
+
+    <owl:Class rdf:about="&pdb;AluminumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:AmericiumAtom -->
+
+    <owl:Class rdf:about="&pdb;AmericiumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:AnalyticalAbsortCorrection -->
+
+    <owl:Class rdf:about="&pdb;AnalyticalAbsortCorrection"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:AngleAlpha -->
+
+    <owl:Class rdf:about="&pdb;AngleAlpha"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:AngleBeta -->
+
+    <owl:Class rdf:about="&pdb;AngleBeta"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:AngleGamma -->
+
+    <owl:Class rdf:about="&pdb;AngleGamma"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:AntimonyAtom -->
+
+    <owl:Class rdf:about="&pdb;AntimonyAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:ArgonAtom -->
+
+    <owl:Class rdf:about="&pdb;ArgonAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:ArsenicAtom -->
+
+    <owl:Class rdf:about="&pdb;ArsenicAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:AstatineAtom -->
+
+    <owl:Class rdf:about="&pdb;AstatineAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Atom -->
+
+    <owl:Class rdf:about="&pdb;Atom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:AtomOccupancy -->
+
+    <owl:Class rdf:about="&pdb;AtomOccupancy"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:AtomSpatialLocation -->
+
+    <owl:Class rdf:about="&pdb;AtomSpatialLocation"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Bacteria -->
+
+    <owl:Class rdf:about="&pdb;Bacteria"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Baculovirus -->
+
+    <owl:Class rdf:about="&pdb;Baculovirus"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:BariumAtom -->
+
+    <owl:Class rdf:about="&pdb;BariumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:BerkeliumAtom -->
+
+    <owl:Class rdf:about="&pdb;BerkeliumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:BerylliumAtom -->
+
+    <owl:Class rdf:about="&pdb;BerylliumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:BetaStrand -->
+
+    <owl:Class rdf:about="&pdb;BetaStrand"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:BismuthAtom -->
+
+    <owl:Class rdf:about="&pdb;BismuthAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:BohriumAtom -->
+
+    <owl:Class rdf:about="&pdb;BohriumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Book -->
+
+    <owl:Class rdf:about="&pdb;Book"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:BoronAtom -->
+
+    <owl:Class rdf:about="&pdb;BoronAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:BromineAtom -->
+
+    <owl:Class rdf:about="&pdb;BromineAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:CadmiumAtom -->
+
+    <owl:Class rdf:about="&pdb;CadmiumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:CalciumAtom -->
+
+    <owl:Class rdf:about="&pdb;CalciumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:CaliforniumAtom -->
+
+    <owl:Class rdf:about="&pdb;CaliforniumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:CanonicalPolymerSequence -->
+
+    <owl:Class rdf:about="&pdb;CanonicalPolymerSequence"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:CarbonAtom -->
+
+    <owl:Class rdf:about="&pdb;CarbonAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:CartesianCoordinateComponent -->
+
+    <owl:Class rdf:about="&pdb;CartesianCoordinateComponent"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Cell -->
+
+    <owl:Class rdf:about="&pdb;Cell"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:CellularLocation -->
+
+    <owl:Class rdf:about="&pdb;CellularLocation"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:CeriumAtom -->
+
+    <owl:Class rdf:about="&pdb;CeriumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:CesiumAtom -->
+
+    <owl:Class rdf:about="&pdb;CesiumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Chain -->
+
+    <owl:Class rdf:about="&pdb;Chain"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:ChainPosition -->
+
+    <owl:Class rdf:about="&pdb;ChainPosition"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:ChemicalFormula -->
+
+    <owl:Class rdf:about="&pdb;ChemicalFormula"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:ChemicalSubstance -->
+
+    <owl:Class rdf:about="&pdb;ChemicalSubstance"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:ChemicalSubstanceAmount -->
+
+    <owl:Class rdf:about="&pdb;ChemicalSubstanceAmount"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:ChemicalSubstanceExtraction -->
+
+    <owl:Class rdf:about="&pdb;ChemicalSubstanceExtraction"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:ChlorineAtom -->
+
+    <owl:Class rdf:about="&pdb;ChlorineAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:ChromiumAtom -->
+
+    <owl:Class rdf:about="&pdb;ChromiumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:CobaltAtom -->
+
+    <owl:Class rdf:about="&pdb;CobaltAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:CoefficientMu -->
+
+    <owl:Class rdf:about="&pdb;CoefficientMu"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:CopperAtom -->
+
+    <owl:Class rdf:about="&pdb;CopperAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Cosmid -->
+
+    <owl:Class rdf:about="&pdb;Cosmid"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Country -->
+
+    <owl:Class rdf:about="&pdb;Country"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:CuriumAtom -->
+
+    <owl:Class rdf:about="&pdb;CuriumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:CyclicPseudoPeptide -->
+
+    <owl:Class rdf:about="&pdb;CyclicPseudoPeptide"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:CylinderAbsortCorrection -->
+
+    <owl:Class rdf:about="&pdb;CylinderAbsortCorrection"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:DOI -->
+
+    <owl:Class rdf:about="&pdb;DOI"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:DarmstadtiumAtom -->
+
+    <owl:Class rdf:about="&pdb;DarmstadtiumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:DeuteriumAtom -->
+
+    <owl:Class rdf:about="&pdb;DeuteriumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:DevelopmentStage -->
+
+    <owl:Class rdf:about="&pdb;DevelopmentStage"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:DocumentVolume -->
+
+    <owl:Class rdf:about="&pdb;DocumentVolume"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:DoubleHelix -->
+
+    <owl:Class rdf:about="&pdb;DoubleHelix"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:DubniumAtom -->
+
+    <owl:Class rdf:about="&pdb;DubniumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:DysprosiumAtom -->
+
+    <owl:Class rdf:about="&pdb;DysprosiumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:EdgeALength -->
+
+    <owl:Class rdf:about="&pdb;EdgeALength"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:EdgeBLength -->
+
+    <owl:Class rdf:about="&pdb;EdgeBLength"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:EdgeCLength -->
+
+    <owl:Class rdf:about="&pdb;EdgeCLength"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:EinsteiniumAtom -->
+
+    <owl:Class rdf:about="&pdb;EinsteiniumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:ElectronCrystallography -->
+
+    <owl:Class rdf:about="&pdb;ElectronCrystallography"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:ElectronMicroscopy -->
+
+    <owl:Class rdf:about="&pdb;ElectronMicroscopy"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:EmpiricalAbsortCorrection -->
+
+    <owl:Class rdf:about="&pdb;EmpiricalAbsortCorrection"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:ErbiumAtom -->
+
+    <owl:Class rdf:about="&pdb;ErbiumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:EuropiumAtom -->
+
+    <owl:Class rdf:about="&pdb;EuropiumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Experiment -->
+
+    <owl:Class rdf:about="&pdb;Experiment"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:ExperimentalFormulaWeight -->
+
+    <owl:Class rdf:about="&pdb;ExperimentalFormulaWeight"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:FermiumAtom -->
+
+    <owl:Class rdf:about="&pdb;FermiumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:FiberDiffraction -->
+
+    <owl:Class rdf:about="&pdb;FiberDiffraction"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:FluorescenceTransfer -->
+
+    <owl:Class rdf:about="&pdb;FluorescenceTransfer"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:FluorineAtom -->
+
+    <owl:Class rdf:about="&pdb;FluorineAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:FranciumAtom -->
+
+    <owl:Class rdf:about="&pdb;FranciumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:GadoliniumAtom -->
+
+    <owl:Class rdf:about="&pdb;GadoliniumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:GalliumAtom -->
+
+    <owl:Class rdf:about="&pdb;GalliumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:GaussianAbsortCorrection -->
+
+    <owl:Class rdf:about="&pdb;GaussianAbsortCorrection"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:GeneticallyManipulatedChemicalSubstanceExtraction -->
+
+    <owl:Class rdf:about="&pdb;GeneticallyManipulatedChemicalSubstanceExtraction"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:GermaniumAtom -->
+
+    <owl:Class rdf:about="&pdb;GermaniumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:GoldAtom -->
+
+    <owl:Class rdf:about="&pdb;GoldAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:HafniumAtom -->
+
+    <owl:Class rdf:about="&pdb;HafniumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:HassiumAtom -->
+
+    <owl:Class rdf:about="&pdb;HassiumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:HeliumAtom -->
+
+    <owl:Class rdf:about="&pdb;HeliumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Helix -->
+
+    <owl:Class rdf:about="&pdb;Helix"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:HelixLength -->
+
+    <owl:Class rdf:about="&pdb;HelixLength"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:HolmiumAtom -->
+
+    <owl:Class rdf:about="&pdb;HolmiumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:HybridExperimentalMethod -->
+
+    <owl:Class rdf:about="&pdb;HybridExperimentalMethod"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:HydrogenAtom -->
+
+    <owl:Class rdf:about="&pdb;HydrogenAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:ISBN -->
+
+    <owl:Class rdf:about="&pdb;ISBN"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:ISSN -->
+
+    <owl:Class rdf:about="&pdb;ISSN"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:IndiumAtom -->
+
+    <owl:Class rdf:about="&pdb;IndiumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:InfraredSpectroscopy -->
+
+    <owl:Class rdf:about="&pdb;InfraredSpectroscopy"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:IntegrationAbsortCorrection -->
+
+    <owl:Class rdf:about="&pdb;IntegrationAbsortCorrection"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:IodineAtom -->
+
+    <owl:Class rdf:about="&pdb;IodineAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:IridiumAtom -->
+
+    <owl:Class rdf:about="&pdb;IridiumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:IronAtom -->
+
+    <owl:Class rdf:about="&pdb;IronAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:IsotropicAtomicDisplacement -->
+
+    <owl:Class rdf:about="&pdb;IsotropicAtomicDisplacement"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Journal -->
+
+    <owl:Class rdf:about="&pdb;Journal"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:JournalAbbreviation -->
+
+    <owl:Class rdf:about="&pdb;JournalAbbreviation"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:KryptonAtom -->
+
+    <owl:Class rdf:about="&pdb;KryptonAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Language -->
+
+    <owl:Class rdf:about="&pdb;Language"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LanthanumAtom -->
+
+    <owl:Class rdf:about="&pdb;LanthanumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LawrenciumAtom -->
+
+    <owl:Class rdf:about="&pdb;LawrenciumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LeadAtom -->
+
+    <owl:Class rdf:about="&pdb;LeadAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LeftHanded2.2-7Helix -->
+
+    <owl:Class rdf:about="&pdb;LeftHanded2.2-7Helix"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LeftHanded3-10Helix -->
+
+    <owl:Class rdf:about="&pdb;LeftHanded3-10Helix"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LeftHandedADoubleHelix -->
+
+    <owl:Class rdf:about="&pdb;LeftHandedADoubleHelix"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LeftHandedAlphaHelix -->
+
+    <owl:Class rdf:about="&pdb;LeftHandedAlphaHelix"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LeftHandedBDoubleHelix -->
+
+    <owl:Class rdf:about="&pdb;LeftHandedBDoubleHelix"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LeftHandedDoubleHelix -->
+
+    <owl:Class rdf:about="&pdb;LeftHandedDoubleHelix"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LeftHandedGammaHelix -->
+
+    <owl:Class rdf:about="&pdb;LeftHandedGammaHelix"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LeftHandedHelix -->
+
+    <owl:Class rdf:about="&pdb;LeftHandedHelix"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LeftHandedOmegaHelix -->
+
+    <owl:Class rdf:about="&pdb;LeftHandedOmegaHelix"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LeftHandedPiHelix -->
+
+    <owl:Class rdf:about="&pdb;LeftHandedPiHelix"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LeftHandedPolyprolineHelix -->
+
+    <owl:Class rdf:about="&pdb;LeftHandedPolyprolineHelix"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LeftHandedZDoubleHelix -->
+
+    <owl:Class rdf:about="&pdb;LeftHandedZDoubleHelix"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LithiumAtom -->
+
+    <owl:Class rdf:about="&pdb;LithiumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LutetiumAtom -->
+
+    <owl:Class rdf:about="&pdb;LutetiumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Macrolide -->
+
+    <owl:Class rdf:about="&pdb;Macrolide"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Macrophage -->
+
+    <owl:Class rdf:about="&pdb;Macrophage"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:MagnesiumAtom -->
+
+    <owl:Class rdf:about="&pdb;MagnesiumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:ManganeseAtom -->
+
+    <owl:Class rdf:about="&pdb;ManganeseAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:MaximumTransmissionFactor -->
+
+    <owl:Class rdf:about="&pdb;MaximumTransmissionFactor"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:MedlineId -->
+
+    <owl:Class rdf:about="&pdb;MedlineId"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:MeitneriumAtom -->
+
+    <owl:Class rdf:about="&pdb;MeitneriumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:MendeleviumAtom -->
+
+    <owl:Class rdf:about="&pdb;MendeleviumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:MercuryAtom -->
+
+    <owl:Class rdf:about="&pdb;MercuryAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:MinimumTransmissionFactor -->
+
+    <owl:Class rdf:about="&pdb;MinimumTransmissionFactor"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Model -->
+
+    <owl:Class rdf:about="&pdb;Model"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:MolybdenumAtom -->
+
+    <owl:Class rdf:about="&pdb;MolybdenumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:MultiScanAbsortCorrection -->
+
+    <owl:Class rdf:about="&pdb;MultiScanAbsortCorrection"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Name -->
+
+    <owl:Class rdf:about="&pdb;Name"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:NaturalChemicalSubstanceExtraction -->
+
+    <owl:Class rdf:about="&pdb;NaturalChemicalSubstanceExtraction"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:NeodymiumAtom -->
+
+    <owl:Class rdf:about="&pdb;NeodymiumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:NeonAtom -->
+
+    <owl:Class rdf:about="&pdb;NeonAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:NeptuniumAtom -->
+
+    <owl:Class rdf:about="&pdb;NeptuniumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:NeutronDiffraction -->
+
+    <owl:Class rdf:about="&pdb;NeutronDiffraction"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:NickelAtom -->
+
+    <owl:Class rdf:about="&pdb;NickelAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:NiobiumAtom -->
+
+    <owl:Class rdf:about="&pdb;NiobiumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:NitrogenAtom -->
+
+    <owl:Class rdf:about="&pdb;NitrogenAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:NobeliumAtom -->
+
+    <owl:Class rdf:about="&pdb;NobeliumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:NonPolymer -->
+
+    <owl:Class rdf:about="&pdb;NonPolymer"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:NonStandardDoubleHelix -->
+
+    <owl:Class rdf:about="&pdb;NonStandardDoubleHelix"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:NonStandardHelix -->
+
+    <owl:Class rdf:about="&pdb;NonStandardHelix"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:NonStandardLeftHandedDoubleHelix -->
+
+    <owl:Class rdf:about="&pdb;NonStandardLeftHandedDoubleHelix"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:NonStandardLeftHandedHelix -->
+
+    <owl:Class rdf:about="&pdb;NonStandardLeftHandedHelix"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:NonStandardRightHandedDoubleHelix -->
+
+    <owl:Class rdf:about="&pdb;NonStandardRightHandedDoubleHelix"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:NonStandardRightHandedHelix -->
+
+    <owl:Class rdf:about="&pdb;NonStandardRightHandedHelix"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:NonStandardTurn -->
+
+    <owl:Class rdf:about="&pdb;NonStandardTurn"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:NumberOfAtoms -->
+
+    <owl:Class rdf:about="&pdb;NumberOfAtoms"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:NumberOfMonomers -->
+
+    <owl:Class rdf:about="&pdb;NumberOfMonomers"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:NumberOfNonHydrogenAtoms -->
+
+    <owl:Class rdf:about="&pdb;NumberOfNonHydrogenAtoms"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:NumericalAbsortCorrection -->
+
+    <owl:Class rdf:about="&pdb;NumericalAbsortCorrection"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Organ -->
+
+    <owl:Class rdf:about="&pdb;Organ"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Organelle -->
+
+    <owl:Class rdf:about="&pdb;Organelle"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:OsmiumAtom -->
+
+    <owl:Class rdf:about="&pdb;OsmiumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:OxygenAtom -->
+
+    <owl:Class rdf:about="&pdb;OxygenAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:PageNumber -->
+
+    <owl:Class rdf:about="&pdb;PageNumber"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:PalladiumAtom -->
+
+    <owl:Class rdf:about="&pdb;PalladiumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:PartialCharge -->
+
+    <owl:Class rdf:about="&pdb;PartialCharge"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:PdbRecord -->
+
+    <owl:Class rdf:about="&pdb;PdbRecord"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:PhosphorusAtom -->
+
+    <owl:Class rdf:about="&pdb;PhosphorusAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Plasmid -->
+
+    <owl:Class rdf:about="&pdb;Plasmid"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:PlatinumAtom -->
+
+    <owl:Class rdf:about="&pdb;PlatinumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:PlutoniumAtom -->
+
+    <owl:Class rdf:about="&pdb;PlutoniumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:PoloniumAtom -->
+
+    <owl:Class rdf:about="&pdb;PoloniumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Polydeoxyribonucleotide -->
+
+    <owl:Class rdf:about="&pdb;Polydeoxyribonucleotide"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Polydeoxyribonucleotide-Polyribonucleotide -->
+
+    <owl:Class rdf:about="&pdb;Polydeoxyribonucleotide-Polyribonucleotide"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Polymer -->
+
+    <owl:Class rdf:about="&pdb;Polymer"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:PolymerSequence -->
+
+    <owl:Class rdf:about="&pdb;PolymerSequence"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Polypeptide(D) -->
+
+    <owl:Class rdf:about="&pdb;Polypeptide(D)"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Polypeptide(L) -->
+
+    <owl:Class rdf:about="&pdb;Polypeptide(L)"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Polyribonucleotide -->
+
+    <owl:Class rdf:about="&pdb;Polyribonucleotide"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Polysaccharide(D) -->
+
+    <owl:Class rdf:about="&pdb;Polysaccharide(D)"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:PotassiumAtom -->
+
+    <owl:Class rdf:about="&pdb;PotassiumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:PowderDiffraction -->
+
+    <owl:Class rdf:about="&pdb;PowderDiffraction"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:PraseodymiumAtom -->
+
+    <owl:Class rdf:about="&pdb;PraseodymiumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:PromethiumAtom -->
+
+    <owl:Class rdf:about="&pdb;PromethiumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:ProtactiniumAtom -->
+
+    <owl:Class rdf:about="&pdb;ProtactiniumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:PsiScanAbsortCorrection -->
+
+    <owl:Class rdf:about="&pdb;PsiScanAbsortCorrection"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Publication -->
+
+    <owl:Class rdf:about="&pdb;Publication"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:PublicationYear -->
+
+    <owl:Class rdf:about="&pdb;PublicationYear"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Publisher -->
+
+    <owl:Class rdf:about="&pdb;Publisher"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:PubmedId -->
+
+    <owl:Class rdf:about="&pdb;PubmedId"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:RadiumAtom -->
+
+    <owl:Class rdf:about="&pdb;RadiumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:RadonAtom -->
+
+    <owl:Class rdf:about="&pdb;RadonAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:ReciprocalAngleAlpha -->
+
+    <owl:Class rdf:about="&pdb;ReciprocalAngleAlpha"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:ReciprocalAngleBeta -->
+
+    <owl:Class rdf:about="&pdb;ReciprocalAngleBeta"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:ReciprocalAngleGamma -->
+
+    <owl:Class rdf:about="&pdb;ReciprocalAngleGamma"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:ReciprocalEdgeALength -->
+
+    <owl:Class rdf:about="&pdb;ReciprocalEdgeALength"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:ReciprocalEdgeBLength -->
+
+    <owl:Class rdf:about="&pdb;ReciprocalEdgeBLength"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:ReciprocalEdgeCLength -->
+
+    <owl:Class rdf:about="&pdb;ReciprocalEdgeCLength"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:RefdelfAbsortCorrection -->
+
+    <owl:Class rdf:about="&pdb;RefdelfAbsortCorrection"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Residue -->
+
+    <owl:Class rdf:about="&pdb;Residue"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:RheniumAtom -->
+
+    <owl:Class rdf:about="&pdb;RheniumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:RhodiumAtom -->
+
+    <owl:Class rdf:about="&pdb;RhodiumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:RightHandPolyprolineHelix -->
+
+    <owl:Class rdf:about="&pdb;RightHandPolyprolineHelix"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:RightHanded2.2-7Helix -->
+
+    <owl:Class rdf:about="&pdb;RightHanded2.2-7Helix"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:RightHanded3-10Helix -->
+
+    <owl:Class rdf:about="&pdb;RightHanded3-10Helix"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:RightHandedADoubleHelix -->
+
+    <owl:Class rdf:about="&pdb;RightHandedADoubleHelix"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:RightHandedAlphaHelix -->
+
+    <owl:Class rdf:about="&pdb;RightHandedAlphaHelix"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:RightHandedBDoubleHelix -->
+
+    <owl:Class rdf:about="&pdb;RightHandedBDoubleHelix"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:RightHandedDoubleHelix -->
+
+    <owl:Class rdf:about="&pdb;RightHandedDoubleHelix"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:RightHandedGammaHelix -->
+
+    <owl:Class rdf:about="&pdb;RightHandedGammaHelix"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:RightHandedHelix -->
+
+    <owl:Class rdf:about="&pdb;RightHandedHelix"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:RightHandedOmegaHelix -->
+
+    <owl:Class rdf:about="&pdb;RightHandedOmegaHelix"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:RightHandedPiHelix -->
+
+    <owl:Class rdf:about="&pdb;RightHandedPiHelix"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:RightHandedZDoubleHelix -->
+
+    <owl:Class rdf:about="&pdb;RightHandedZDoubleHelix"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:RoentgeniumAtom -->
+
+    <owl:Class rdf:about="&pdb;RoentgeniumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:RubidiumAtom -->
+
+    <owl:Class rdf:about="&pdb;RubidiumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:RuthefordiumAtom -->
+
+    <owl:Class rdf:about="&pdb;RuthefordiumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:RutheniumAtom -->
+
+    <owl:Class rdf:about="&pdb;RutheniumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:SamariumAtom -->
+
+    <owl:Class rdf:about="&pdb;SamariumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:ScandiumAtom -->
+
+    <owl:Class rdf:about="&pdb;ScandiumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:SeaborgiumAtom -->
+
+    <owl:Class rdf:about="&pdb;SeaborgiumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Secretion -->
+
+    <owl:Class rdf:about="&pdb;Secretion"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:SeleniumAtom -->
+
+    <owl:Class rdf:about="&pdb;SeleniumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:SiliconAtom -->
+
+    <owl:Class rdf:about="&pdb;SiliconAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:SilverAtom -->
+
+    <owl:Class rdf:about="&pdb;SilverAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:SodiumAtom -->
+
+    <owl:Class rdf:about="&pdb;SodiumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:SolidStateNmr -->
+
+    <owl:Class rdf:about="&pdb;SolidStateNmr"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:SolutionNmr -->
+
+    <owl:Class rdf:about="&pdb;SolutionNmr"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:SolutionScattering -->
+
+    <owl:Class rdf:about="&pdb;SolutionScattering"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:SphereAbsortCorrection -->
+
+    <owl:Class rdf:about="&pdb;SphereAbsortCorrection"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:StrontiumAtom -->
+
+    <owl:Class rdf:about="&pdb;StrontiumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:StructureDetermination -->
+
+    <owl:Class rdf:about="&pdb;StructureDetermination"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:SulfurAtom -->
+
+    <owl:Class rdf:about="&pdb;SulfurAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:SynthecticChemicalSubstanceExtraction -->
+
+    <owl:Class rdf:about="&pdb;SynthecticChemicalSubstanceExtraction"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:TantalumAtom -->
+
+    <owl:Class rdf:about="&pdb;TantalumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:TechnetiumAtom -->
+
+    <owl:Class rdf:about="&pdb;TechnetiumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:TellurimAtom -->
+
+    <owl:Class rdf:about="&pdb;TellurimAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:TerbiumAtom -->
+
+    <owl:Class rdf:about="&pdb;TerbiumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:ThalliumAtom -->
+
+    <owl:Class rdf:about="&pdb;ThalliumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:TheoreticalFormulaWeight -->
+
+    <owl:Class rdf:about="&pdb;TheoreticalFormulaWeight"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:TheoreticalModel -->
+
+    <owl:Class rdf:about="&pdb;TheoreticalModel"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:ThoriumAtom -->
+
+    <owl:Class rdf:about="&pdb;ThoriumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:ThuliumAtom -->
+
+    <owl:Class rdf:about="&pdb;ThuliumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:TinAtom -->
+
+    <owl:Class rdf:about="&pdb;TinAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Tissue -->
+
+    <owl:Class rdf:about="&pdb;Tissue"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:TissueFraction -->
+
+    <owl:Class rdf:about="&pdb;TissueFraction"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:TitaniumAtom -->
+
+    <owl:Class rdf:about="&pdb;TitaniumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Title -->
+
+    <owl:Class rdf:about="&pdb;Title"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:TungstenAtom -->
+
+    <owl:Class rdf:about="&pdb;TungstenAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Turn -->
+
+    <owl:Class rdf:about="&pdb;Turn"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:TypeIIIPrimeTurn -->
+
+    <owl:Class rdf:about="&pdb;TypeIIIPrimeTurn"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:TypeIIITurn -->
+
+    <owl:Class rdf:about="&pdb;TypeIIITurn"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:TypeIIPrimeTurn -->
+
+    <owl:Class rdf:about="&pdb;TypeIIPrimeTurn"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:TypeIITurn -->
+
+    <owl:Class rdf:about="&pdb;TypeIITurn"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:TypeIPrimeTurn -->
+
+    <owl:Class rdf:about="&pdb;TypeIPrimeTurn"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:TypeITurn -->
+
+    <owl:Class rdf:about="&pdb;TypeITurn"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:UraniumAtom -->
+
+    <owl:Class rdf:about="&pdb;UraniumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:VanadiumAtom -->
+
+    <owl:Class rdf:about="&pdb;VanadiumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Vector -->
+
+    <owl:Class rdf:about="&pdb;Vector"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Virus -->
+
+    <owl:Class rdf:about="&pdb;Virus"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Volume -->
+
+    <owl:Class rdf:about="&pdb;Volume"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:VolumeNumber -->
+
+    <owl:Class rdf:about="&pdb;VolumeNumber"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Water -->
+
+    <owl:Class rdf:about="&pdb;Water"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:XRayDiffraction -->
+
+    <owl:Class rdf:about="&pdb;XRayDiffraction"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:XenonAtom -->
+
+    <owl:Class rdf:about="&pdb;XenonAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:YtterbiumAtom -->
+
+    <owl:Class rdf:about="&pdb;YtterbiumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:YttriumAtom -->
+
+    <owl:Class rdf:about="&pdb;YttriumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:ZincAtom -->
+
+    <owl:Class rdf:about="&pdb;ZincAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:ZirconiumAtom -->
+
+    <owl:Class rdf:about="&pdb;ZirconiumAtom"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:polysaccharide(L) -->
+
+    <owl:Class rdf:about="&pdb;polysaccharide(L)"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+

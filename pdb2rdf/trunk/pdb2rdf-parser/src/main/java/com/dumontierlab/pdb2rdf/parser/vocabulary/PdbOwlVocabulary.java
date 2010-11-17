@@ -403,6 +403,7 @@ public class PdbOwlVocabulary {
 		AdenosineFivePrimeMonophosphate(DEFAULT_NAMESPACE + "Adenosine5PrimeMonophosphate"),
 		TwoPrimeDeoxyAdenosineFivePrimeMonophosphate(DEFAULT_NAMESPACE + "TwoPrimeDeoxyAdenosineMonophosphate"),
 		TwoPrimeDeoxyCytidineFivePrimeMonophosphate(DEFAULT_NAMESPACE + "TwoPrimeDeoxyCitidineMonophosphate"),
+		TwoPrimeDeoxyGuanosineFivePrimeMonophosphate(DEFAULT_NAMESPACE + "TwoPrimeDeoxyGuanosineFivePrimeMonophosphate"),
 		ThymidineFivePrimeMonophosphate(DEFAULT_NAMESPACE + "Thymidine5PrimeMonophosphate");
 		
 

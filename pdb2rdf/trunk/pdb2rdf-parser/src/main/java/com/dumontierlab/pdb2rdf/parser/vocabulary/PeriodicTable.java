@@ -183,7 +183,7 @@ public class PeriodicTable {
 
 	public static PdbOwlVocabulary.Class get(String typeSymbol) {
 		PdbOwlVocabulary.Class c = symbol2class.get(typeSymbol.toUpperCase());
-		assert c != null : "Unknonw atom type sybol: " + typeSymbol;
+		assert c != null : "Unknonw atom type symbol: " + typeSymbol;
 		return c;
 	}
 

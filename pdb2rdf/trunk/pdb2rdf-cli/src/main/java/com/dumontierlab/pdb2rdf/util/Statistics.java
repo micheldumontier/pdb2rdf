@@ -23,13 +23,12 @@ package com.dumontierlab.pdb2rdf.util;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.openrdf.model.vocabulary.RDF;
-
 import com.hp.hpl.jena.query.QueryExecution;
 import com.hp.hpl.jena.query.QueryExecutionFactory;
 import com.hp.hpl.jena.query.QuerySolution;
 import com.hp.hpl.jena.query.ResultSet;
 import com.hp.hpl.jena.rdf.model.Model;
+import com.hp.hpl.jena.vocabulary.RDF;
 
 /**
  * @author Alexander De Leon
@@ -45,8 +44,8 @@ public class Statistics {
 	}
 
 	public Map<String, Double> getRelationshipCounts(Model model) {
-		QueryExecution execution = QueryExecutionFactory.create("select ?c ?t where { ?s <" + RDF.TYPE + "> ?c . ?o <"
-				+ RDF.TYPE + "> ?t. ?s ?p ?o. }", model);
+		QueryExecution execution = QueryExecutionFactory.create("select ?c ?t where { ?s <" + RDF.type + "> ?c . ?o <"
+				+ RDF.type + "> ?t. ?s ?p ?o. }", model);
 
 		ResultSet result = execution.execSelect();
 		Map<String, Double> stats = new HashMap<String, Double>();
@@ -64,7 +63,7 @@ public class Statistics {
 
 	public Map<String, Double> getClassCounts(Model model) {
 		QueryExecution execution = QueryExecutionFactory
-				.create("select ?c ?i where { ?i <" + RDF.TYPE + "> ?c }", model);
+				.create("select ?c ?i where { ?i <" + RDF.type + "> ?c }", model);
 		ResultSet result = execution.execSelect();
 		Map<String, Double> stats = new HashMap<String, Double>();
 		while (result.hasNext()) {

@@ -32,10 +32,6 @@
 			<artifactId>jline</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.bigdata</groupId>
-			<artifactId>bigdata</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>com.hp.hpl.jena</groupId>
 			<artifactId>arq</artifactId>
 		</dependency>

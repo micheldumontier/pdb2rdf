@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2009 Dumontierlab
+ * Copyright (c) 2010 Alexander De Leon Battista
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
@@ -20,59 +20,37 @@
  */
 package com.dumontierlab.pdb2rdf.util;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.List;
-import java.util.zip.GZIPInputStream;
+import org.xml.sax.InputSource;
 
-import org.apache.log4j.Logger;
+/**
+ * @author Alexander De Leon
+ */
+public class Pdb2RdfInputIteratorAdapter implements Pdb2RdfInputIterator {
 
-public class FileCollectionIterator implements InputInterator {
+	private final InputInterator inputInterator;
 
-	private static final Logger LOG = Logger.getLogger(FileCollectionIterator.class);
-
-	private final List<File> files;
-	private final boolean gzip;
-	private int counter;
-
-	public FileCollectionIterator(List<File> files, boolean gzip) throws IOException {
-		this.files = files;
-		this.gzip = gzip;
+	public Pdb2RdfInputIteratorAdapter(InputInterator inputInterator) {
+		this.inputInterator = inputInterator;
 	}
 
+	@Override
 	public boolean hasNext() {
-		return counter < size();
+		return inputInterator.hasNext();
 	}
 
-	public InputStream next() {
-		File f = files.get(counter++);
-		try {
-			return getInputStream(f);
-		} catch (IOException e) {
-			LOG.error("Unable to open file=" + f.getPath() + ".", e);
-			if (!hasNext()) {
-				System.exit(0);
-			}
-			return next();
-		}
+	@Override
+	public InputSource next() {
+		return new InputSource(inputInterator.next());
 	}
 
+	@Override
 	public void remove() {
-		// do nothing
-	}
-
-	private InputStream getInputStream(File f) throws IOException {
-		FileInputStream fileInputStream = new FileInputStream(f);
-		if (gzip) {
-			return new GZIPInputStream(fileInputStream);
-		}
-		return fileInputStream;
+		inputInterator.remove();
 	}
 
 	@Override
 	public int size() {
-		return files.size();
+		return inputInterator.size();
 	}
+
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2009 Dumontierlab
+ * Copyright (c) 2010 Alexander De Leon Battista
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
@@ -20,28 +20,14 @@
  */
 package com.dumontierlab.pdb2rdf.util;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.InputStream;
+import java.util.Iterator;
 
-public class DirectoryIterator extends FileCollectionIterator {
+/**
+ * @author Alexander De Leon
+ */
+public interface InputInterator extends Iterator<InputStream> {
 
-	public DirectoryIterator(File dir, boolean gzip) throws IOException {
-		super(findAllFiles(dir, gzip), gzip);
-	}
-
-	private static List<File> findAllFiles(File dir, boolean gzip) {
-		List<File> files = new ArrayList<File>();
-		File[] list = dir.listFiles();
-		for (File f : list) {
-			if (f.isDirectory()) {
-				files.addAll(findAllFiles(f, gzip));
-			} else if (f.getName().endsWith(gzip ? ".gz" : ".xml")) {
-				files.add(f);
-			}
-		}
-		return files;
-	}
+	int size();
 
 }

@@ -28,7 +28,6 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Properties;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -47,18 +46,8 @@ import org.apache.commons.cli.OptionBuilder;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.log4j.Logger;
-import org.openrdf.model.Resource;
-import org.openrdf.model.Value;
-import org.openrdf.model.impl.LiteralImpl;
-import org.openrdf.model.impl.StatementImpl;
-import org.openrdf.model.impl.URIImpl;
-import org.openrdf.repository.Repository;
-import org.openrdf.repository.RepositoryConnection;
-import org.openrdf.repository.RepositoryException;
 import org.xml.sax.InputSource;
 
-import com.bigdata.rdf.sail.BigdataSail;
-import com.bigdata.rdf.sail.BigdataSailRepository;
 import com.dumontierlab.pdb2rdf.dao.VirtuosoDaoFactory;
 import com.dumontierlab.pdb2rdf.model.PdbRdfModel;
 import com.dumontierlab.pdb2rdf.model.VirtPdbRdfModel;
@@ -71,16 +60,16 @@ import com.dumontierlab.pdb2rdf.util.ClusterIterator;
 import com.dumontierlab.pdb2rdf.util.ConsoleProgressMonitorImpl;
 import com.dumontierlab.pdb2rdf.util.DirectoryIterator;
 import com.dumontierlab.pdb2rdf.util.FileIterator;
+import com.dumontierlab.pdb2rdf.util.InputInterator;
 import com.dumontierlab.pdb2rdf.util.Pdb2RdfInputIterator;
+import com.dumontierlab.pdb2rdf.util.Pdb2RdfInputIteratorAdapter;
 import com.dumontierlab.pdb2rdf.util.PdbsIterator;
 import com.dumontierlab.pdb2rdf.util.ProgressMonitor;
 import com.dumontierlab.pdb2rdf.util.Statistics;
-import com.hp.hpl.jena.rdf.model.Literal;
-import com.hp.hpl.jena.rdf.model.RDFNode;
+import com.hp.hpl.jena.rdf.model.Model;
+import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.RDFWriter;
 import com.hp.hpl.jena.rdf.model.RDFWriterF;
-import com.hp.hpl.jena.rdf.model.Statement;
-import com.hp.hpl.jena.rdf.model.StmtIterator;
 import com.hp.hpl.jena.rdf.model.impl.RDFWriterFImpl;
 
 /**
@@ -108,7 +97,9 @@ public class Pdb2Rdf {
 				stats = new HashMap<String, Double>();
 			}
 
-			if (cmd.hasOption("load")) {
+			if (cmd.hasOption("statsFromRDF")) {
+				generateStatsFromRDF(cmd);
+			} else if (cmd.hasOption("load")) {
 				load(cmd, stats);
 			} else if (cmd.hasOption("bigdata")) {
 				loadBigData(cmd, stats);
@@ -132,6 +123,32 @@ public class Pdb2Rdf {
 			System.exit(1);
 		}
 
+	}
+
+	private static void generateStatsFromRDF(CommandLine cmd) {
+		String dir = cmd.getOptionValue("dir");
+		if (dir == null) {
+			LOG.fatal("Need to specify -dir with -statsFromRDF");
+			System.exit(1);
+		}
+		Map<String, Double> stats = new HashMap<String, Double>();
+		Statistics statistics = new Statistics();
+		try {
+			InputInterator input = new DirectoryIterator(new File(dir), cmd.hasOption("gzip"));
+			while (input.hasNext()) {
+				try {
+					Model model = ModelFactory.createDefaultModel();
+					model.read(input.next(), "");
+					statistics.mergeStats(statistics.getStatistics(model), stats);
+				} catch (Exception e) {
+					LOG.warn("Fail to read input file", e);
+				}
+			}
+			outputStats(cmd, stats);
+		} catch (IOException e) {
+			LOG.fatal("Unable to read files form " + dir);
+			System.exit(1);
+		}
 	}
 
 	private static void updateStats(Map<String, Double> stats, PdbRdfModel model) {
@@ -372,128 +389,133 @@ public class Pdb2Rdf {
 	}
 
 	private static void loadBigData(final CommandLine cmd, final Map<String, Double> stats) {
-		DetailLevel detailLevel = null;
-		if (cmd.hasOption("detailLevel")) {
-			try {
-				detailLevel = Enum.valueOf(DetailLevel.class, cmd.getOptionValue("detailLevel"));
-			} catch (IllegalArgumentException e) {
-				LOG.fatal("Invalid argument value for detailLevel option", e);
-				System.exit(1);
-			}
-		}
-		final DetailLevel f_detailLevel = detailLevel;
-
-		String filePath = cmd.getOptionValue("bigdata");
-		if (filePath == null) {
-			LOG.fatal("You need to specify the path the BigData DB file");
-			System.exit(1);
-		}
-		File journal = new File(filePath);
-		if (!journal.exists()) {
-			LOG.info("Creating file: " + filePath);
-			try {
-				journal.createNewFile();
-			} catch (IOException e) {
-				LOG.fatal("Unable to create file: " + filePath);
-				System.exit(1);
-			}
-		}
-		// create big data properties
-		Properties properties = new Properties();
-		try {
-			properties.load(Pdb2Rdf.class.getResourceAsStream("/fastload.properties"));
-		} catch (IOException e1) {
-			LOG.warn("Unable to read bigdata configuration: /fastload.properties");
-		}
-		properties.setProperty(BigdataSail.Options.FILE, journal.getAbsolutePath());
-
-		// instantiate a sail
-		BigdataSail sail = new BigdataSail(properties);
-		final Repository repo = new BigdataSailRepository(sail);
-		try {
-			repo.initialize();
-		} catch (RepositoryException e) {
-			LOG.fatal("Unable to initialize SAIL repository", e);
-			System.exit(1);
-		}
-
-		final ExecutorService pool = getThreadPool(cmd);
-		final ProgressMonitor monitor = getProgressMonitor();
-		final Pdb2RdfInputIterator i = processInput(cmd);
-		final int inputSize = i.size();
-		final AtomicInteger progressCount = new AtomicInteger();
-
-		while (i.hasNext()) {
-			final InputSource input = i.next();
-			pool.execute(new Runnable() {
-				public void run() {
-					PdbXmlParser parser = new PdbXmlParser();
-					PdbRdfModel model = null;
-					try {
-						if (f_detailLevel != null) {
-							model = parser.parse(input, new PdbRdfModel(), f_detailLevel);
-						} else {
-							model = parser.parse(input, new PdbRdfModel());
-						}
-
-						RepositoryConnection cxn = repo.getConnection();
-						cxn.setAutoCommit(false);
-						try {
-							for (StmtIterator staments = model.listStatements(); staments.hasNext();) {
-								Statement statement = staments.next();
-
-								Resource s = new URIImpl(statement.getSubject().getURI());
-								URIImpl p = new URIImpl(statement.getPredicate().getURI());
-								RDFNode obj = statement.getObject();
-								Value o = null;
-								if (obj.isLiteral()) {
-									LiteralImpl literal = null;
-									if (((Literal) obj).getDatatype() != null) {
-										literal = new LiteralImpl(((Literal) obj).getString(), new URIImpl(
-												((Literal) obj).getDatatype().getURI()));
-									} else if (((Literal) obj).getLanguage() != null
-											&& ((Literal) obj).getLanguage().length() != 0) {
-										literal = new LiteralImpl(((Literal) obj).getString(), ((Literal) obj)
-												.getLanguage());
-									} else {
-										literal = new LiteralImpl(((Literal) obj).getString());
-									}
-									o = literal;
-								} else {
-									o = new URIImpl(((com.hp.hpl.jena.rdf.model.Resource) obj).getURI());
-								}
-								cxn.add(new StatementImpl(s, p, o));
-							}
-							cxn.commit();
-						} catch (Exception ex) {
-							cxn.rollback();
-							throw ex;
-						} finally {
-							// close the repository connection
-							cxn.close();
-						}
-						if (stats != null) {
-							updateStats(stats, model);
-						}
-						if (monitor != null) {
-							monitor.setProgress(progressCount.incrementAndGet(), inputSize);
-						}
-
-					} catch (Exception e) {
-						LOG.error("Uanble to parse input for pdb=" + (model != null ? model.getPdbId() : "null"), e);
-					}
-				}
-			});
-		}
-
-		pool.shutdown();
-		while (!pool.isTerminated()) {
-			try {
-				pool.awaitTermination(1, TimeUnit.SECONDS);
-			} catch (InterruptedException e) {
-				break;
-			}
-		}
+		// DetailLevel detailLevel = null;
+		// if (cmd.hasOption("detailLevel")) {
+		// try {
+		// detailLevel = Enum.valueOf(DetailLevel.class,
+		// cmd.getOptionValue("detailLevel"));
+		// } catch (IllegalArgumentException e) {
+		// LOG.fatal("Invalid argument value for detailLevel option", e);
+		// System.exit(1);
+		// }
+		// }
+		// final DetailLevel f_detailLevel = detailLevel;
+		//
+		// String filePath = cmd.getOptionValue("bigdata");
+		// if (filePath == null) {
+		// LOG.fatal("You need to specify the path the BigData DB file");
+		// System.exit(1);
+		// }
+		// File journal = new File(filePath);
+		// if (!journal.exists()) {
+		// LOG.info("Creating file: " + filePath);
+		// try {
+		// journal.createNewFile();
+		// } catch (IOException e) {
+		// LOG.fatal("Unable to create file: " + filePath);
+		// System.exit(1);
+		// }
+		// }
+		// // create big data properties
+		// Properties properties = new Properties();
+		// try {
+		// properties.load(Pdb2Rdf.class.getResourceAsStream("/fastload.properties"));
+		// } catch (IOException e1) {
+		// LOG.warn("Unable to read bigdata configuration: /fastload.properties");
+		// }
+		// properties.setProperty(BigdataSail.Options.FILE,
+		// journal.getAbsolutePath());
+		//
+		// // instantiate a sail
+		// BigdataSail sail = new BigdataSail(properties);
+		// final Repository repo = new BigdataSailRepository(sail);
+		// try {
+		// repo.initialize();
+		// } catch (RepositoryException e) {
+		// LOG.fatal("Unable to initialize SAIL repository", e);
+		// System.exit(1);
+		// }
+		//
+		// final ExecutorService pool = getThreadPool(cmd);
+		// final ProgressMonitor monitor = getProgressMonitor();
+		// final Pdb2RdfInputIterator i = processInput(cmd);
+		// final int inputSize = i.size();
+		// final AtomicInteger progressCount = new AtomicInteger();
+		//
+		// while (i.hasNext()) {
+		// final InputSource input = i.next();
+		// pool.execute(new Runnable() {
+		// public void run() {
+		// PdbXmlParser parser = new PdbXmlParser();
+		// PdbRdfModel model = null;
+		// try {
+		// if (f_detailLevel != null) {
+		// model = parser.parse(input, new PdbRdfModel(), f_detailLevel);
+		// } else {
+		// model = parser.parse(input, new PdbRdfModel());
+		// }
+		//
+		// RepositoryConnection cxn = repo.getConnection();
+		// cxn.setAutoCommit(false);
+		// try {
+		// for (StmtIterator staments = model.listStatements();
+		// staments.hasNext();) {
+		// Statement statement = staments.next();
+		//
+		// Resource s = new URIImpl(statement.getSubject().getURI());
+		// URIImpl p = new URIImpl(statement.getPredicate().getURI());
+		// RDFNode obj = statement.getObject();
+		// Value o = null;
+		// if (obj.isLiteral()) {
+		// LiteralImpl literal = null;
+		// if (((Literal) obj).getDatatype() != null) {
+		// literal = new LiteralImpl(((Literal) obj).getString(), new URIImpl(
+		// ((Literal) obj).getDatatype().getURI()));
+		// } else if (((Literal) obj).getLanguage() != null
+		// && ((Literal) obj).getLanguage().length() != 0) {
+		// literal = new LiteralImpl(((Literal) obj).getString(), ((Literal)
+		// obj)
+		// .getLanguage());
+		// } else {
+		// literal = new LiteralImpl(((Literal) obj).getString());
+		// }
+		// o = literal;
+		// } else {
+		// o = new URIImpl(((com.hp.hpl.jena.rdf.model.Resource) obj).getURI());
+		// }
+		// cxn.add(new StatementImpl(s, p, o));
+		// }
+		// cxn.commit();
+		// } catch (Exception ex) {
+		// cxn.rollback();
+		// throw ex;
+		// } finally {
+		// // close the repository connection
+		// cxn.close();
+		// }
+		// if (stats != null) {
+		// updateStats(stats, model);
+		// }
+		// if (monitor != null) {
+		// monitor.setProgress(progressCount.incrementAndGet(), inputSize);
+		// }
+		//
+		// } catch (Exception e) {
+		// LOG.error("Uanble to parse input for pdb=" + (model != null ?
+		// model.getPdbId() : "null"), e);
+		// }
+		// }
+		// });
+		// }
+		//
+		// pool.shutdown();
+		// while (!pool.isTerminated()) {
+		// try {
+		// pool.awaitTermination(1, TimeUnit.SECONDS);
+		// } catch (InterruptedException e) {
+		// break;
+		// }
+		// }
 	}
 
 	private static ProgressMonitor getProgressMonitor() {
@@ -523,14 +545,14 @@ public class Pdb2Rdf {
 					LOG.fatal("Cannot access file: " + file);
 					System.exit(1);
 				}
-				return new FileIterator(file, gzip);
+				return new Pdb2RdfInputIteratorAdapter(new FileIterator(file, gzip));
 			} else if (cmd.hasOption("dir")) {
 				File dir = new File(cmd.getOptionValue("dir"));
 				if (!dir.exists() || !dir.canRead() || !dir.canExecute()) {
 					LOG.fatal("Cannot access directory: " + dir);
 					System.exit(1);
 				}
-				return new DirectoryIterator(dir, gzip);
+				return new Pdb2RdfInputIteratorAdapter(new DirectoryIterator(dir, gzip));
 			} else if (cmd.hasOption("cluster")) {
 				String url = cmd.getOptionValue("cluster");
 				return new ClusterIterator(url);
@@ -595,6 +617,10 @@ public class Pdb2Rdf {
 				"stats",
 				false,
 				"Outputs statistics to file pdb2rdf-stats.txt (in output directory, if one is specified, or in the current directory otherwise)");
+		options.addOption(
+				"statsFromRDF",
+				false,
+				"Generates statistics from RDF files (located in the directory spefied by -dir). The stats are output to the file pdb2rdf-stats.txt (in output directory, if one is specified, or in the current directory otherwise)");
 		Option noAtomSitesOption = OptionBuilder.hasArg(true)
 				.withDescription("Specify detail level: COMPLETE | ATOM | RESIDUE | EXPERIMENT | METADATA ")
 				.create("detailLevel");

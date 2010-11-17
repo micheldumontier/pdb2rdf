@@ -144,11 +144,14 @@ public class ChemCompCategory extends ContentHandlerState {
 		if (!residues.containsKey(componentId)) {
 			return;
 		}
+		//replace the 
+		//componentType = AminoAcidTable.get(typeName).resource() createResource();
+		//if componentType == null do the following
 		componentType = createResource(Bio2RdfPdbUriPattern.RESIDUE_TYPE, UriUtil.urlEncode(UriUtil
 				.replacePrimes(UriUtil.toCamelCase(typeName))));
 		for (Resource residue : residues.get(componentId)) {
 			getRdfModel().add(residue, RDF.type, componentType);
-			getRdfModel().add(componentType, RDF.type, OWL.Class);
+			//getRdfModel().add(componentType, RDF.type, OWL.Class);
 			getRdfModel().add(residue, RDFS.label, typeName);
 		}
 	}

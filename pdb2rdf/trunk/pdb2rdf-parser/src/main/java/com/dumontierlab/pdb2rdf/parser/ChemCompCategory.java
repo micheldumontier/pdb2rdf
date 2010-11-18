@@ -29,6 +29,7 @@ import org.xml.sax.SAXException;
 import com.dumontierlab.pdb2rdf.model.PdbRdfModel;
 import com.dumontierlab.pdb2rdf.parser.vocabulary.PdbOwlVocabulary;
 import com.dumontierlab.pdb2rdf.parser.vocabulary.PdbXmlVocabulary;
+import com.dumontierlab.pdb2rdf.parser.vocabulary.ResidueTable;
 import com.dumontierlab.pdb2rdf.parser.vocabulary.uri.Bio2RdfPdbUriPattern;
 import com.dumontierlab.pdb2rdf.parser.vocabulary.uri.UriBuilder;
 import com.dumontierlab.pdb2rdf.util.UriUtil;
@@ -144,11 +145,11 @@ public class ChemCompCategory extends ContentHandlerState {
 		if (!residues.containsKey(componentId)) {
 			return;
 		}
-		//replace the 
-		//componentType = AminoAcidTable.get(typeName).resource() createResource();
-		//if componentType == null do the following
-		componentType = createResource(Bio2RdfPdbUriPattern.RESIDUE_TYPE, UriUtil.urlEncode(UriUtil
-				.replacePrimes(UriUtil.toCamelCase(typeName))));
+		componentType = ResidueTable.get(typeName).resource();
+		if(componentType == null){
+			componentType = createResource(Bio2RdfPdbUriPattern.RESIDUE_TYPE, UriUtil.urlEncode(UriUtil
+					.replacePrimes(UriUtil.toCamelCase(typeName))));
+		}
 		for (Resource residue : residues.get(componentId)) {
 			getRdfModel().add(residue, RDF.type, componentType);
 			//getRdfModel().add(componentType, RDF.type, OWL.Class);

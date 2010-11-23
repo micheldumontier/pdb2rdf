@@ -9,11 +9,13 @@
     <!ENTITY resource "http://semanticscience.org/resource/" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY ss "http://semanticscience.googlecode.com/">
+    <!ENTITY pdb2rdf "http://pdb2rdf.googlecode.com/">
 ]>
 
 
-<rdf:RDF xmlns="http://semanticscience.org/ontology/pdb.owl#"
-     xml:base="http://semanticscience.org/ontology/pdb.owl"
+<rdf:RDF xmlns="&pdb2rdf;svn/trunk/ontology/pdb.owl#"
+     xml:base="&pdb2rdf;svn/trunk/ontology/pdb.owl"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
      xmlns:resource="http://semanticscience.org/resource/"
@@ -22,7 +24,8 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:pdb="http://bio2rdf.org/pdb:">
     <owl:Ontology rdf:about="">
-        <owl:imports rdf:resource="file:/C:/Users/Michel%20Dumontier/Desktop/pdb2rdf.owl"/>
+	<owl:imports rdf:resource="&pdb2rdf;svn/trunk/ontology/pdb2rdf.owl"/>
+       <!-- <owl:imports rdf:resource="file:/C:/Users/Michel%20Dumontier/Desktop/pdb2rdf.owl"/>-->
     </owl:Ontology>
     
 

@@ -20,12 +20,7 @@
  */
 package com.dumontierlab.pdb2rdf.parser;
 
-import java.io.IOException;
-
-import org.xml.sax.SAXException;
-
 import com.dumontierlab.pdb2rdf.model.PdbRdfModel;
-import com.hp.hpl.jena.rdf.model.Model;
 
 /**
  * @author Alexander De Leon
@@ -37,9 +32,4 @@ public class PdbXmlParser extends AbstractPdbXmlParser {
 		return new PdbXmlContentHandler(model);
 	}
 
-	public static void main(String[] args) throws IOException, SAXException {
-		Model rdf = new PdbXmlParser().parse("2W6V");
-		System.err.println(rdf.size());
-		rdf.write(System.out);
-	}
 }

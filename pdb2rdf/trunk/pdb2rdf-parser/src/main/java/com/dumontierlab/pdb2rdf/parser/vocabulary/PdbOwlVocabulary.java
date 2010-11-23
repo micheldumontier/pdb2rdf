@@ -20,8 +20,6 @@
  */
 package com.dumontierlab.pdb2rdf.parser.vocabulary;
 
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter.DEFAULT;
-
 import com.hp.hpl.jena.ontology.AnnotationProperty;
 import com.hp.hpl.jena.ontology.DatatypeProperty;
 import com.hp.hpl.jena.ontology.OntClass;
@@ -378,25 +376,25 @@ public class PdbOwlVocabulary {
 		Alanine(DEFAULT_NAMESPACE + "Alanine"),
 		Arginine(DEFAULT_NAMESPACE + "Arginine"),
 		Asparagine(DEFAULT_NAMESPACE + "Asparigine"),
-		AsparticAcid(DEFAULT_NAMESPACE+ "AsparticAcid"),
-		Cysteine(DEFAULT_NAMESPACE+ "Cysteine"),
+		AsparticAcid(DEFAULT_NAMESPACE + "AsparticAcid"),
+		Cysteine(DEFAULT_NAMESPACE + "Cysteine"),
 		GlutamicAcid(DEFAULT_NAMESPACE + "GlutamicAcid"),
 		Glutamine(DEFAULT_NAMESPACE + "Glutamine"),
 		Glycine(DEFAULT_NAMESPACE + "Glycine"),
 		Histidine(DEFAULT_NAMESPACE + "Histidine"),
 		Isoleucine(DEFAULT_NAMESPACE + "Isoleucine"),
 		Leucine(DEFAULT_NAMESPACE + "Leucine"),
-		Lysine(DEFAULT_NAMESPACE +"Lysine"),
+		Lysine(DEFAULT_NAMESPACE + "Lysine"),
 		Methionine(DEFAULT_NAMESPACE + "Methionine"),
 		Phenylalanine(DEFAULT_NAMESPACE + "Phenylalanine"),
 		Proline(DEFAULT_NAMESPACE + "Proline"),
 		Serine(DEFAULT_NAMESPACE + "Serine"),
-		Threonine(DEFAULT_NAMESPACE +"Threonine"),
-		Tryptophan(DEFAULT_NAMESPACE+"Tryptophan"),
+		Threonine(DEFAULT_NAMESPACE + "Threonine"),
+		Tryptophan(DEFAULT_NAMESPACE + "Tryptophan"),
 		Tyrosine(DEFAULT_NAMESPACE + "Tyrosine"),
 		Valine(DEFAULT_NAMESPACE + "Valine"),
 		Selenocysteine(DEFAULT_NAMESPACE + "Selenocysteine"),
-		Pyrrolysine(DEFAULT_NAMESPACE+"Pyrrolysine"),
+		Pyrrolysine(DEFAULT_NAMESPACE + "Pyrrolysine"),
 		CytidineFivePrimeMonophosphate(DEFAULT_NAMESPACE + "Cytidine5PrimeMonophosphate"),
 		GuanosineFivePrimeMonophosphate(DEFAULT_NAMESPACE + "Guanosine5PrimeMonophosphate"),
 		UridineFivePrimeMonophosphate(DEFAULT_NAMESPACE + "Uridine5PrimeMonophosphate"),
@@ -405,7 +403,6 @@ public class PdbOwlVocabulary {
 		TwoPrimeDeoxyCytidineFivePrimeMonophosphate(DEFAULT_NAMESPACE + "TwoPrimeDeoxyCitidineMonophosphate"),
 		TwoPrimeDeoxyGuanosineFivePrimeMonophosphate(DEFAULT_NAMESPACE + "TwoPrimeDeoxyGuanosineFivePrimeMonophosphate"),
 		ThymidineFivePrimeMonophosphate(DEFAULT_NAMESPACE + "Thymidine5PrimeMonophosphate");
-		
 
 		private final String uri;
 
@@ -656,6 +653,7 @@ public class PdbOwlVocabulary {
 		System.out.println("Object Properties: " + ObjectProperty.values().length);
 		System.out.println("Data Properties: " + DataProperty.values().length);
 		System.out.println("Annotations: " + Annotation.values().length);
+		getOntology().write(System.out);
 	}
 
 }

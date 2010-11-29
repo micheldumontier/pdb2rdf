@@ -9,13 +9,11 @@
     <!ENTITY resource "http://semanticscience.org/resource/" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY ss "http://semanticscience.googlecode.com/">
-    <!ENTITY pdb2rdf "http://pdb2rdf.googlecode.com/">
 ]>
 
 
-<rdf:RDF xmlns="&pdb2rdf;svn/trunk/ontology/pdb.owl#"
-     xml:base="&pdb2rdf;svn/trunk/ontology/pdb.owl"
+<rdf:RDF xmlns="http://pdb2rdf.googlecode.com/svn/trunk/ontology/pdb.owl#"
+     xml:base="http://pdb2rdf.googlecode.com/svn/trunk/ontology/pdb.owl"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
      xmlns:resource="http://semanticscience.org/resource/"
@@ -24,8 +22,7 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:pdb="http://bio2rdf.org/pdb:">
     <owl:Ontology rdf:about="">
-	<owl:imports rdf:resource="&pdb2rdf;svn/trunk/ontology/pdb2rdf.owl"/>
-       <!-- <owl:imports rdf:resource="file:/C:/Users/Michel%20Dumontier/Desktop/pdb2rdf.owl"/>-->
+        <owl:imports rdf:resource="http://pdb2rdf.googlecode.com/svn/trunk/ontology/pdb2rdf.owl"/>
     </owl:Ontology>
     
 
@@ -555,6 +552,23 @@
     
 
 
+    <!-- http://bio2rdf.org/pdb:Adenosine5PrimeMonophosphate -->
+
+    <owl:Class rdf:about="&pdb;Adenosine5PrimeMonophosphate">
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010003"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Alanine -->
+
+    <owl:Class rdf:about="&pdb;Alanine">
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010005"/>
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010007"/>
+    </owl:Class>
+    
+
+
     <!-- http://bio2rdf.org/pdb:AluminumAtom -->
 
     <owl:Class rdf:about="&pdb;AluminumAtom">
@@ -603,10 +617,67 @@
     
 
 
+    <!-- http://bio2rdf.org/pdb:Aniso_B11 -->
+
+    <owl:Class rdf:about="&pdb;Aniso_B11">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Aniso_B12 -->
+
+    <owl:Class rdf:about="&pdb;Aniso_B12">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Aniso_B13 -->
+
+    <owl:Class rdf:about="&pdb;Aniso_B13">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Aniso_B22 -->
+
+    <owl:Class rdf:about="&pdb;Aniso_B22">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Aniso_B23 -->
+
+    <owl:Class rdf:about="&pdb;Aniso_B23">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Aniso_B33 -->
+
+    <owl:Class rdf:about="&pdb;Aniso_B33">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
     <!-- http://bio2rdf.org/pdb:AntimonyAtom -->
 
     <owl:Class rdf:about="&pdb;AntimonyAtom">
         <rdfs:subClassOf rdf:resource="&pdb;Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Arginine -->
+
+    <owl:Class rdf:about="&pdb;Arginine">
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010007"/>
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010011"/>
     </owl:Class>
     
 
@@ -623,6 +694,24 @@
 
     <owl:Class rdf:about="&pdb;ArsenicAtom">
         <rdfs:subClassOf rdf:resource="&pdb;Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Asparigine -->
+
+    <owl:Class rdf:about="&pdb;Asparigine">
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010007"/>
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010008"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:AsparticAcid -->
+
+    <owl:Class rdf:about="&pdb;AsparticAcid">
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010007"/>
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010010"/>
     </owl:Class>
     
 
@@ -655,6 +744,38 @@
 
     <owl:Class rdf:about="&pdb;AtomSpatialLocation">
         <rdfs:subClassOf rdf:resource="&resource;PDB_0003"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:AverageConstraintViolationsPerResidue -->
+
+    <owl:Class rdf:about="&pdb;AverageConstraintViolationsPerResidue">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:BIsoMax -->
+
+    <owl:Class rdf:about="&pdb;BIsoMax">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:BIsoMean -->
+
+    <owl:Class rdf:about="&pdb;BIsoMean">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:BIsoMin -->
+
+    <owl:Class rdf:about="&pdb;BIsoMin">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
     </owl:Class>
     
 
@@ -787,6 +908,14 @@
     
 
 
+    <!-- http://bio2rdf.org/pdb:CartesianCoordinate -->
+
+    <owl:Class rdf:about="&pdb;CartesianCoordinate">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0011"/>
+    </owl:Class>
+    
+
+
     <!-- http://bio2rdf.org/pdb:CartesianCoordinateComponent -->
 
     <owl:Class rdf:about="&pdb;CartesianCoordinateComponent">
@@ -907,10 +1036,34 @@
     
 
 
+    <!-- http://bio2rdf.org/pdb:ConformerSelectionCriteria -->
+
+    <owl:Class rdf:about="&pdb;ConformerSelectionCriteria">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
     <!-- http://bio2rdf.org/pdb:CopperAtom -->
 
     <owl:Class rdf:about="&pdb;CopperAtom">
         <rdfs:subClassOf rdf:resource="&pdb;Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:CorrelationCoefficientFoToFc -->
+
+    <owl:Class rdf:about="&pdb;CorrelationCoefficientFoToFc">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:CorrelationCoefficientFoToFcFree -->
+
+    <owl:Class rdf:about="&pdb;CorrelationCoefficientFoToFcFree">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
     </owl:Class>
     
 
@@ -955,6 +1108,23 @@
     
 
 
+    <!-- http://bio2rdf.org/pdb:Cysteine -->
+
+    <owl:Class rdf:about="&pdb;Cysteine">
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010007"/>
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010008"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Cytidine5PrimeMonophosphate -->
+
+    <owl:Class rdf:about="&pdb;Cytidine5PrimeMonophosphate">
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010003"/>
+    </owl:Class>
+    
+
+
     <!-- http://bio2rdf.org/pdb:DOI -->
 
     <owl:Class rdf:about="&pdb;DOI">
@@ -967,6 +1137,30 @@
 
     <owl:Class rdf:about="&pdb;DarmstadtiumAtom">
         <rdfs:subClassOf rdf:resource="&pdb;Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:DataCutoffHighAbsF -->
+
+    <owl:Class rdf:about="&pdb;DataCutoffHighAbsF">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:DataCutoffHighRmsAbsF -->
+
+    <owl:Class rdf:about="&pdb;DataCutoffHighRmsAbsF">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:DataCutoffLowAbsF -->
+
+    <owl:Class rdf:about="&pdb;DataCutoffLowAbsF">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
     </owl:Class>
     
 
@@ -1187,10 +1381,44 @@
     
 
 
+    <!-- http://bio2rdf.org/pdb:GlutamicAcid -->
+
+    <owl:Class rdf:about="&pdb;GlutamicAcid">
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010007"/>
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010010"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Glutamine -->
+
+    <owl:Class rdf:about="&pdb;Glutamine">
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010007"/>
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010008"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Glycine -->
+
+    <owl:Class rdf:about="&pdb;Glycine">
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010007"/>
+    </owl:Class>
+    
+
+
     <!-- http://bio2rdf.org/pdb:GoldAtom -->
 
     <owl:Class rdf:about="&pdb;GoldAtom">
         <rdfs:subClassOf rdf:resource="&pdb;Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Guanosine5PrimeMonophosphate -->
+
+    <owl:Class rdf:about="&pdb;Guanosine5PrimeMonophosphate">
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010003"/>
     </owl:Class>
     
 
@@ -1231,6 +1459,15 @@
 
     <owl:Class rdf:about="&pdb;HelixLength">
         <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Histidine -->
+
+    <owl:Class rdf:about="&pdb;Histidine">
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010007"/>
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010011"/>
     </owl:Class>
     
 
@@ -1323,10 +1560,27 @@
     
 
 
+    <!-- http://bio2rdf.org/pdb:Isoleucine -->
+
+    <owl:Class rdf:about="&pdb;Isoleucine">
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010005"/>
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010007"/>
+    </owl:Class>
+    
+
+
     <!-- http://bio2rdf.org/pdb:IsotropicAtomicDisplacement -->
 
     <owl:Class rdf:about="&pdb;IsotropicAtomicDisplacement">
         <rdfs:subClassOf rdf:resource="&resource;PDB_0003"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:IsotropicThermalModel -->
+
+    <owl:Class rdf:about="&pdb;IsotropicThermalModel">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0011"/>
     </owl:Class>
     
 
@@ -1483,6 +1737,15 @@
     
 
 
+    <!-- http://bio2rdf.org/pdb:Leucine -->
+
+    <owl:Class rdf:about="&pdb;Leucine">
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010005"/>
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010007"/>
+    </owl:Class>
+    
+
+
     <!-- http://bio2rdf.org/pdb:LithiumAtom -->
 
     <owl:Class rdf:about="&pdb;LithiumAtom">
@@ -1491,10 +1754,187 @@
     
 
 
+    <!-- http://bio2rdf.org/pdb:LsCrossValidMethod -->
+
+    <owl:Class rdf:about="&pdb;LsCrossValidMethod">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LsDResHigh -->
+
+    <owl:Class rdf:about="&pdb;LsDResHigh">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LsDResLow -->
+
+    <owl:Class rdf:about="&pdb;LsDResLow">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LsNumberParameters -->
+
+    <owl:Class rdf:about="&pdb;LsNumberParameters">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LsNumberReflnsAll -->
+
+    <owl:Class rdf:about="&pdb;LsNumberReflnsAll">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LsNumberReflnsObs -->
+
+    <owl:Class rdf:about="&pdb;LsNumberReflnsObs">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LsNumberReflnsRFree -->
+
+    <owl:Class rdf:about="&pdb;LsNumberReflnsRFree">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LsNumberRestraints -->
+
+    <owl:Class rdf:about="&pdb;LsNumberRestraints">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LsPercentReflnsObs -->
+
+    <owl:Class rdf:about="&pdb;LsPercentReflnsObs">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LsPercentReflnsRFree -->
+
+    <owl:Class rdf:about="&pdb;LsPercentReflnsRFree">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LsRFactorAll -->
+
+    <owl:Class rdf:about="&pdb;LsRFactorAll">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LsRFactorObs -->
+
+    <owl:Class rdf:about="&pdb;LsRFactorObs">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LsRFactorRFree -->
+
+    <owl:Class rdf:about="&pdb;LsRFactorRFree">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LsRFactorRFreeError -->
+
+    <owl:Class rdf:about="&pdb;LsRFactorRFreeError">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LsRFactorRFreeErrorDetails -->
+
+    <owl:Class rdf:about="&pdb;LsRFactorRFreeErrorDetails">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LsRFactorRWork -->
+
+    <owl:Class rdf:about="&pdb;LsRFactorRWork">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LsRedundancyReflnsObs -->
+
+    <owl:Class rdf:about="&pdb;LsRedundancyReflnsObs">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LsSigmaF -->
+
+    <owl:Class rdf:about="&pdb;LsSigmaF">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LsSigmaI -->
+
+    <owl:Class rdf:about="&pdb;LsSigmaI">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LsWRFactorRFree -->
+
+    <owl:Class rdf:about="&pdb;LsWRFactorRFree">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:LsWRFactorRWork -->
+
+    <owl:Class rdf:about="&pdb;LsWRFactorRWork">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
     <!-- http://bio2rdf.org/pdb:LutetiumAtom -->
 
     <owl:Class rdf:about="&pdb;LutetiumAtom">
         <rdfs:subClassOf rdf:resource="&pdb;Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Lysine -->
+
+    <owl:Class rdf:about="&pdb;Lysine">
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010007"/>
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010011"/>
     </owl:Class>
     
 
@@ -1567,6 +2007,23 @@
 
     <owl:Class rdf:about="&pdb;MercuryAtom">
         <rdfs:subClassOf rdf:resource="&pdb;Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Methionine -->
+
+    <owl:Class rdf:about="&pdb;Methionine">
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010005"/>
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010007"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:MethodToDetermineStruct -->
+
+    <owl:Class rdf:about="&pdb;MethodToDetermineStruct">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
     </owl:Class>
     
 
@@ -1779,6 +2236,22 @@
     
 
 
+    <!-- http://bio2rdf.org/pdb:OccupancyMax -->
+
+    <owl:Class rdf:about="&pdb;OccupancyMax">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:OccupancyMin -->
+
+    <owl:Class rdf:about="&pdb;OccupancyMin">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
     <!-- http://bio2rdf.org/pdb:Organ -->
 
     <owl:Class rdf:about="&pdb;Organ">
@@ -1799,6 +2272,78 @@
 
     <owl:Class rdf:about="&pdb;OsmiumAtom">
         <rdfs:subClassOf rdf:resource="&pdb;Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:OverallESUR -->
+
+    <owl:Class rdf:about="&pdb;OverallESUR">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:OverallESURFree -->
+
+    <owl:Class rdf:about="&pdb;OverallESURFree">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:OverallFOMFreeRSet -->
+
+    <owl:Class rdf:about="&pdb;OverallFOMFreeRSet">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:OverallFOMWorkRSet -->
+
+    <owl:Class rdf:about="&pdb;OverallFOMWorkRSet">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:OverallPhaseError -->
+
+    <owl:Class rdf:about="&pdb;OverallPhaseError">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:OverallSUB -->
+
+    <owl:Class rdf:about="&pdb;OverallSUB">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:OverallSUML -->
+
+    <owl:Class rdf:about="&pdb;OverallSUML">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:OverallSURCruishankDPI -->
+
+    <owl:Class rdf:about="&pdb;OverallSURCruishankDPI">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:OverallSURFree -->
+
+    <owl:Class rdf:about="&pdb;OverallSURFree">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
     </owl:Class>
     
 
@@ -1839,6 +2384,15 @@
 
     <owl:Class rdf:about="&pdb;PdbRecord">
         <rdfs:subClassOf rdf:resource="&resource;PDB_0000"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Phenylalanine -->
+
+    <owl:Class rdf:about="&pdb;Phenylalanine">
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010005"/>
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010006"/>
     </owl:Class>
     
 
@@ -1971,6 +2525,15 @@
     
 
 
+    <!-- http://bio2rdf.org/pdb:Proline -->
+
+    <owl:Class rdf:about="&pdb;Proline">
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010005"/>
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010007"/>
+    </owl:Class>
+    
+
+
     <!-- http://bio2rdf.org/pdb:PromethiumAtom -->
 
     <owl:Class rdf:about="&pdb;PromethiumAtom">
@@ -2022,6 +2585,23 @@
     <!-- http://bio2rdf.org/pdb:PubmedId -->
 
     <owl:Class rdf:about="&pdb;PubmedId">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Pyrrolysine -->
+
+    <owl:Class rdf:about="&pdb;Pyrrolysine">
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010007"/>
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010011"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:RFreeSelectionDetails -->
+
+    <owl:Class rdf:about="&pdb;RFreeSelectionDetails">
         <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
     </owl:Class>
     
@@ -2095,6 +2675,30 @@
 
     <owl:Class rdf:about="&pdb;RefdelfAbsortCorrection">
         <rdfs:subClassOf rdf:resource="&resource;PDB_0003"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Refinement -->
+
+    <owl:Class rdf:about="&pdb;Refinement">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0006"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:RefinementDetails -->
+
+    <owl:Class rdf:about="&pdb;RefinementDetails">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:RefinementMethod -->
+
+    <owl:Class rdf:about="&pdb;RefinementMethod">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
     </owl:Class>
     
 
@@ -2291,6 +2895,24 @@
     
 
 
+    <!-- http://bio2rdf.org/pdb:Selenocysteine -->
+
+    <owl:Class rdf:about="&pdb;Selenocysteine">
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010007"/>
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010008"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Serine -->
+
+    <owl:Class rdf:about="&pdb;Serine">
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010007"/>
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010008"/>
+    </owl:Class>
+    
+
+
     <!-- http://bio2rdf.org/pdb:SiliconAtom -->
 
     <owl:Class rdf:about="&pdb;SiliconAtom">
@@ -2339,10 +2961,82 @@
     
 
 
+    <!-- http://bio2rdf.org/pdb:SolventIonProbeRadii -->
+
+    <owl:Class rdf:about="&pdb;SolventIonProbeRadii">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:SolventModelDetails -->
+
+    <owl:Class rdf:about="&pdb;SolventModelDetails">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:SolventModelParamBsol -->
+
+    <owl:Class rdf:about="&pdb;SolventModelParamBsol">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:SolventModelParamKsol -->
+
+    <owl:Class rdf:about="&pdb;SolventModelParamKsol">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:SolventShrinkageRadii -->
+
+    <owl:Class rdf:about="&pdb;SolventShrinkageRadii">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:SolventVdwProbeRadii -->
+
+    <owl:Class rdf:about="&pdb;SolventVdwProbeRadii">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
     <!-- http://bio2rdf.org/pdb:SphereAbsortCorrection -->
 
     <owl:Class rdf:about="&pdb;SphereAbsortCorrection">
         <rdfs:subClassOf rdf:resource="&resource;PDB_0003"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:StartingModel -->
+
+    <owl:Class rdf:about="&pdb;StartingModel">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0011"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:StereochemTargetValSpecCase -->
+
+    <owl:Class rdf:about="&pdb;StereochemTargetValSpecCase">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:StereochemistryTargetValues -->
+
+    <owl:Class rdf:about="&pdb;StereochemistryTargetValues">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0009"/>
     </owl:Class>
     
 
@@ -2443,10 +3137,27 @@
     
 
 
+    <!-- http://bio2rdf.org/pdb:Threonine -->
+
+    <owl:Class rdf:about="&pdb;Threonine">
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010007"/>
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010008"/>
+    </owl:Class>
+    
+
+
     <!-- http://bio2rdf.org/pdb:ThuliumAtom -->
 
     <owl:Class rdf:about="&pdb;ThuliumAtom">
         <rdfs:subClassOf rdf:resource="&pdb;Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Thymidine5PrimeMonophosphate -->
+
+    <owl:Class rdf:about="&pdb;Thymidine5PrimeMonophosphate">
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010002"/>
     </owl:Class>
     
 
@@ -2491,6 +3202,15 @@
     
 
 
+    <!-- http://bio2rdf.org/pdb:Tryptophan -->
+
+    <owl:Class rdf:about="&pdb;Tryptophan">
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010005"/>
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010006"/>
+    </owl:Class>
+    
+
+
     <!-- http://bio2rdf.org/pdb:TungstenAtom -->
 
     <owl:Class rdf:about="&pdb;TungstenAtom">
@@ -2503,6 +3223,30 @@
 
     <owl:Class rdf:about="&pdb;Turn">
         <rdfs:subClassOf rdf:resource="&resource;PDB_0005"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:TwoPrimeDeoxyAdenosineMonophosphate -->
+
+    <owl:Class rdf:about="&pdb;TwoPrimeDeoxyAdenosineMonophosphate">
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010002"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:TwoPrimeDeoxyCitidineMonophosphate -->
+
+    <owl:Class rdf:about="&pdb;TwoPrimeDeoxyCitidineMonophosphate">
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010002"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:TwoPrimeDeoxyGuanosineFivePrimeMonophosphate -->
+
+    <owl:Class rdf:about="&pdb;TwoPrimeDeoxyGuanosineFivePrimeMonophosphate">
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010002"/>
     </owl:Class>
     
 
@@ -2555,10 +3299,36 @@
     
 
 
+    <!-- http://bio2rdf.org/pdb:Tyrosine -->
+
+    <owl:Class rdf:about="&pdb;Tyrosine">
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010006"/>
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010008"/>
+    </owl:Class>
+    
+
+
     <!-- http://bio2rdf.org/pdb:UraniumAtom -->
 
     <owl:Class rdf:about="&pdb;UraniumAtom">
         <rdfs:subClassOf rdf:resource="&pdb;Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Uridine5PrimeMonophosphate -->
+
+    <owl:Class rdf:about="&pdb;Uridine5PrimeMonophosphate">
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010003"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:Valine -->
+
+    <owl:Class rdf:about="&pdb;Valine">
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010005"/>
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010007"/>
     </owl:Class>
     
 
@@ -2611,6 +3381,14 @@
     
 
 
+    <!-- http://bio2rdf.org/pdb:XCartesianCoordinate -->
+
+    <owl:Class rdf:about="&pdb;XCartesianCoordinate">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0011"/>
+    </owl:Class>
+    
+
+
     <!-- http://bio2rdf.org/pdb:XRayDiffraction -->
 
     <owl:Class rdf:about="&pdb;XRayDiffraction">
@@ -2627,6 +3405,14 @@
     
 
 
+    <!-- http://bio2rdf.org/pdb:YCartesianCoordinate -->
+
+    <owl:Class rdf:about="&pdb;YCartesianCoordinate">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0011"/>
+    </owl:Class>
+    
+
+
     <!-- http://bio2rdf.org/pdb:YtterbiumAtom -->
 
     <owl:Class rdf:about="&pdb;YtterbiumAtom">
@@ -2639,6 +3425,14 @@
 
     <owl:Class rdf:about="&pdb;YttriumAtom">
         <rdfs:subClassOf rdf:resource="&pdb;Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:ZCartesianCoordinate -->
+
+    <owl:Class rdf:about="&pdb;ZCartesianCoordinate">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_0011"/>
     </owl:Class>
     
 
@@ -2773,6 +3567,130 @@
 
     <owl:Class rdf:about="&resource;PDB_0011">
         <rdfs:label>abstract entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_010000 -->
+
+    <owl:Class rdf:about="&resource;SIO_010000">
+        <rdfs:label
+            >nucleotide residue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&pdb;Residue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_010001 -->
+
+    <owl:Class rdf:about="&resource;SIO_010001">
+        <rdfs:label
+            >amino acid residue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&pdb;Residue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_010002 -->
+
+    <owl:Class rdf:about="&resource;SIO_010002">
+        <rdfs:label
+            >deoxyribonucleotide residue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010000"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_010003 -->
+
+    <owl:Class rdf:about="&resource;SIO_010003">
+        <rdfs:label
+            >ribonucleotide residue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010000"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_010004 -->
+
+    <owl:Class rdf:about="&resource;SIO_010004">
+        <rdfs:label xml:lang="en"
+            >polar amino acid</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010001"/>
+        <owl:disjointWith rdf:resource="&resource;SIO_010005"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_010005 -->
+
+    <owl:Class rdf:about="&resource;SIO_010005">
+        <rdfs:label xml:lang="en"
+            >non polar amino acid</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010001"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_010006 -->
+
+    <owl:Class rdf:about="&resource;SIO_010006">
+        <rdfs:label
+            >aromatic amino acid</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010001"/>
+        <owl:disjointWith rdf:resource="&resource;SIO_010007"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_010007 -->
+
+    <owl:Class rdf:about="&resource;SIO_010007">
+        <rdfs:label
+            >non aromatic amino acid</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010001"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_010008 -->
+
+    <owl:Class rdf:about="&resource;SIO_010008">
+        <rdfs:label
+            >polar uncharged amino acid</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010004"/>
+        <owl:disjointWith rdf:resource="&resource;SIO_010009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_010009 -->
+
+    <owl:Class rdf:about="&resource;SIO_010009">
+        <rdfs:label
+            >polar charged amino acid</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010004"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_010010 -->
+
+    <owl:Class rdf:about="&resource;SIO_010010">
+        <rdfs:label
+            >polar acidic amino acid</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010009"/>
+        <owl:disjointWith rdf:resource="&resource;SIO_010011"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_010011 -->
+
+    <owl:Class rdf:about="&resource;SIO_010011">
+        <rdfs:label
+            >polar basic amino acid</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&resource;SIO_010009"/>
     </owl:Class>
 </rdf:RDF>
 

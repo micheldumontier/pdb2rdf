@@ -3,6 +3,7 @@
 
 <!DOCTYPE rdf:RDF [
     <!ENTITY pdb "http://bio2rdf.org/pdb:" >
+    <!ENTITY pdb2 "http://bio2rdf.org/pdb:2" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
@@ -22,6 +23,7 @@
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:pdb2="&pdb;2"
      xmlns:pdb="http://bio2rdf.org/pdb:">
     <owl:Ontology rdf:about="http://pdb2rdf.googlecode.com/svn/trunk/ontology/pdb.owl">
         <rdfs:label xml:lang="en">A simple upper level ontology for PDB</rdfs:label>
@@ -1072,6 +1074,14 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://bio2rdf.org/pdb:2p-deoxycytidine-5p-monophosphate -->
+
+    <owl:Class rdf:about="&pdb;2p-deoxycytidine-5p-monophosphate">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_1102"/>
+    </owl:Class>
     
 
 

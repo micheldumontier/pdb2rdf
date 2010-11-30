@@ -4,6 +4,7 @@
 <!DOCTYPE rdf:RDF [
     <!ENTITY pdb "http://bio2rdf.org/pdb:" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
     <!ENTITY resource "http://semanticscience.org/resource/" >
@@ -14,6 +15,7 @@
 
 <rdf:RDF xmlns="http://pdb2rdf.googlecode.com/svn/trunk/ontology/pdb.owl#"
      xml:base="http://pdb2rdf.googlecode.com/svn/trunk/ontology/pdb.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
      xmlns:resource="http://semanticscience.org/resource/"
@@ -22,6 +24,10 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:pdb="http://bio2rdf.org/pdb:">
     <owl:Ontology rdf:about="http://pdb2rdf.googlecode.com/svn/trunk/ontology/pdb.owl">
+        <rdfs:label xml:lang="en">A simple upper level ontology for PDB</rdfs:label>
+        <dc:creator rdf:datatype="&rdf;PlainLiteral">Alexander DeLeon</dc:creator>
+        <dc:creator rdf:datatype="&rdf;PlainLiteral">Jose Cruz-Toledo</dc:creator>
+        <dc:creator rdf:datatype="&rdf;PlainLiteral">Michel Dumontier</dc:creator>
         <owl:imports rdf:resource="http://pdb2rdf.googlecode.com/svn/trunk/ontology/pdb2rdf.owl"/>
     </owl:Ontology>
     
@@ -35,6 +41,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    <owl:AnnotationProperty rdf:about="&dc;creator"/>
     <owl:AnnotationProperty rdf:about="&rdfs;label"/>
     
 
@@ -47,6 +54,22 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://bio2rdf.org/pdb:beginsAt -->
+
+    <owl:ObjectProperty rdf:about="&pdb;beginsAt">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:endsAt -->
+
+    <owl:ObjectProperty rdf:about="&pdb;endsAt">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
     
 
 
@@ -74,9 +97,89 @@
     
 
 
+    <!-- http://bio2rdf.org/pdb:hasAnisoB11 -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasAnisoB11">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0013"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasAnisoB12 -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasAnisoB12">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0013"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasAnisoB13 -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasAnisoB13">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0013"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasAnisoB22 -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasAnisoB22">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0013"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasAnisoB23 -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasAnisoB23">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0013"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasAnisoB33 -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasAnisoB33">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0013"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://bio2rdf.org/pdb:hasAuthor -->
 
     <owl:ObjectProperty rdf:about="&pdb;hasAuthor">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasAverageConstraintViolationsPerResidue -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasAverageConstraintViolationsPerResidue">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasBIsoMax -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasBIsoMax">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasBIsoMean -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasBIsoMean">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasBIsoMin -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasBIsoMin">
         <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
     </owl:ObjectProperty>
     
@@ -114,6 +217,38 @@
     
 
 
+    <!-- http://bio2rdf.org/pdb:hasConformerSelectionCriteria -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasConformerSelectionCriteria">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasCoordinate -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasCoordinate">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0013"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasCorrelationCoefficientFoToFc -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasCorrelationCoefficientFoToFc">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasCorrelationCoefficientFoToFcFree -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasCorrelationCoefficientFoToFcFree">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://bio2rdf.org/pdb:hasCountryOfPublication -->
 
     <owl:ObjectProperty rdf:about="&pdb;hasCountryOfPublication">
@@ -125,6 +260,38 @@
     <!-- http://bio2rdf.org/pdb:hasDOI -->
 
     <owl:ObjectProperty rdf:about="&pdb;hasDOI">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasDataCutoffHighAbsF -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasDataCutoffHighAbsF">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasDataCutoffHighRmsAbsF -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasDataCutoffHighRmsAbsF">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasDataCutoffLowAbsF -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasDataCutoffLowAbsF">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasDetails -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasDetails">
         <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
     </owl:ObjectProperty>
     
@@ -226,6 +393,14 @@
     
 
 
+    <!-- http://bio2rdf.org/pdb:hasIsotropicThermalModel -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasIsotropicThermalModel">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://bio2rdf.org/pdb:hasJournalAbbreviation -->
 
     <owl:ObjectProperty rdf:about="&pdb;hasJournalAbbreviation">
@@ -250,6 +425,166 @@
     
 
 
+    <!-- http://bio2rdf.org/pdb:hasLsCrossValidMethod -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasLsCrossValidMethod">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasLsDResHigh -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasLsDResHigh">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasLsDResLow -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasLsDResLow">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasLsNumberParameters -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasLsNumberParameters">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasLsNumberReflnsAll -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasLsNumberReflnsAll">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasLsNumberReflnsObs -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasLsNumberReflnsObs">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasLsNumberReflnsRFree -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasLsNumberReflnsRFree">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasLsNumberRestraints -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasLsNumberRestraints">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasLsPercentReflnsObs -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasLsPercentReflnsObs">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasLsPercentReflnsRFree -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasLsPercentReflnsRFree">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasLsRFactorAll -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasLsRFactorAll">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasLsRFactorObs -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasLsRFactorObs">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasLsRFactorRFree -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasLsRFactorRFree">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasLsRFactorRFreeError -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasLsRFactorRFreeError">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasLsRFactorRWork -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasLsRFactorRWork">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasLsRedundancyReflnsObs -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasLsRedundancyReflnsObs">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasLsSigmaF -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasLsSigmaF">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasLsSigmaI -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasLsSigmaI">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasLsWRFactorRFree -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasLsWRFactorRFree">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasLsWRFactorRWork -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasLsWRFactorRWork">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://bio2rdf.org/pdb:hasMaximumTransmissionFactor -->
 
     <owl:ObjectProperty rdf:about="&pdb;hasMaximumTransmissionFactor">
@@ -261,6 +596,14 @@
     <!-- http://bio2rdf.org/pdb:hasMedlineId -->
 
     <owl:ObjectProperty rdf:about="&pdb;hasMedlineId">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasMethodToDetermineStruct -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasMethodToDetermineStruct">
         <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
     </owl:ObjectProperty>
     
@@ -309,6 +652,94 @@
     <!-- http://bio2rdf.org/pdb:hasOccupancy -->
 
     <owl:ObjectProperty rdf:about="&pdb;hasOccupancy">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasOccupancyMax -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasOccupancyMax">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasOccupancyMin -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasOccupancyMin">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasOverallESUR -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasOverallESUR">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasOverallESURFree -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasOverallESURFree">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasOverallFOMFreeRSet -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasOverallFOMFreeRSet">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasOverallFOMWorkRSet -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasOverallFOMWorkRSet">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasOverallPhaseError -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasOverallPhaseError">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasOverallSUB -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasOverallSUB">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasOverallSUML -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasOverallSUML">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasOverallSURCruickshankDPI -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasOverallSURCruickshankDPI">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasOverallSURFree -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasOverallSURFree">
         <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
     </owl:ObjectProperty>
     
@@ -370,6 +801,14 @@
     
 
 
+    <!-- http://bio2rdf.org/pdb:hasRFreeSelectionDetails -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasRFreeSelectionDetails">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://bio2rdf.org/pdb:hasReciprocalAngleAlpha -->
 
     <owl:ObjectProperty rdf:about="&pdb;hasReciprocalAngleAlpha">
@@ -418,6 +857,54 @@
     
 
 
+    <!-- http://bio2rdf.org/pdb:hasSolventIonProbeRadii -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasSolventIonProbeRadii">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasSolventModelDetails -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasSolventModelDetails">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasSolventModelParamBsol -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasSolventModelParamBsol">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasSolventModelParamKsol -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasSolventModelParamKsol">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasSolventShrinkageRadii -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasSolventShrinkageRadii">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasSolventVdwProbeRadii -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasSolventVdwProbeRadii">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://bio2rdf.org/pdb:hasSource -->
 
     <owl:ObjectProperty rdf:about="&pdb;hasSource">
@@ -429,6 +916,30 @@
     <!-- http://bio2rdf.org/pdb:hasSpatialLocation -->
 
     <owl:ObjectProperty rdf:about="&pdb;hasSpatialLocation">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasStartingModel -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasStartingModel">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasStereochemTargetValSpecCase -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasStereochemTargetValSpecCase">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasStereochemistryTargetValues -->
+
+    <owl:ObjectProperty rdf:about="&pdb;hasStereochemistryTargetValues">
         <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
     </owl:ObjectProperty>
     
@@ -494,6 +1005,22 @@
 
     <owl:ObjectProperty rdf:about="&pdb;hasZCoordinate">
         <rdfs:subPropertyOf rdf:resource="&resource;PDB_0013"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:isDerivedFrom -->
+
+    <owl:ObjectProperty rdf:about="&pdb;isDerivedFrom">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:isImmediatelyBefore -->
+
+    <owl:ObjectProperty rdf:about="&pdb;isImmediatelyBefore">
+        <rdfs:subPropertyOf rdf:resource="&resource;PDB_0012"/>
     </owl:ObjectProperty>
     
 

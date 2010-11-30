@@ -1,1486 +1,1507 @@
-<rdf:RDF
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:owl="http://www.w3.org/2002/07/owl#"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    xmlns:pdb="http://bio2rdf.org/pdb:"
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" > 
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LeftHandedDoubleHelix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Pyrrolysine">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasOverallSUB">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:CorrelationCoefficientFoToFc">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:OverallESURFree">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:TellurimAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:FluorescenceTransfer">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:NonStandardTurn">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:SiliconAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:BIsoMin">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:RefdelfAbsortCorrection">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:OverallESUR">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Bacteria">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:StartingModel">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:ChlorineAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasNumberOfMonomers">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Uridine5PrimeMonophosphate">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Polydeoxyribonucleotide">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:IsotropicAtomicDisplacement">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:SeaborgiumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasValue">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasAuthor">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasOverallPhaseError">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:RoentgeniumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LsNumberReflnsObs">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:TypeIIIPrimeTurn">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:AngleBeta">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:GaussianAbsortCorrection">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LsCrossValidMethod">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasTitle">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:ChemicalSubstanceExtraction">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Tissue">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Water">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasOccupancy">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:ChainPosition">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LanthanumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:StrontiumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasOverallESUR">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LeftHandedAlphaHelix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasLsCrossValidMethod">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:isProducedBy">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:PdbRecord">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasXCoordinate">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasDocumentSection">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Glutamine">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LeftHandedZDoubleHelix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:HydrogenAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasFormalCharge">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LeftHandedADoubleHelix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:CanonicalPolymerSequence">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:NitrogenAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:OverallPhaseError">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasLsWRFactorRFree">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:DoubleHelix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Polypeptide(L)">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasCorrelationCoefficientFoToFcFree">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:OccupancyMax">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasMethodToDetermineStruct">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasLanguage">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:SolutionScattering">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasLastPageNumber">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:IntegrationAbsortCorrection">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:ReciprocalEdgeCLength">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LsRFactorAll">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LeftHandedOmegaHelix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:PartialCharge">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LithiumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:OverallSUML">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasSolventModelParamKsol">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:XCartesianCoordinate">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasOccupancyMin">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LsRFactorRFree">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasDetails">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Model">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Aniso_B13">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LsRedundancyReflnsObs">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasCoefficientMu">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:ReciprocalEdgeBLength">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:isParticipantIn">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:PowderDiffraction">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:MercuryAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LsRFactorObs">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasDataCutoffHighAbsF">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasLsDResLow">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:RightHanded2.2-7Helix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:TypeITurn">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:RutheniumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:TypeIIITurn">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:SolventModelParamBsol">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasLsDResHigh">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:TwoPrimeDeoxyCitidineMonophosphate">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:CesiumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Aniso_B12">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:NumberOfMonomers">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasOverallSUML">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LeftHandedPolyprolineHelix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasLsNumberReflnsObs">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Name">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Polymer">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:RightHandedADoubleHelix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Cysteine">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasLsSigmaI">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Chain">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasExperimentalFormulaWeight">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Aniso_B11">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:ISSN">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasLsRFactorRFree">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasName">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Cell">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasDevelopmentStage">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:ReciprocalEdgeALength">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:MendeleviumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasReciprocalEdgeCLength">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:BetaStrand">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Journal">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:TheoreticalFormulaWeight">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:NonStandardRightHandedDoubleHelix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasMedlineId">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:GoldAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LeftHandedGammaHelix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasStartingModel">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:OccupancyMin">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:TwoPrimeDeoxyGuanosineFivePrimeMonophosphate">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:PlatinumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:SolventModelDetails">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:ReciprocalAngleGamma">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:TechnetiumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:MaximumTransmissionFactor">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasStandardDeviation">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasProduct">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:AsparticAcid">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:NiobiumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Publication">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:BromineAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:CuriumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:NonStandardHelix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Organ">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasJournalAbbreviation">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasBIsoMax">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:OsmiumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:NonStandardDoubleHelix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:AtomOccupancy">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LsPercentReflnsObs">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Aniso_B22">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LsNumberRestraints">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Organelle">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:YtterbiumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasCountryOfPublication">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:isImmediatelyBefore">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:RightHandedAlphaHelix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:DataCutoffLowAbsF">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasNumberOfAtoms">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:CartesianCoordinate">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:EdgeCLength">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:CaliforniumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:OverallFOMFreeRSet">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:GalliumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Aniso_B23">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LeadAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:OverallSURCruishankDPI">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:BismuthAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Tyrosine">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasAngleBeta">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:ZincAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasSolventVdwProbeRadii">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:TypeIITurn">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:RubidiumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:PhosphorusAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:PubmedId">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Valine">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LeftHandedHelix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasTheoreticalFormulaWeight">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:FluorineAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Turn">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:CarbonAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasPublisher">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasLsRFactorAll">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:ScandiumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Methionine">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:HolmiumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Serine">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:GeneticallyManipulatedChemicalSubstanceExtraction">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:AmericiumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:StereochemTargetValSpecCase">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:ZirconiumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:HeliumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:DeuteriumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasStereochemTargetValSpecCase">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:ThalliumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:SolventModelParamKsol">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LeftHandedPiHelix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:ElectronMicroscopy">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasVolumeNumber">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:TerbiumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:EdgeBLength">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasCorrelationCoefficientFoToFc">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:RightHandPolyprolineHelix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasOccupancyMax">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:CyclicPseudoPeptide">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LsNumberReflnsRFree">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:SeleniumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:XenonAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Experiment">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:BohriumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:MinimumTransmissionFactor">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:ChemicalSubstanceAmount">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:beginsAt">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LsDResLow">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:PraseodymiumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LawrenciumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:ArsenicAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:NonStandardRightHandedHelix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasLsNumberReflnsAll">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:YCartesianCoordinate">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:PageNumber">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:RadiumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:RFreeSelectionDetails">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasUnitCell">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasLsRFactorObs">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:PublicationYear">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:RuthefordiumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LutetiumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:ISBN">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:SphereAbsortCorrection">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:StructureDetermination">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LsWRFactorRWork">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:ErbiumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:NaturalChemicalSubstanceExtraction">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Aniso_B33">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Phenylalanine">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:isDerivedFrom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:RadonAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Polyribonucleotide">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasLsNumberRestraints">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasBIsoMean">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasOverallFOMWorkRSet">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:FranciumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasParticipant">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Lysine">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Alanine">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:AntimonyAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:PalladiumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:RhodiumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasNumberOfNonHydrogenAtoms">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Arginine">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:JournalAbbreviation">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:isPublishedIn">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasLsPercentReflnsObs">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LsPercentReflnsRFree">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LeftHanded2.2-7Helix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Publisher">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:NonStandardLeftHandedHelix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasDataCutoffLowAbsF">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Volume">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasVolume">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:FermiumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Adenosine5PrimeMonophosphate">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasDataCutoffHighRmsAbsF">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasLsRFactorRFreeError">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:NobeliumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:BariumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:DevelopmentStage">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Helix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:ReciprocalAngleAlpha">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:IronAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Threonine">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasOverallESURFree">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:RightHandedDoubleHelix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Macrolide">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasMinimumTransmissionFactor">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:CadmiumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LeftHanded3-10Helix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasPublicationYear">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Proline">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:EuropiumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:AnalyticalAbsortCorrection">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:TypeIPrimeTurn">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:TantalumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:GadoliniumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:ConformerSelectionCriteria">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:RightHandedZDoubleHelix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasPubmedId">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:RightHandedGammaHelix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:TungstenAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasChemicalFormula">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:TypeIIPrimeTurn">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:AstatineAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:HelixLength">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:2p-deoxycytidine-5p-monophosphate">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Vector">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasZCoordinate">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasISBN">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:DysprosiumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:NumberOfAtoms">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasReciprocalAngleBeta">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:NeodymiumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasBIsoMin">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:DocumentVolume">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasAngleGamma">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Language">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:ActiniumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:TissueFraction">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:AngleAlpha">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:OxygenAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:NickelAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:ExperimentalFormulaWeight">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasYCoordinate">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:PotassiumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Plasmid">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasSolventIonProbeRadii">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LsRFactorRFreeError">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:EmpiricalAbsortCorrection">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Virus">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:MolybdenumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:CopperAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:ArgonAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:AtomSpatialLocation">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:BIsoMean">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:NeutronDiffraction">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:VolumeNumber">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:CoefficientMu">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasMaximumTransmissionFactor">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:BerylliumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:NeonAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Cosmid">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:ThoriumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LsRFactorRFreeErrorDetails">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:YttriumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:XRayDiffraction">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasSolventModelParamBsol">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasReciprocalEdgeBLength">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:MultiScanAbsortCorrection">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:RheniumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasReciprocalAngleGamma">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Abstract">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasLsPercentReflnsRFree">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:IndiumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasConformerSelectionCriteria">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Secretion">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Histidine">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:ThuliumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:SilverAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Macrophage">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:description">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:RefinementMethod">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:TitaniumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:GermaniumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasPolymerSequence">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:SulfurAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Cytidine5PrimeMonophosphate">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:ChromiumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasChainPosition">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:RightHandedBDoubleHelix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:AluminumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasISSN">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:OverallSURFree">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:RightHanded3-10Helix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasReciprocalEdgeALength">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasAverageConstraintViolationsPerResidue">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:DOI">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:EdgeALength">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:IodineAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:RightHandedHelix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasEdgeCLength">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasPublication">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasDOI">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasLsNumberParameters">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:experimentalMethod">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasEdgeBLength">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Country">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:DarmstadtiumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:NonPolymer">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasCoordinate">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Title">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:CylinderAbsortCorrection">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:NeptuniumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Book">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Refinement">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasHelixLegth">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasAngleAlpha">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasSource">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:PolymerSequence">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LeftHandedBDoubleHelix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Asparagine">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:NumberOfNonHydrogenAtoms">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:VanadiumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:DataCutoffHighRmsAbsF">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:SolventIonProbeRadii">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasLsSigmaF">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:SynthecticChemicalSubstanceExtraction">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasSpatialLocation">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:polysaccharide(L)">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:BerkeliumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Glycine">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasSolventShrinkageRadii">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:ReciprocalAngleBeta">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Polysaccharide(D)">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:RightHandedPiHelix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:details">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:OverallSUB">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LsNumberReflnsAll">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasStereochemistryTargetValues">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:NonStandardLeftHandedDoubleHelix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasAnisoB13">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Leucine">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:IridiumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:DubniumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:SodiumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:ChemicalSubstance">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasAnisoB33">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:CeriumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:CalciumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasReciprocalAngleAlpha">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasAnisoB23">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasLsWRFactorRWork">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasAnisoB12">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasSolventModelDetails">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:EinsteiniumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:IsotropicThermalModel">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:HassiumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasLsNumberReflnsRFree">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasAnisoB22">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:AngleGamma">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:ChemicalFormula">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasChemicalSubstanceAmount">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasAnisoB11">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:PsiScanAbsortCorrection">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Atom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:MedlineId">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:AverageConstraintViolationsPerResidue">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:ZCartesianCoordinate">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:HybridExperimentalMethod">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Isoleucine">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:SolventShrinkageRadii">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:UraniumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:RightHandedOmegaHelix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LsSigmaI">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:MethodToDetermineStruct">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasIsotropicThermalModel">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:MagnesiumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Polypeptide(D)">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:ProtactiniumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasOverallSURFree">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasLsRedundancyReflnsObs">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:OverallFOMWorkRSet">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LsWRFactorRFree">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:KryptonAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasOverallFOMFreeRSet">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:SolutionNmr">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:GlutamicAcid">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:BoronAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:mutation">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:ManganeseAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:endsAt">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:PromethiumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasOverallSURCruickshankDPI">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LsNumberParameters">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:SolidStateNmr">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:CellularLocation">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:StereochemistryTargetValues">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:PlutoniumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:DataCutoffHighAbsF">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Polydeoxyribonucleotide-Polyribonucleotide">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:ElectronCrystallography">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Selenocysteine">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Guanosine5PrimeMonophosphate">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:BIsoMax">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Thymidine5PrimeMonophosphate">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:MeitneriumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasEdgeALength">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:TheoreticalModel">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Baculovirus">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Tryptophan">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LsDResHigh">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:NumericalAbsortCorrection">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasLsRFactorRWork">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:TinAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasFirstPageNumber">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:HafniumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:CobaltAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:SamariumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:FiberDiffraction">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LsSigmaF">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:CorrelationCoefficientFoToFcFree">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasIsotropicAtomicDisplacement">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:hasRFreeSelectionDetails">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:LsRFactorRWork">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:Residue">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:SolventVdwProbeRadii">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:InfraredSpectroscopy">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:modification">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:RefinementDetails">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bio2rdf.org/pdb:PoloniumAtom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-</rdf:RDF>
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace">
+    <Prefix name="pdb" IRI="http://bio2rdf.org/pdb:"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:2p-deoxycytidine-5p-monophosphate"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Abstract"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:ActiniumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Adenosine5PrimeMonophosphate"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Alanine"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:AluminumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:AmericiumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:AnalyticalAbsortCorrection"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:AngleAlpha"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:AngleBeta"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:AngleGamma"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Aniso_B11"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Aniso_B12"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Aniso_B13"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Aniso_B22"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Aniso_B23"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Aniso_B33"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:AntimonyAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Arginine"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:ArgonAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:ArsenicAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Asparagine"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:AsparticAcid"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:AstatineAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Atom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:AtomOccupancy"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:AtomSpatialLocation"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:AverageConstraintViolationsPerResidue"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:BIsoMax"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:BIsoMean"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:BIsoMin"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Bacteria"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Baculovirus"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:BariumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:BerkeliumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:BerylliumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:BetaStrand"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:BismuthAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:BohriumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Book"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:BoronAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:BromineAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:CadmiumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:CalciumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:CaliforniumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:CanonicalPolymerSequence"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:CarbonAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:CartesianCoordinate"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Cell"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:CellularLocation"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:CeriumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:CesiumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Chain"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:ChainPosition"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:ChemicalFormula"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:ChemicalSubstance"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:ChemicalSubstanceAmount"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:ChemicalSubstanceExtraction"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:ChlorineAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:ChromiumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:CobaltAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:CoefficientMu"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:ConformerSelectionCriteria"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:CopperAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:CorrelationCoefficientFoToFc"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:CorrelationCoefficientFoToFcFree"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Cosmid"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Country"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:CuriumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:CyclicPseudoPeptide"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:CylinderAbsortCorrection"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Cysteine"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Cytidine5PrimeMonophosphate"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:DOI"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:DarmstadtiumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:DataCutoffHighAbsF"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:DataCutoffHighRmsAbsF"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:DataCutoffLowAbsF"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:DeuteriumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:DevelopmentStage"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:DocumentVolume"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:DoubleHelix"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:DubniumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:DysprosiumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:EdgeALength"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:EdgeBLength"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:EdgeCLength"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:EinsteiniumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:ElectronCrystallography"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:ElectronMicroscopy"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:EmpiricalAbsortCorrection"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:ErbiumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:EuropiumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Experiment"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:ExperimentalFormulaWeight"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:FermiumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:FiberDiffraction"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:FluorescenceTransfer"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:FluorineAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:FranciumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:GadoliniumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:GalliumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:GaussianAbsortCorrection"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:GeneticallyManipulatedChemicalSubstanceExtraction"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:GermaniumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:GlutamicAcid"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Glutamine"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Glycine"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:GoldAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Guanosine5PrimeMonophosphate"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:HafniumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:HassiumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:HeliumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Helix"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:HelixLength"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Histidine"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:HolmiumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:HybridExperimentalMethod"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:HydrogenAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:ISBN"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:ISSN"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:IndiumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:InfraredSpectroscopy"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:IntegrationAbsortCorrection"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:IodineAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:IridiumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:IronAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Isoleucine"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:IsotropicAtomicDisplacement"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:IsotropicThermalModel"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Journal"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:JournalAbbreviation"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:KryptonAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Language"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LanthanumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LawrenciumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LeadAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LeftHanded2.2-7Helix"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LeftHanded3-10Helix"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LeftHandedADoubleHelix"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LeftHandedAlphaHelix"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LeftHandedBDoubleHelix"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LeftHandedDoubleHelix"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LeftHandedGammaHelix"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LeftHandedHelix"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LeftHandedOmegaHelix"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LeftHandedPiHelix"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LeftHandedPolyprolineHelix"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LeftHandedZDoubleHelix"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Leucine"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LithiumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LsCrossValidMethod"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LsDResHigh"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LsDResLow"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LsNumberParameters"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LsNumberReflnsAll"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LsNumberReflnsObs"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LsNumberReflnsRFree"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LsNumberRestraints"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LsPercentReflnsObs"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LsPercentReflnsRFree"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LsRFactorAll"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LsRFactorObs"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LsRFactorRFree"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LsRFactorRFreeError"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LsRFactorRFreeErrorDetails"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LsRFactorRWork"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LsRedundancyReflnsObs"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LsSigmaF"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LsSigmaI"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LsWRFactorRFree"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LsWRFactorRWork"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:LutetiumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Lysine"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Macrolide"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Macrophage"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:MagnesiumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:ManganeseAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:MaximumTransmissionFactor"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:MedlineId"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:MeitneriumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:MendeleviumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:MercuryAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Methionine"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:MethodToDetermineStruct"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:MinimumTransmissionFactor"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Model"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:MolybdenumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:MultiScanAbsortCorrection"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Name"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:NaturalChemicalSubstanceExtraction"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:NeodymiumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:NeonAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:NeptuniumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:NeutronDiffraction"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:NickelAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:NiobiumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:NitrogenAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:NobeliumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:NonPolymer"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:NonStandardDoubleHelix"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:NonStandardHelix"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:NonStandardLeftHandedDoubleHelix"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:NonStandardLeftHandedHelix"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:NonStandardRightHandedDoubleHelix"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:NonStandardRightHandedHelix"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:NonStandardTurn"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:NumberOfAtoms"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:NumberOfMonomers"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:NumberOfNonHydrogenAtoms"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:NumericalAbsortCorrection"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:OccupancyMax"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:OccupancyMin"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Organ"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Organelle"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:OsmiumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:OverallESUR"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:OverallESURFree"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:OverallFOMFreeRSet"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:OverallFOMWorkRSet"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:OverallPhaseError"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:OverallSUB"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:OverallSUML"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:OverallSURCruishankDPI"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:OverallSURFree"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:OxygenAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:PageNumber"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:PalladiumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:PartialCharge"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:PdbRecord"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Phenylalanine"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:PhosphorusAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Plasmid"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:PlatinumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:PlutoniumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:PoloniumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Polydeoxyribonucleotide"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Polydeoxyribonucleotide-Polyribonucleotide"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Polymer"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:PolymerSequence"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Polypeptide(D)"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Polypeptide(L)"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Polyribonucleotide"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Polysaccharide(D)"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:PotassiumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:PowderDiffraction"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:PraseodymiumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Proline"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:PromethiumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:ProtactiniumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:PsiScanAbsortCorrection"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Publication"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:PublicationYear"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Publisher"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:PubmedId"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Pyrrolysine"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:RFreeSelectionDetails"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:RadiumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:RadonAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:ReciprocalAngleAlpha"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:ReciprocalAngleBeta"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:ReciprocalAngleGamma"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:ReciprocalEdgeALength"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:ReciprocalEdgeBLength"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:ReciprocalEdgeCLength"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:RefdelfAbsortCorrection"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Refinement"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:RefinementDetails"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:RefinementMethod"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Residue"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:RheniumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:RhodiumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:RightHandPolyprolineHelix"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:RightHanded2.2-7Helix"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:RightHanded3-10Helix"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:RightHandedADoubleHelix"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:RightHandedAlphaHelix"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:RightHandedBDoubleHelix"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:RightHandedDoubleHelix"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:RightHandedGammaHelix"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:RightHandedHelix"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:RightHandedOmegaHelix"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:RightHandedPiHelix"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:RightHandedZDoubleHelix"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:RoentgeniumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:RubidiumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:RuthefordiumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:RutheniumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:SamariumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:ScandiumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:SeaborgiumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Secretion"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:SeleniumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Selenocysteine"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Serine"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:SiliconAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:SilverAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:SodiumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:SolidStateNmr"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:SolutionNmr"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:SolutionScattering"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:SolventIonProbeRadii"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:SolventModelDetails"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:SolventModelParamBsol"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:SolventModelParamKsol"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:SolventShrinkageRadii"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:SolventVdwProbeRadii"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:SphereAbsortCorrection"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:StartingModel"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:StereochemTargetValSpecCase"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:StereochemistryTargetValues"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:StrontiumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:StructureDetermination"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:SulfurAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:SynthecticChemicalSubstanceExtraction"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:TantalumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:TechnetiumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:TellurimAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:TerbiumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:ThalliumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:TheoreticalFormulaWeight"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:TheoreticalModel"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:ThoriumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Threonine"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:ThuliumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Thymidine5PrimeMonophosphate"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:TinAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Tissue"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:TissueFraction"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:TitaniumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Title"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Tryptophan"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:TungstenAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Turn"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:TwoPrimeDeoxyCitidineMonophosphate"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:TwoPrimeDeoxyGuanosineFivePrimeMonophosphate"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:TypeIIIPrimeTurn"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:TypeIIITurn"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:TypeIIPrimeTurn"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:TypeIITurn"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:TypeIPrimeTurn"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:TypeITurn"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Tyrosine"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:UraniumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Uridine5PrimeMonophosphate"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Valine"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:VanadiumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Vector"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Virus"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Volume"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:VolumeNumber"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:Water"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:XCartesianCoordinate"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:XRayDiffraction"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:XenonAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:YCartesianCoordinate"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:YtterbiumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:YttriumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:ZCartesianCoordinate"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:ZincAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:ZirconiumAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pdb:polysaccharide(L)"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:beginsAt"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:endsAt"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasAngleAlpha"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasAngleBeta"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasAngleGamma"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasAnisoB11"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasAnisoB12"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasAnisoB13"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasAnisoB22"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasAnisoB23"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasAnisoB33"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasAuthor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasAverageConstraintViolationsPerResidue"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasBIsoMax"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasBIsoMean"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasBIsoMin"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasChainPosition"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasChemicalFormula"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasChemicalSubstanceAmount"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasCoefficientMu"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasConformerSelectionCriteria"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasCoordinate"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasCorrelationCoefficientFoToFc"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasCorrelationCoefficientFoToFcFree"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasCountryOfPublication"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasDOI"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasDataCutoffHighAbsF"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasDataCutoffHighRmsAbsF"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasDataCutoffLowAbsF"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasDetails"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasDevelopmentStage"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasDocumentSection"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasEdgeALength"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasEdgeBLength"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasEdgeCLength"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasExperimentalFormulaWeight"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasFirstPageNumber"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasFormalCharge"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasHelixLegth"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasISBN"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasISSN"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasIsotropicAtomicDisplacement"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasIsotropicThermalModel"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasJournalAbbreviation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasLanguage"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasLastPageNumber"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasLsCrossValidMethod"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasLsDResHigh"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasLsDResLow"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasLsNumberParameters"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasLsNumberReflnsAll"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasLsNumberReflnsObs"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasLsNumberReflnsRFree"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasLsNumberRestraints"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasLsPercentReflnsObs"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasLsPercentReflnsRFree"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasLsRFactorAll"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasLsRFactorObs"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasLsRFactorRFree"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasLsRFactorRFreeError"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasLsRFactorRWork"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasLsRedundancyReflnsObs"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasLsSigmaF"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasLsSigmaI"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasLsWRFactorRFree"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasLsWRFactorRWork"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasMaximumTransmissionFactor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasMedlineId"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasMethodToDetermineStruct"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasMinimumTransmissionFactor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasName"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasNumberOfAtoms"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasNumberOfMonomers"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasNumberOfNonHydrogenAtoms"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasOccupancy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasOccupancyMax"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasOccupancyMin"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasOverallESUR"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasOverallESURFree"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasOverallFOMFreeRSet"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasOverallFOMWorkRSet"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasOverallPhaseError"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasOverallSUB"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasOverallSUML"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasOverallSURCruickshankDPI"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasOverallSURFree"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasParticipant"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasPolymerSequence"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasProduct"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasPublication"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasPublicationYear"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasPublisher"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasPubmedId"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasRFreeSelectionDetails"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasReciprocalAngleAlpha"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasReciprocalAngleBeta"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasReciprocalAngleGamma"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasReciprocalEdgeALength"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasReciprocalEdgeBLength"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasReciprocalEdgeCLength"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasSolventIonProbeRadii"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasSolventModelDetails"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasSolventModelParamBsol"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasSolventModelParamKsol"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasSolventShrinkageRadii"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasSolventVdwProbeRadii"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasSource"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasSpatialLocation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasStartingModel"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasStereochemTargetValSpecCase"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasStereochemistryTargetValues"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasTheoreticalFormulaWeight"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasTitle"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasUnitCell"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasVolume"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasVolumeNumber"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasXCoordinate"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasYCoordinate"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:hasZCoordinate"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:isDerivedFrom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:isImmediatelyBefore"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:isParticipantIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:isProducedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="pdb:isPublishedIn"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="pdb:hasStandardDeviation"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="pdb:hasValue"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="pdb:description"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="pdb:details"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="pdb:experimentalMethod"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="pdb:modification"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="pdb:mutation"/>
+    </Declaration>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.1.0.20069) http://owlapi.sourceforge.net -->
+

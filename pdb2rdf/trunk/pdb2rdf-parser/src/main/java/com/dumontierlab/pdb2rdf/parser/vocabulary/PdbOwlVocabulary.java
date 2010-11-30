@@ -375,7 +375,7 @@ public class PdbOwlVocabulary {
 		Refinement(DEFAULT_NAMESPACE + "Refinement"),
 		Alanine(DEFAULT_NAMESPACE + "Alanine"),
 		Arginine(DEFAULT_NAMESPACE + "Arginine"),
-		Asparagine(DEFAULT_NAMESPACE + "Asparigine"),
+		Asparagine(DEFAULT_NAMESPACE + "Asparagine"),
 		AsparticAcid(DEFAULT_NAMESPACE + "AsparticAcid"),
 		Cysteine(DEFAULT_NAMESPACE + "Cysteine"),
 		GlutamicAcid(DEFAULT_NAMESPACE + "GlutamicAcid"),

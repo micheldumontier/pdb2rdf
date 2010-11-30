@@ -41,14 +41,14 @@ public class ResidueTable {
 		put("GUANOSINE-5&apos;-MONOPHOSPHATE", PdbOwlVocabulary.Class.GuanosineFivePrimeMonophosphate);
 		put("URIDINE-5&apos;-MONOPHOSPHATE",PdbOwlVocabulary.Class.UridineFivePrimeMonophosphate);
 		put("ADENOSINE-5&apos;-MONOPHOSPHATE",PdbOwlVocabulary.Class.AdenosineFivePrimeMonophosphate);
-		put("2&apos;-DEOXYADENOSINE-5&apos;-MONOPHOSPHATE", PdbOwlVocabulary.Class.TwoPrimeDeoxyAdenosineFivePrimeMonophosphate);
+		put("2P-DEOXYADENOSINE-5P-MONOPHOSPHATE", PdbOwlVocabulary.Class.TwoPrimeDeoxyAdenosineFivePrimeMonophosphate);
 		put("2&apos;-DEOXYGUANOSINE-5&apos;-MONOPHOSPHATE", PdbOwlVocabulary.Class.TwoPrimeDeoxyGuanosineFivePrimeMonophosphate);
 		put("THYMIDINE-5&apos;-MONOPHOSPHATE", PdbOwlVocabulary.Class.ThymidineFivePrimeMonophosphate);
 	}
 	
 	public static PdbOwlVocabulary.Class get(String typeSymbol){
 		PdbOwlVocabulary.Class c = symbol2class.get(typeSymbol.toUpperCase());
-		assert c != null: "Unknown residue type symbol" + typeSymbol;
+		assert c != null: "Unknown residue type symbol " + typeSymbol;
 		return c;
 	}
 	

@@ -3,6 +3,7 @@
 
 <!DOCTYPE rdf:RDF [
     <!ENTITY pdb "http://bio2rdf.org/pdb:" >
+    <!ENTITY pdb2 "http://bio2rdf.org/pdb:2" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
@@ -22,13 +23,13 @@
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:pdb2="&pdb;2"
      xmlns:pdb="http://bio2rdf.org/pdb:">
     <owl:Ontology rdf:about="http://pdb2rdf.googlecode.com/svn/trunk/ontology/pdb.owl">
         <rdfs:label xml:lang="en">A simple upper level ontology for PDB</rdfs:label>
         <dc:creator rdf:datatype="&rdf;PlainLiteral">Alexander DeLeon</dc:creator>
         <dc:creator rdf:datatype="&rdf;PlainLiteral">Jose Cruz-Toledo</dc:creator>
         <dc:creator rdf:datatype="&rdf;PlainLiteral">Michel Dumontier</dc:creator>
-        <owl:imports rdf:resource="http://pdb2rdf.googlecode.com/svn/trunk/ontology/pdb2rdf.owl"/>
     </owl:Ontology>
     
 
@@ -42,6 +43,11 @@
      -->
 
     <owl:AnnotationProperty rdf:about="&dc;creator"/>
+    <owl:AnnotationProperty rdf:about="&pdb;details"/>
+    <owl:AnnotationProperty rdf:about="&pdb;modification"/>
+    <owl:AnnotationProperty rdf:about="&pdb;experimentalMethod"/>
+    <owl:AnnotationProperty rdf:about="&pdb;mutation"/>
+    <owl:AnnotationProperty rdf:about="&pdb;description"/>
     <owl:AnnotationProperty rdf:about="&rdfs;label"/>
     
 
@@ -1067,11 +1073,42 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasStandardDeviation -->
+
+    <owl:DatatypeProperty rdf:about="&pdb;hasStandardDeviation"/>
+    
+
+
+    <!-- http://bio2rdf.org/pdb:hasValue -->
+
+    <owl:DatatypeProperty rdf:about="&pdb;hasValue"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Classes
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://bio2rdf.org/pdb:2p-deoxycytidine-5p-monophosphate -->
+
+    <owl:Class rdf:about="&pdb;2p-deoxycytidine-5p-monophosphate">
+        <rdfs:subClassOf rdf:resource="&resource;PDB_1102"/>
+    </owl:Class>
     
 
 

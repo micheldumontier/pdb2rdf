@@ -1267,6 +1267,12 @@
 
     <owl:Class rdf:about="&pdb;Atom">
         <rdfs:subClassOf rdf:resource="&resource;PDB_0007"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&resource;PDB_0012"/>
+                <owl:someValuesFrom rdf:resource="&pdb;AtomSpatialLocation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -3246,6 +3252,12 @@
 
     <owl:Class rdf:about="&pdb;Residue">
         <rdfs:subClassOf rdf:resource="&resource;PDB_0005"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&resource;PDB_0013"/>
+                <owl:someValuesFrom rdf:resource="&pdb;Atom"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 

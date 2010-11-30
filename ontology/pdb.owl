@@ -1237,9 +1237,9 @@
     
 
 
-    <!-- http://bio2rdf.org/pdb:Asparigine -->
+    <!-- http://bio2rdf.org/pdb:Asparagine -->
 
-    <owl:Class rdf:about="&pdb;Asparigine">
+    <owl:Class rdf:about="&pdb;Asparagine">
         <rdfs:subClassOf rdf:resource="&resource;PDB_1107"/>
         <rdfs:subClassOf rdf:resource="&resource;PDB_1108"/>
     </owl:Class>

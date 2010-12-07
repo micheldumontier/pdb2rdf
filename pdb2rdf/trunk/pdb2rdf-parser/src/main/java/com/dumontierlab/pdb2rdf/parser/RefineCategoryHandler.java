@@ -477,7 +477,7 @@ public class RefineCategoryHandler extends ContentHandlerState {
 		getRdfModel().add(x, RDF.type, PdbOwlVocabulary.Class.LsCrossValidMethod.resource());
 		getRdfModel().add(x, RDFS.label,
 				"Whether the cross validataion method was used through out or only at the end.", "en");
-		getRdfModel().add(x, PdbOwlVocabulary.DataProperty.hasValue.property(), createDecimalLiteral(value));
+		getRdfModel().add(x, PdbOwlVocabulary.DataProperty.hasValue.property(), value, "en");
 		getRdfModel().add(refinement, PdbOwlVocabulary.ObjectProperty.hasLsCrossValidMethod.property(), x);
 	}
 

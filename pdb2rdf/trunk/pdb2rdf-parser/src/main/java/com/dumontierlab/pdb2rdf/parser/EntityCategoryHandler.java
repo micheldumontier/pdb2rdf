@@ -122,7 +122,7 @@ public class EntityCategoryHandler extends ContentHandlerState {
 				getUriBuilder().buildUri(Bio2RdfPdbUriPattern.CHEMICAL_SUBSTANCE_EXTRACTION, pdbId, entityId));
 
 		getRdfModel().add(entityExtraction, RDF.type, PdbOwlVocabulary.Class.ChemicalSubstanceExtraction.resource());
-		getRdfModel().add(experimentResource, DCTerms.hasPart, entityExtraction);
+		getRdfModel().add(experimentResource, PdbOwlVocabulary.ObjectProperty.hasPart.property(), entityExtraction);
 
 		getRdfModel().add(entityExtraction, PdbOwlVocabulary.ObjectProperty.hasProduct.property(), entity);
 

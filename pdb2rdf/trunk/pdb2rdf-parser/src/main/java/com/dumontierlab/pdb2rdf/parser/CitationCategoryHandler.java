@@ -286,7 +286,7 @@ public class CitationCategoryHandler extends ContentHandlerState {
 		getRdfModel().add(volumeResource, PdbOwlVocabulary.ObjectProperty.hasVolumeNumber.property(), volumeNumResource);
 		getRdfModel().add(volumeNumResource, RDF.type, PdbOwlVocabulary.Class.VolumeNumber.resource());
 		getRdfModel().add(volumeNumResource, PdbOwlVocabulary.DataProperty.hasValue.property(), volumeNum);
-		getRdfModel().add(volumeResource, DCTerms.isPartOf, getJournal());
+		getRdfModel().add(volumeResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), getJournal());
 
 	}
 

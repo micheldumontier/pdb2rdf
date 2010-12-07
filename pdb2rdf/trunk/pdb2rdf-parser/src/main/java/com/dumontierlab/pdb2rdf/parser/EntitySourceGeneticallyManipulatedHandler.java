@@ -31,7 +31,6 @@ import com.dumontierlab.pdb2rdf.parser.vocabulary.uri.Bio2RdfPdbUriPattern;
 import com.dumontierlab.pdb2rdf.parser.vocabulary.uri.UriBuilder;
 import com.dumontierlab.pdb2rdf.util.UriUtil;
 import com.hp.hpl.jena.rdf.model.Resource;
-import com.hp.hpl.jena.vocabulary.DCTerms;
 import com.hp.hpl.jena.vocabulary.OWL;
 import com.hp.hpl.jena.vocabulary.RDF;
 import com.hp.hpl.jena.vocabulary.RDFS;
@@ -533,7 +532,7 @@ public class EntitySourceGeneticallyManipulatedHandler extends ContentHandlerSta
 	private Resource getVectorResource() {
 		if (vectorResource == null) {
 			vectorResource = createResource(Bio2RdfPdbUriPattern.VECTOR, pdbId, entityId);
-			getRdfModel().add(getGeneResource(), DCTerms.isPartOf, vectorResource);
+			getRdfModel().add(getGeneResource(), PdbOwlVocabulary.ObjectProperty.isPartOf.property(), vectorResource);
 			getRdfModel().add(vectorResource, RDF.type, PdbOwlVocabulary.Class.Vector.resource());
 		}
 		return vectorResource;
@@ -544,7 +543,7 @@ public class EntitySourceGeneticallyManipulatedHandler extends ContentHandlerSta
 			geneTissueResource = createResource(Bio2RdfPdbUriPattern.GENE_SOURCE_TISSUE, pdbId, entityId);
 			getRdfModel().add(getGeneResource(), PdbOwlVocabulary.ObjectProperty.hasSource.property(),
 					geneTissueResource);
-			getRdfModel().add(geneTissueResource, DCTerms.isPartOf, getGeneOrganismResource());
+			getRdfModel().add(geneTissueResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), getGeneOrganismResource());
 		}
 		return geneTissueResource;
 	}
@@ -560,7 +559,7 @@ public class EntitySourceGeneticallyManipulatedHandler extends ContentHandlerSta
 				getRdfModel().add(geneTissueFractionResource, PdbOwlVocabulary.ObjectProperty.isDerivedFrom.property(),
 						geneTissueResource);
 			}
-			getRdfModel().add(geneTissueFractionResource, DCTerms.isPartOf, getGeneOrganismResource());
+			getRdfModel().add(geneTissueFractionResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), getGeneOrganismResource());
 
 		}
 		return geneTissueFractionResource;
@@ -571,7 +570,7 @@ public class EntitySourceGeneticallyManipulatedHandler extends ContentHandlerSta
 			organismResource = createResource(Bio2RdfPdbUriPattern.ORGANISM, pdbId, entityId);
 			getRdfModel().add(getEntityExtractionResource(), PdbOwlVocabulary.ObjectProperty.hasSource.property(),
 					organismResource);
-			getRdfModel().add(organismResource, DCTerms.hasPart, getVectorResource());
+			getRdfModel().add(organismResource, PdbOwlVocabulary.ObjectProperty.hasPart.property(), getVectorResource());
 		}
 		return organismResource;
 	}
@@ -588,7 +587,7 @@ public class EntitySourceGeneticallyManipulatedHandler extends ContentHandlerSta
 		if (geneCellResource == null) {
 			geneCellResource = createResource(Bio2RdfPdbUriPattern.GENE_SOURCE_CELL, pdbId, entityId);
 			getRdfModel().add(getGeneResource(), PdbOwlVocabulary.ObjectProperty.hasSource.property(), geneCellResource);
-			getRdfModel().add(geneCellResource, DCTerms.isPartOf, getGeneOrganismResource());
+			getRdfModel().add(geneCellResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), getGeneOrganismResource());
 			if (geneSourceDevelopmentStage != null) {
 				Resource devStageQuality = createResource(Bio2RdfPdbUriPattern.GENE_SOURCE_CELL_DEV_STAGE, pdbId,
 						entityId);
@@ -610,9 +609,9 @@ public class EntitySourceGeneticallyManipulatedHandler extends ContentHandlerSta
 			geneCellularLocationResource = createResource(Bio2RdfPdbUriPattern.GENE_SOURCE_CELLULAR_LOCATION, pdbId,
 					entityId);
 			if (geneCellResource != null) {
-				getRdfModel().add(geneCellularLocationResource, DCTerms.isPartOf, geneCellResource);
+				getRdfModel().add(geneCellularLocationResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), geneCellResource);
 			}
-			getRdfModel().add(geneCellularLocationResource, DCTerms.isPartOf, getGeneOrganismResource());
+			getRdfModel().add(geneCellularLocationResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), getGeneOrganismResource());
 		}
 		return geneCellularLocationResource;
 	}
@@ -622,9 +621,9 @@ public class EntitySourceGeneticallyManipulatedHandler extends ContentHandlerSta
 			geneOrganResource = createResource(Bio2RdfPdbUriPattern.GENE_SOURCE_ORGAN, pdbId, entityId);
 			getRdfModel()
 					.add(getGeneResource(), PdbOwlVocabulary.ObjectProperty.hasSource.property(), geneOrganResource);
-			getRdfModel().add(geneOrganResource, DCTerms.isPartOf, getGeneOrganismResource());
+			getRdfModel().add(geneOrganResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), getGeneOrganismResource());
 			if (geneTissueResource != null) {
-				getRdfModel().add(geneTissueResource, DCTerms.isPartOf, geneOrganResource);
+				getRdfModel().add(geneTissueResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), geneOrganResource);
 			}
 		}
 		return geneOrganResource;
@@ -637,9 +636,9 @@ public class EntitySourceGeneticallyManipulatedHandler extends ContentHandlerSta
 					geneOrganelleResource);
 
 			if (geneCellResource != null) {
-				getRdfModel().add(geneOrganelleResource, DCTerms.isPartOf, geneCellResource);
+				getRdfModel().add(geneOrganelleResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), geneCellResource);
 			}
-			getRdfModel().add(geneOrganelleResource, DCTerms.isPartOf, getGeneOrganismResource());
+			getRdfModel().add(geneOrganelleResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), getGeneOrganismResource());
 
 		}
 		return geneOrganelleResource;
@@ -651,7 +650,7 @@ public class EntitySourceGeneticallyManipulatedHandler extends ContentHandlerSta
 			getRdfModel().add(getGeneResource(), PdbOwlVocabulary.ObjectProperty.hasSource.property(),
 					genePlasmidResource);
 
-			getRdfModel().add(genePlasmidResource, DCTerms.isPartOf, getGeneOrganismResource());
+			getRdfModel().add(genePlasmidResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), getGeneOrganismResource());
 
 		}
 		return genePlasmidResource;
@@ -662,7 +661,7 @@ public class EntitySourceGeneticallyManipulatedHandler extends ContentHandlerSta
 			cellResource = createResource(Bio2RdfPdbUriPattern.CELL, pdbId, entityId);
 			getRdfModel().add(getEntityExtractionResource(), PdbOwlVocabulary.ObjectProperty.hasSource.property(),
 					cellResource);
-			getRdfModel().add(cellResource, DCTerms.isPartOf, getHostOrganismResource());
+			getRdfModel().add(cellResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), getHostOrganismResource());
 		}
 		return cellResource;
 	}
@@ -672,7 +671,7 @@ public class EntitySourceGeneticallyManipulatedHandler extends ContentHandlerSta
 			cellularLocationResource = createResource(Bio2RdfPdbUriPattern.CELLULAR_LOCATION, pdbId, entityId);
 			getRdfModel().add(getEntityExtractionResource(), PdbOwlVocabulary.ObjectProperty.hasSource.property(),
 					cellularLocationResource);
-			getRdfModel().add(cellularLocationResource, DCTerms.isPartOf, getHostOrganismResource());
+			getRdfModel().add(cellularLocationResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), getHostOrganismResource());
 		}
 		return cellularLocationResource;
 	}
@@ -680,7 +679,7 @@ public class EntitySourceGeneticallyManipulatedHandler extends ContentHandlerSta
 	private Resource getHostGeneReouce() {
 		if (hostGeneResource == null) {
 			hostGeneResource = createResource(Bio2RdfPdbUriPattern.HOST_GENE, pdbId, entityId);
-			getRdfModel().add(hostGeneResource, DCTerms.isPartOf, getHostOrganismResource());
+			getRdfModel().add(hostGeneResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), getHostOrganismResource());
 		}
 		return hostGeneResource;
 	}
@@ -690,7 +689,7 @@ public class EntitySourceGeneticallyManipulatedHandler extends ContentHandlerSta
 			organResource = createResource(Bio2RdfPdbUriPattern.ORGAN, pdbId, entityId);
 			getRdfModel().add(getEntityExtractionResource(), PdbOwlVocabulary.ObjectProperty.hasSource.property(),
 					organResource);
-			getRdfModel().add(organResource, DCTerms.isPartOf, getHostOrganismResource());
+			getRdfModel().add(organResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), getHostOrganismResource());
 		}
 		return organResource;
 	}
@@ -702,9 +701,9 @@ public class EntitySourceGeneticallyManipulatedHandler extends ContentHandlerSta
 					organelleResource);
 
 			if (cellResource != null) {
-				getRdfModel().add(organelleResource, DCTerms.isPartOf, cellResource);
+				getRdfModel().add(organelleResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), cellResource);
 			}
-			getRdfModel().add(organelleResource, DCTerms.isPartOf, getHostOrganismResource());
+			getRdfModel().add(organelleResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), getHostOrganismResource());
 
 		}
 		return organelleResource;
@@ -717,12 +716,12 @@ public class EntitySourceGeneticallyManipulatedHandler extends ContentHandlerSta
 					tissueResource);
 
 			if (organResource != null) {
-				getRdfModel().add(tissueResource, DCTerms.isPartOf, organResource);
+				getRdfModel().add(tissueResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), organResource);
 			}
-			getRdfModel().add(tissueResource, DCTerms.isPartOf, getHostOrganismResource());
+			getRdfModel().add(tissueResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), getHostOrganismResource());
 
 			if (cellResource != null) {
-				getRdfModel().add(cellResource, DCTerms.isPartOf, tissueResource);
+				getRdfModel().add(cellResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), tissueResource);
 			}
 
 		}
@@ -740,9 +739,9 @@ public class EntitySourceGeneticallyManipulatedHandler extends ContentHandlerSta
 						tissueResource);
 			}
 			if (organelleResource != null) {
-				getRdfModel().add(organelleResource, DCTerms.isPartOf, tissueFractionResource);
+				getRdfModel().add(organelleResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), tissueFractionResource);
 			}
-			getRdfModel().add(tissueFractionResource, DCTerms.isPartOf, getHostOrganismResource());
+			getRdfModel().add(tissueFractionResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), getHostOrganismResource());
 
 		}
 		return tissueFractionResource;

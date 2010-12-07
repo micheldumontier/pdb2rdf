@@ -35,7 +35,6 @@ import com.dumontierlab.pdb2rdf.parser.vocabulary.uri.Bio2RdfPdbUriPattern;
 import com.dumontierlab.pdb2rdf.parser.vocabulary.uri.UriBuilder;
 import com.dumontierlab.pdb2rdf.util.UriUtil;
 import com.hp.hpl.jena.rdf.model.Resource;
-import com.hp.hpl.jena.vocabulary.DCTerms;
 import com.hp.hpl.jena.vocabulary.RDF;
 import com.hp.hpl.jena.vocabulary.RDFS;
 import com.hp.hpl.jena.vocabulary.XSD;
@@ -612,9 +611,9 @@ public class AtomSiteCategoryHandler extends ContentHandlerState {
 					UriUtil.urlEncode(UriUtil.replacePrimes(atomName)));
 			if (!getRdfModel().containsResource(atomResource)) {
 				if (groupPDB.equals(PdbXmlVocabulary.PDB_GROUP_ATOM_VALUE)) {
-					getRdfModel().add(getResidue(), DCTerms.hasPart, atomResource);
+					getRdfModel().add(getResidue(), PdbOwlVocabulary.ObjectProperty.hasPart.property(), atomResource);
 				} else {
-					getRdfModel().add(atomResource, DCTerms.isPartOf, getChemicalSubstanceResource());
+					getRdfModel().add(atomResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), getChemicalSubstanceResource());
 				}
 				getRdfModel().add(atomResource, RDFS.label, atomName);
 			}
@@ -651,7 +650,7 @@ public class AtomSiteCategoryHandler extends ContentHandlerState {
 		assert modelNumber != null : "The model number is needed for creating this resource";
 		if (atomLocationResource == null) {
 			atomLocationResource = createResource(Bio2RdfPdbUriPattern.ATOM_SPATIAL_LOCATION, pdbId, atomSiteId);
-			getRdfModel().add(getModelResource(), DCTerms.hasPart, atomLocationResource);
+			getRdfModel().add(getModelResource(), PdbOwlVocabulary.ObjectProperty.hasPart.property(), atomLocationResource);
 			getRdfModel().add(getAtomResource(), PdbOwlVocabulary.ObjectProperty.hasSpatialLocation.property(),
 					atomLocationResource);
 			getRdfModel().add(atomLocationResource, RDF.type, PdbOwlVocabulary.Class.AtomSpatialLocation.resource());
@@ -677,7 +676,7 @@ public class AtomSiteCategoryHandler extends ContentHandlerState {
 							PdbOwlVocabulary.ObjectProperty.isImmediatelyBefore.property(), residueResource);
 				}
 
-				getRdfModel().add(residueResource, DCTerms.isPartOf, getChemicalSubstanceResource());
+				getRdfModel().add(residueResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), getChemicalSubstanceResource());
 
 				// Add its position on the chain
 				Resource chainPositionResource = createResource(Bio2RdfPdbUriPattern.CHAIN_POSITION, pdbId, chainId,
@@ -687,7 +686,7 @@ public class AtomSiteCategoryHandler extends ContentHandlerState {
 				getRdfModel().add(chainPositionResource, RDF.type, PdbOwlVocabulary.Class.ChainPosition.resource());
 				getRdfModel().add(chainPositionResource, PdbOwlVocabulary.DataProperty.hasValue.property(),
 						createLiteral(chainPosition, XSD.integer.getURI()));
-				getRdfModel().add(chainPositionResource, DCTerms.isPartOf, getChain());
+				getRdfModel().add(chainPositionResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), getChain());
 				getRdfModel().add(chainPositionResource, RDFS.label,
 						"Position " + chainPosition + " on chain " + chainId);
 

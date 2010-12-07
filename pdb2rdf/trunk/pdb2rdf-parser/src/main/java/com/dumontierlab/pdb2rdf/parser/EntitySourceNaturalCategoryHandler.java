@@ -30,7 +30,6 @@ import com.dumontierlab.pdb2rdf.parser.vocabulary.uri.Bio2RdfPdbUriPattern;
 import com.dumontierlab.pdb2rdf.parser.vocabulary.uri.UriBuilder;
 import com.dumontierlab.pdb2rdf.util.UriUtil;
 import com.hp.hpl.jena.rdf.model.Resource;
-import com.hp.hpl.jena.vocabulary.DCTerms;
 import com.hp.hpl.jena.vocabulary.OWL;
 import com.hp.hpl.jena.vocabulary.RDF;
 import com.hp.hpl.jena.vocabulary.RDFS;
@@ -267,7 +266,7 @@ public class EntitySourceNaturalCategoryHandler extends ContentHandlerState {
 			cellResource = createResource(Bio2RdfPdbUriPattern.CELL, pdbId, entityId);
 			getRdfModel().add(getEntityExtractionResource(), PdbOwlVocabulary.ObjectProperty.hasSource.property(),
 					cellResource);
-			getRdfModel().add(cellResource, DCTerms.isPartOf, getOrganismResource());
+			getRdfModel().add(cellResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), getOrganismResource());
 		}
 		return cellResource;
 	}
@@ -286,7 +285,7 @@ public class EntitySourceNaturalCategoryHandler extends ContentHandlerState {
 			organResource = createResource(Bio2RdfPdbUriPattern.ORGAN, pdbId, entityId);
 			getRdfModel().add(getEntityExtractionResource(), PdbOwlVocabulary.ObjectProperty.hasSource.property(),
 					organResource);
-			getRdfModel().add(organResource, DCTerms.isPartOf, getOrganismResource());
+			getRdfModel().add(organResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), getOrganismResource());
 		}
 		return organResource;
 	}
@@ -298,9 +297,9 @@ public class EntitySourceNaturalCategoryHandler extends ContentHandlerState {
 					organelleResource);
 
 			if (cellResource != null) {
-				getRdfModel().add(organelleResource, DCTerms.isPartOf, cellResource);
+				getRdfModel().add(organelleResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), cellResource);
 			}
-			getRdfModel().add(organelleResource, DCTerms.isPartOf, getOrganismResource());
+			getRdfModel().add(organelleResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), getOrganismResource());
 
 		}
 		return organelleResource;
@@ -312,7 +311,7 @@ public class EntitySourceNaturalCategoryHandler extends ContentHandlerState {
 			getRdfModel().add(getEntityExtractionResource(), PdbOwlVocabulary.ObjectProperty.hasSource.property(),
 					plasmidResource);
 
-			getRdfModel().add(plasmidResource, DCTerms.isPartOf, getOrganismResource());
+			getRdfModel().add(plasmidResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), getOrganismResource());
 
 		}
 		return plasmidResource;
@@ -338,12 +337,12 @@ public class EntitySourceNaturalCategoryHandler extends ContentHandlerState {
 					tissueResource);
 
 			if (organResource != null) {
-				getRdfModel().add(tissueResource, DCTerms.isPartOf, organResource);
+				getRdfModel().add(tissueResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), organResource);
 			}
-			getRdfModel().add(tissueResource, DCTerms.isPartOf, getOrganismResource());
+			getRdfModel().add(tissueResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), getOrganismResource());
 
 			if (cellResource != null) {
-				getRdfModel().add(cellResource, DCTerms.isPartOf, tissueResource);
+				getRdfModel().add(cellResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), tissueResource);
 			}
 
 			if (secretionResource != null) {
@@ -370,9 +369,9 @@ public class EntitySourceNaturalCategoryHandler extends ContentHandlerState {
 						tissueResource);
 			}
 			if (organelleResource != null) {
-				getRdfModel().add(organelleResource, DCTerms.isPartOf, tissueFractionResource);
+				getRdfModel().add(organelleResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), tissueFractionResource);
 			}
-			getRdfModel().add(tissueFractionResource, DCTerms.isPartOf, getOrganismResource());
+			getRdfModel().add(tissueFractionResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), getOrganismResource());
 
 		}
 		return tissueFractionResource;

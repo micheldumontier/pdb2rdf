@@ -958,6 +958,6 @@ public class RefineCategoryHandler extends ContentHandlerState {
 		refinement = createResource(Bio2RdfPdbUriPattern.REFINEMENT, pdbId);
 		getRdfModel().add(refinement, RDF.type, PdbOwlVocabulary.Class.Refinement.resource());
 		getRdfModel().add(refinement, RDFS.label, "Refinement of " + pdbId, "en");
-		getRdfModel().add(structureDetermination, DCTerms.hasPart, refinement);
+		getRdfModel().add(structureDetermination, PdbOwlVocabulary.ObjectProperty.hasPart.property(), refinement);
 	}
 }

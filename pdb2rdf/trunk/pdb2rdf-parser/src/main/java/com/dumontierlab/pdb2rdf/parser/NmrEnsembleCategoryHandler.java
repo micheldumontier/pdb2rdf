@@ -69,6 +69,6 @@ public class NmrEnsembleCategoryHandler extends ContentHandlerState {
 	private void createEnsemble() {
 		Resource structureDetermination = createResource(Bio2RdfPdbUriPattern.STRUCTURE_DETERMINATION, pdbId);
 		ensemble = createResource(Bio2RdfPdbUriPattern.ENSEMBLE, pdbId);
-		getRdfModel().add(structureDetermination, DCTerms.hasPart, ensemble);
+		getRdfModel().add(structureDetermination, PdbOwlVocabulary.ObjectProperty.hasPart.property(), ensemble);
 	}
 }// NmrEnsembleCategoryHandler

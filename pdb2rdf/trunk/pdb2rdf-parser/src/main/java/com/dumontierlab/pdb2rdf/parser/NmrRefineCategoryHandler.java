@@ -71,7 +71,7 @@ public class NmrRefineCategoryHandler extends ContentHandlerState {
 		// I am using the same URI pattern for NMR refinement as for XRAY
 		refinement = createResource(Bio2RdfPdbUriPattern.REFINEMENT, pdbId);
 		getRdfModel().add(refinement, RDF.type, PdbOwlVocabulary.Class.Refinement.resource());
-		getRdfModel().add(structureDetermination, DCTerms.hasPart, refinement);
+		getRdfModel().add(structureDetermination, PdbOwlVocabulary.ObjectProperty.hasPart.property(), refinement);
 	}
 
 }

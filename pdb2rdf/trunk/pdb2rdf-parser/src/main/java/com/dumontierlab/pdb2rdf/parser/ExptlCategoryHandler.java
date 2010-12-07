@@ -146,7 +146,7 @@ public class ExptlCategoryHandler extends ContentHandlerState {
 	public Resource getAbsorptCorrectionResource() {
 		if (absorptCorrectionsResource == null) {
 			absorptCorrectionsResource = createResource(Bio2RdfPdbUriPattern.ABSORPTION_CORRECTION, pdbId);
-			getRdfModel().add(getStructureDeterminationResource(), DCTerms.hasPart, absorptCorrectionsResource);
+			getRdfModel().add(getStructureDeterminationResource(), PdbOwlVocabulary.ObjectProperty.hasPart.property(), absorptCorrectionsResource);
 		}
 		return absorptCorrectionsResource;
 	}

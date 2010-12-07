@@ -551,7 +551,9 @@ public class PdbOwlVocabulary {
 		hasSolventModelParamKsol(DEFAULT_NAMESPACE + "hasSolventModelParamKsol"),
 		hasConformerSelectionCriteria(DEFAULT_NAMESPACE + "hasConformerSelectionCriteria"),
 		hasAverageConstraintViolationsPerResidue(DEFAULT_NAMESPACE + "hasAverageConstraintViolationsPerResidue"),
-		hasCoordinate(DEFAULT_NAMESPACE + "hasCoordinate");
+		hasCoordinate(DEFAULT_NAMESPACE + "hasCoordinate"),
+		hasPart(DEFAULT_NAMESPACE + "hasPart"),
+		isPartOf(DEFAULT_NAMESPACE +"isPartOf");
 
 		private final String uri;
 

@@ -116,7 +116,7 @@ public class DataBlockHandler extends ContentHandlerState {
 		// structure determination
 		Resource structureDetermination = createResource(Bio2RdfPdbUriPattern.STRUCTURE_DETERMINATION, pdbId);
 		getRdfModel().add(structureDetermination, RDF.type, PdbOwlVocabulary.Class.StructureDetermination.resource());
-		getRdfModel().add(experimentResource, DCTerms.hasPart, structureDetermination);
+		getRdfModel().add(experimentResource, PdbOwlVocabulary.ObjectProperty.hasPart.property(), structureDetermination);
 
 	}
 

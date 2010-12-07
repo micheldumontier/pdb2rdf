@@ -82,8 +82,8 @@ public class Helper {
 						+ "?atom_sl pdb:hasXCoordinate ?xcoord. " + "?atom_sl pdb:hasYCoordinate ?ycoord. "
 						+ "?atom_sl pdb:hasZCoordinate ?zcoord. " + "?xcoord pdb:hasValue ?xval. "
 						+ "?ycoord pdb:hasValue ?yval. " + "?zcoord pdb:hasValue ?zval. " + "}WHERE{ "
-						+ "<http://bio2rdf.org/pdb:" + pdbId + "> dc:hasPart " + "?structure_deter. "
-						+ "?structure_deter pdb:hasProduct ?model. " + "?model dc:hasPart ?atom_sl. "
+						+ "<http://bio2rdf.org/pdb:" + pdbId + "> pdb:hasPart " + "?structure_deter. "
+						+ "?structure_deter pdb:hasProduct ?model. " + "?model pdb:hasPart ?atom_sl. "
 						+ "?atom pdb:hasSpatialLocation ?atom_sl. ?atom a ?atomType. "
 						+ "?atom_sl pdb:hasXCoordinate ?xcoord. " + "?atom_sl pdb:hasYCoordinate ?ycoord. "
 						+ "?atom_sl pdb:hasZCoordinate ?zcoord. " + "?xcoord pdb:hasValue ?xval. "
@@ -95,7 +95,7 @@ public class Helper {
 				.executeSelectQuery(
 						"select ?cs ?type ?label ?formula ?amount where { <http://bio2rdf.org/pdb:"
 								+ pdbId
-								+ "> <http://purl.org/dc/terms/hasPart> ?ex . ?ex <"
+								+ "> <http://bio2rdf.org/pdb:hasPart> ?ex . ?ex <"
 								+ RDF.type
 								+ "> <http://bio2rdf.org/pdb:ChemicalSubstanceExtraction> . ?ex <http://bio2rdf.org/pdb:hasProduct> ?cs. ?cs <"
 								+ RDF.type

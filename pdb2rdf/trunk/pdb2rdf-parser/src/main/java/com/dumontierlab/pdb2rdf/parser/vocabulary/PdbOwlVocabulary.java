@@ -433,11 +433,19 @@ public class PdbOwlVocabulary {
 		NicotinamideAdenineDinucleotide(DEFAULT_NAMESPACE+"NicotinamideAdenineDinucleotide"),
 		TwoTwoSTwoMethylPyrrolidinTwoYLOneHBenzimiazoleSevenCarboxamide(DEFAULT_NAMESPACE+"TwoTwoSTwoMethylPyrrolidinTwoYLOneHBenzimiazoleSevenCarboxamide"),
 		FeIIIIon(DEFAULT_NAMESPACE+"FeIIIIon"),
+		HypoPhosphite(DEFAULT_NAMESPACE+"HypoPhosphite"),
 		TwoAminoTwoHydroxyMethylPropaneOneThreeDiol(DEFAULT_NAMESPACE +"TwoAminoTwoHydroxyMethylPropaneOneThreeDiol"),
 		PyroglutamicAcid(DEFAULT_NAMESPACE+"PyroglutamicAcid"),
 		TwoHydroxymethylSixOctylsulfanylTetrahydroPyranThreeFourFiveTriol(DEFAULT_NAMESPACE+"TwoHydroxymethylSixOctylsulfanylTetrahydroPyranThreeFourFiveTriol"),
 		ArachidonicAcid(DEFAULT_NAMESPACE +"ArachidonicAcid"),
+		ProtoporphyrinIxContainingFe(DEFAULT_NAMESPACE + "ProtoporphyrinIxContainingFe"),
 		NAcetylDGlucosamine(DEFAULT_NAMESPACE +"NAcetylDGlucosamine"),
+		AminoGroup(DEFAULT_NAMESPACE + "AminoGroup"),
+		FlavinMononucleotide(DEFAULT_NAMESPACE + "FlavinMononucleotide"),
+		ZincIon(DEFAULT_NAMESPACE+"ZincIon"),
+		GuanosineFivePrimeDiphosphate(DEFAULT_NAMESPACE+ "GuanosineFivePrimeDiphosphate"),
+		FourRFourAlphaThiazolyBenzamide(DEFAULT_NAMESPACE +"FourRFourAlphaThiazolyBenzamide"),
+		ThreeCycloPentylNHydroxyPropanamide(DEFAULT_NAMESPACE + "ThreeCycloPentylNHydroxyPropanamide"),
 		SodiumIon(DEFAULT_NAMESPACE +"SodiumIon");
 		private final String uri;
 

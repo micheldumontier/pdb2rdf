@@ -48,6 +48,7 @@ public class ResidueTable {
 		put("S-OXY CYSTEINE", PdbOwlVocabulary.Class.SOxyCysteine);
 		put("2-AMINO-2-HYDROXYMETHYL-PROPANE-1,3-DIOL", PdbOwlVocabulary.Class.TwoAminoTwoHydroxyMethylPropaneOneThreeDiol);
 		put("N-[[1-[N-ACETAMIDYL]-[1-CYCLOHEXYLMETHYL-2-HYDROXY-4-ISOPROPYL]-BUT-4-YL]-CARBONYL]-GLUTAMINYL-ARGINYL-AMIDE", PdbOwlVocabulary.Class.NOneNAcetamidylOneCyclohexymethylTwoHydroxyFourIsoPropylGlutaminylArginylAmide);
+		put("3-CYCLOPENTYL-N-HYDROXYPROPANAMIDE", PdbOwlVocabulary.Class.ThreeCycloPentylNHydroxyPropanamide);
 		
 		//Nucleic acid residues
 		put("CYTIDINE-5'-MONOPHOSPHATE", PdbOwlVocabulary.Class.CytidineFivePrimeMonophosphate);
@@ -69,7 +70,8 @@ public class ResidueTable {
 		put("ADENOSINE-5'-TRIPHOSPHATE", PdbOwlVocabulary.Class.AdenosineFivePrimeTriPhosphate);
 		put("NICOTINAMIDE-ADENINE-DINUCLEOTIDE", PdbOwlVocabulary.Class.NicotinamideAdenineDinucleotide);
 		put("NADP NICOTINAMIDE-ADENINE-DINUCLEOTIDE PHOSPHATE", PdbOwlVocabulary.Class.NapdNicotinamideAdenineDinucleotidePhosphate);
-		
+		put("FLAVIN MONONUCLEOTIDE", PdbOwlVocabulary.Class.FlavinMononucleotide);
+		put("GUANOSINE-5'-DIPHOSPHATE", PdbOwlVocabulary.Class.GuanosineFivePrimeDiphosphate);
 		
 		//Ions
 		put("CHLORIDE ION", PdbOwlVocabulary.Class.ChlorideIon);
@@ -81,10 +83,15 @@ public class ResidueTable {
 		put("SULFATE ION", PdbOwlVocabulary.Class.SulfateIon);
 		put("FE (III) ION", PdbOwlVocabulary.Class.FeIIIIon);
 		put("NICKEL (II) ION", PdbOwlVocabulary.Class.NickelIIIon);
+		put("ZINC ION", PdbOwlVocabulary.Class.ZincIon);
+		put("HYPOPHOSPHITE", PdbOwlVocabulary.Class.HypoPhosphite);
 		
 		
 		
 		//other stuff
+		put("[4R-(4ALPHA,5ALPHA,6BETA,7BETA)]-3,3'-[[TETRAHYDRO-5,6-DIHYDROXY-2-OXO-4,7-BIS(PHENYLMETHYL)-1H-1,3-DIAZEPINE-1,3(2H)-DIYL] BIS(METHYLENE)]BIS[N-2-THIAZOLYLBENZAMIDE]", PdbOwlVocabulary.Class.FourRFourAlphaThiazolyBenzamide);
+		put("PROTOPORPHYRIN IX CONTAINING FE", PdbOwlVocabulary.Class.ProtoporphyrinIxContainingFe);
+		put("AMINO GROUP", PdbOwlVocabulary.Class.AminoGroup);
 		put("IRON/SULFUR CLUSTER", PdbOwlVocabulary.Class.IronSulfurCluster);
 		put("N-ACETYL-D-GLUCOSAMINE", PdbOwlVocabulary.Class.NAcetylDGlucosamine);
 		put("2-HYDROXYMETHYL-6-OCTYLSULFANYL-TETRAHYDRO-PYRAN-3,4,5-TRIOL", PdbOwlVocabulary.Class.TwoHydroxymethylSixOctylsulfanylTetrahydroPyranThreeFourFiveTriol);

@@ -37,13 +37,63 @@ public class ResidueTable {
 		put("VALINE", PdbOwlVocabulary.Class.Valine);
 		put("SELENOCYSTEINE", PdbOwlVocabulary.Class.Selenocysteine);
 		put("PYRROLYSINE", PdbOwlVocabulary.Class.Pyrrolysine);
-		put("CYTIDINE-5&apos;-MONOPHOSPHATE", PdbOwlVocabulary.Class.CytidineFivePrimeMonophosphate);
-		put("GUANOSINE-5&apos;-MONOPHOSPHATE", PdbOwlVocabulary.Class.GuanosineFivePrimeMonophosphate);
-		put("URIDINE-5&apos;-MONOPHOSPHATE",PdbOwlVocabulary.Class.UridineFivePrimeMonophosphate);
-		put("ADENOSINE-5&apos;-MONOPHOSPHATE",PdbOwlVocabulary.Class.AdenosineFivePrimeMonophosphate);
-		put("2P-DEOXYADENOSINE-5P-MONOPHOSPHATE", PdbOwlVocabulary.Class.TwoPrimeDeoxyAdenosineFivePrimeMonophosphate);
-		put("2&apos;-DEOXYGUANOSINE-5&apos;-MONOPHOSPHATE", PdbOwlVocabulary.Class.TwoPrimeDeoxyGuanosineFivePrimeMonophosphate);
-		put("THYMIDINE-5&apos;-MONOPHOSPHATE", PdbOwlVocabulary.Class.ThymidineFivePrimeMonophosphate);
+		
+		//Modified Amino acid residues
+		put("D-GAMMA-GLUTAMYL-L-CYSTEINYLGLYCINE", PdbOwlVocabulary.Class.DGammaGlutamylLCysteinylGlycine);
+		put("PHOSPHOSERINE", PdbOwlVocabulary.Class.PhosphoSerine);
+		put("SELENOMETHIONINE", PdbOwlVocabulary.Class.SelenoMethionine);
+		put("2-[(2S)-2-METHYLPYRROLIDIN-2-YL]-1H-BENZIMIDAZOLE-7-CARBOXAMIDE",PdbOwlVocabulary.Class.TwoTwoSTwoMethylPyrrolidinTwoYLOneHBenzimiazoleSevenCarboxamide);
+		put("PHOSPHOTHREONINE", PdbOwlVocabulary.Class.PhosphoThreonine);
+		put("PYROGLUTAMIC ACID", PdbOwlVocabulary.Class.PyroglutamicAcid);
+		put("S-OXY CYSTEINE", PdbOwlVocabulary.Class.SOxyCysteine);
+		put("2-AMINO-2-HYDROXYMETHYL-PROPANE-1,3-DIOL", PdbOwlVocabulary.Class.TwoAminoTwoHydroxyMethylPropaneOneThreeDiol);
+		put("N-[[1-[N-ACETAMIDYL]-[1-CYCLOHEXYLMETHYL-2-HYDROXY-4-ISOPROPYL]-BUT-4-YL]-CARBONYL]-GLUTAMINYL-ARGINYL-AMIDE", PdbOwlVocabulary.Class.NOneNAcetamidylOneCyclohexymethylTwoHydroxyFourIsoPropylGlutaminylArginylAmide);
+		
+		//Nucleic acid residues
+		put("CYTIDINE-5'-MONOPHOSPHATE", PdbOwlVocabulary.Class.CytidineFivePrimeMonophosphate);
+		put("GUANOSINE-5'-MONOPHOSPHATE", PdbOwlVocabulary.Class.GuanosineFivePrimeMonophosphate);
+		put("URIDINE-5'-MONOPHOSPHATE",PdbOwlVocabulary.Class.UridineFivePrimeMonophosphate);
+		put("ADENOSINE-5'-MONOPHOSPHATE",PdbOwlVocabulary.Class.AdenosineFivePrimeMonophosphate);
+		put("2'-DEOXYADENOSINE-5'-MONOPHOSPHATE", PdbOwlVocabulary.Class.TwoPrimeDeoxyAdenosineFivePrimeMonophosphate);
+		put("2'-DEOXYGUANOSINE-5'-MONOPHOSPHATE", PdbOwlVocabulary.Class.TwoPrimeDeoxyGuanosineFivePrimeMonophosphate);
+		put("2'-DEOXYCYTIDINE-5'-MONOPHOSPHATE", PdbOwlVocabulary.Class.TwoPrimeDeoxyCytidineFivePrimeMonophosphate);
+		put("THYMIDINE-5'-MONOPHOSPHATE", PdbOwlVocabulary.Class.ThymidineFivePrimeMonophosphate);
+		put("ADENINE", PdbOwlVocabulary.Class.Adenine);
+		
+		//Modified nucleic acid residues
+		put("2'-DEOXYINOSINE-5'-MONOPHOSPHATE", PdbOwlVocabulary.Class.TwoPrimeDeoxyinosine5PrimeMonophosphate);
+		put("5-BROMO-2'-DEOXY-CYTIDINE-5'-MONOPHOSPHATE", PdbOwlVocabulary.Class.FivePrimeBromo2PrimeDeoxyCytidineFivePrimeMonophosphate);
+		put("(1R)-1,4-ANHYDRO-2-DEOXY-1-(3-FLUOROPHENYL)-5-O-PHOSPHONO-D-ERYTHRO-PENTITOL", PdbOwlVocabulary.Class.OneROneFourAnhydroTwoDeoxyOneThreeFluoroPhenylFiveOPhosphonoDErythroPentinol);
+		put("5-METHYL-2'-DEOXY-CYTIDINE-5'-MONOPHOSPHATE", PdbOwlVocabulary.Class.FiveMethylTwoPrimeDeoxyCytidineFivePrimeMonophosphate);
+		put("GALACTOSE-URIDINE-5'-DIPHOSPHATE", PdbOwlVocabulary.Class.GalactoseUridineFivePrimeDiphosphate);
+		put("ADENOSINE-5'-TRIPHOSPHATE", PdbOwlVocabulary.Class.AdenosineFivePrimeTriPhosphate);
+		put("NICOTINAMIDE-ADENINE-DINUCLEOTIDE", PdbOwlVocabulary.Class.NicotinamideAdenineDinucleotide);
+		put("NADP NICOTINAMIDE-ADENINE-DINUCLEOTIDE PHOSPHATE", PdbOwlVocabulary.Class.NapdNicotinamideAdenineDinucleotidePhosphate);
+		
+		
+		//Ions
+		put("CHLORIDE ION", PdbOwlVocabulary.Class.ChlorideIon);
+		put("MANGANESE (II) ION", PdbOwlVocabulary.Class.ManganeseIonII);
+		put("MAGNESIUM ION", PdbOwlVocabulary.Class.MagnesiumIon);
+		put("POTASSIUM ION", PdbOwlVocabulary.Class.PotassiumIon);
+		put("SODIUM ION", PdbOwlVocabulary.Class.SodiumIon);
+		put("CALCIUM ION", PdbOwlVocabulary.Class.CalciumIon);
+		put("SULFATE ION", PdbOwlVocabulary.Class.SulfateIon);
+		put("FE (III) ION", PdbOwlVocabulary.Class.FeIIIIon);
+		put("NICKEL (II) ION", PdbOwlVocabulary.Class.NickelIIIon);
+		
+		
+		
+		//other stuff
+		put("IRON/SULFUR CLUSTER", PdbOwlVocabulary.Class.IronSulfurCluster);
+		put("N-ACETYL-D-GLUCOSAMINE", PdbOwlVocabulary.Class.NAcetylDGlucosamine);
+		put("2-HYDROXYMETHYL-6-OCTYLSULFANYL-TETRAHYDRO-PYRAN-3,4,5-TRIOL", PdbOwlVocabulary.Class.TwoHydroxymethylSixOctylsulfanylTetrahydroPyranThreeFourFiveTriol);
+		put("ARACHIDONIC ACID", PdbOwlVocabulary.Class.ArachidonicAcid);
+		put("OLEIC ACID", PdbOwlVocabulary.Class.OleicAcid);
+		put("GLYCEROL", PdbOwlVocabulary.Class.Glycerol);
+		put("WATER", PdbOwlVocabulary.Class.Water);
+		put ("UNKNOWN", PdbOwlVocabulary.Class.UnknownResidue);
+		
 	}
 	
 	public static PdbOwlVocabulary.Class get(String typeSymbol){

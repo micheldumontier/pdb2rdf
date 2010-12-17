@@ -20,6 +20,8 @@
  */
 package com.dumontierlab.pdb2rdf.parser.vocabulary;
 
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter.DEFAULT;
+
 import com.hp.hpl.jena.ontology.AnnotationProperty;
 import com.hp.hpl.jena.ontology.DatatypeProperty;
 import com.hp.hpl.jena.ontology.OntClass;
@@ -402,8 +404,41 @@ public class PdbOwlVocabulary {
 		TwoPrimeDeoxyAdenosineFivePrimeMonophosphate(DEFAULT_NAMESPACE + "TwoPrimeDeoxyAdenosineMonophosphate"),
 		TwoPrimeDeoxyCytidineFivePrimeMonophosphate(DEFAULT_NAMESPACE + "TwoPrimeDeoxyCitidineMonophosphate"),
 		TwoPrimeDeoxyGuanosineFivePrimeMonophosphate(DEFAULT_NAMESPACE + "TwoPrimeDeoxyGuanosineFivePrimeMonophosphate"),
-		ThymidineFivePrimeMonophosphate(DEFAULT_NAMESPACE + "Thymidine5PrimeMonophosphate");
-
+		ThymidineFivePrimeMonophosphate(DEFAULT_NAMESPACE + "Thymidine5PrimeMonophosphate"),
+		PhosphoThreonine(DEFAULT_NAMESPACE+"PhosphoThreonine"),
+		SOxyCysteine(DEFAULT_NAMESPACE+"SOxyCysteine"),
+		Adenine(DEFAULT_NAMESPACE + "Adenine"),
+		NOneNAcetamidylOneCyclohexymethylTwoHydroxyFourIsoPropylGlutaminylArginylAmide(DEFAULT_NAMESPACE+"NOneNAcetamidylOneCyclohexymethylTwoHydroxyFourIsoPropylGlutaminylArginylAmide"),
+		FivePrimeBromo2PrimeDeoxyCytidineFivePrimeMonophosphate(DEFAULT_NAMESPACE +"FivePrimeBromo2PrimeDeoxyCytidineFivePrimeMonophosphate"),
+		OneROneFourAnhydroTwoDeoxyOneThreeFluoroPhenylFiveOPhosphonoDErythroPentinol(DEFAULT_NAMESPACE+"OneROneFourAnhydroTwoDeoxyOneThreeFluoroPhenylFiveOPhosphonoDErythroPentinol"),
+		PotassiumIon(DEFAULT_NAMESPACE+"PotassiumIon"),
+		ChlorideIon(DEFAULT_NAMESPACE +"ChlorideIon"),
+		UnknownResidue(DEFAULT_NAMESPACE +"UnknownResidue"),
+		TwoPrimeDeoxyinosine5PrimeMonophosphate(DEFAULT_NAMESPACE+"2PrimeDeoxyinosine5PrimeMonophosphate"),
+		NapdNicotinamideAdenineDinucleotidePhosphate(DEFAULT_NAMESPACE+"NapdNicotinamideAdenineDinucleotidePhosphate"),
+		FiveMethylTwoPrimeDeoxyCytidineFivePrimeMonophosphate(DEFAULT_NAMESPACE+ "FiveMethylTwoPrimeDeoxyCytidineFivePrimeMonophosphate"),
+		Glycerol(DEFAULT_NAMESPACE+"Glycerol"),
+		DGammaGlutamylLCysteinylGlycine(DEFAULT_NAMESPACE +"DGammaGlutamylLCysteinylGlycine"),
+		GalactoseUridineFivePrimeDiphosphate(DEFAULT_NAMESPACE +"GalactoseUridineFivePrimeDiphosphate"),
+		PhosphoSerine(DEFAULT_NAMESPACE + "PhosphoSerine"),
+		MagnesiumIon(DEFAULT_NAMESPACE + "MagnesiumIon"),
+		SelenoMethionine(DEFAULT_NAMESPACE +"SelenoMethionine"),
+		NickelIIIon(DEFAULT_NAMESPACE+"NickelIIIon"),
+		OleicAcid(DEFAULT_NAMESPACE +"OleicAcid"),
+		CalciumIon(DEFAULT_NAMESPACE+"CalciumIon"),
+		SulfateIon(DEFAULT_NAMESPACE+"SulfateIon"),
+		IronSulfurCluster(DEFAULT_NAMESPACE +"IronSulfurCluster"),
+		ManganeseIonII(DEFAULT_NAMESPACE+"ManganeseIonII"),
+		AdenosineFivePrimeTriPhosphate(DEFAULT_NAMESPACE+"AdenosineFivePrimeTriPhosphate"),
+		NicotinamideAdenineDinucleotide(DEFAULT_NAMESPACE+"NicotinamideAdenineDinucleotide"),
+		TwoTwoSTwoMethylPyrrolidinTwoYLOneHBenzimiazoleSevenCarboxamide(DEFAULT_NAMESPACE+"TwoTwoSTwoMethylPyrrolidinTwoYLOneHBenzimiazoleSevenCarboxamide"),
+		FeIIIIon(DEFAULT_NAMESPACE+"FeIIIIon"),
+		TwoAminoTwoHydroxyMethylPropaneOneThreeDiol(DEFAULT_NAMESPACE +"TwoAminoTwoHydroxyMethylPropaneOneThreeDiol"),
+		PyroglutamicAcid(DEFAULT_NAMESPACE+"PyroglutamicAcid"),
+		TwoHydroxymethylSixOctylsulfanylTetrahydroPyranThreeFourFiveTriol(DEFAULT_NAMESPACE+"TwoHydroxymethylSixOctylsulfanylTetrahydroPyranThreeFourFiveTriol"),
+		ArachidonicAcid(DEFAULT_NAMESPACE +"ArachidonicAcid"),
+		NAcetylDGlucosamine(DEFAULT_NAMESPACE +"NAcetylDGlucosamine"),
+		SodiumIon(DEFAULT_NAMESPACE +"SodiumIon");
 		private final String uri;
 
 		private Class(String uri) {

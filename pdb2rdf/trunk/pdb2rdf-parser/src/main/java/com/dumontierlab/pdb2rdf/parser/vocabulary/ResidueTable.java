@@ -117,7 +117,9 @@ public class ResidueTable {
 
 	public static PdbOwlVocabulary.Class get(String typeSymbol) {
 		PdbOwlVocabulary.Class c = symbol2class.get(typeSymbol.toUpperCase());
-		UNKNOWN_RESIDUE_LOG.warn(typeSymbol);
+		if (c == null) {
+			UNKNOWN_RESIDUE_LOG.warn(typeSymbol);
+		}
 		return c;
 	}
 

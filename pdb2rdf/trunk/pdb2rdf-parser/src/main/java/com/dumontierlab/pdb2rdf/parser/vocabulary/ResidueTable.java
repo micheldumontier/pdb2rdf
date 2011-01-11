@@ -14,7 +14,7 @@ import org.apache.log4j.Logger;
  */
 public class ResidueTable {
 
-	private static final Logger UNKNOWN_RESIDUE_LOG = Logger.getLogger("com.dumontierlab.pdb2rdf.unknown_residues");
+	private static final Logger UNKNOWN_RESIDUE_LOG = Logger.getLogger("unknownresidues");
 
 	private static final Map<String, PdbOwlVocabulary.Class> symbol2class = new HashMap<String, PdbOwlVocabulary.Class>();
 	private static final Map<String, String> class2symbol = new HashMap<String, String>();

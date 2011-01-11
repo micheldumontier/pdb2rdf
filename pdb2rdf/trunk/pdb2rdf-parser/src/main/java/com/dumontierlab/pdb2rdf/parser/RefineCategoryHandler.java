@@ -520,8 +520,11 @@ public class RefineCategoryHandler extends ContentHandlerState {
 	private void createOverallPdbxRFreeSelectionDetails(String value) {
 		Resource x = createResource(Bio2RdfPdbUriPattern.R_FREE_SELECTION_DETAILS, pdbId);
 		getRdfModel().add(x, RDF.type, PdbOwlVocabulary.Class.RFreeSelectionDetails.resource());
-		getRdfModel().add(x, RDFS.label,
-				"Details of the manner in which the cross validation reflections were selected. Random selection", "en");
+		getRdfModel()
+				.add(x,
+						RDFS.label,
+						"Details of the manner in which the cross validation reflections were selected. Random selection",
+						"en");
 		getRdfModel().add(x, PdbOwlVocabulary.DataProperty.hasValue.property(), value, "en");
 		getRdfModel().add(refinement, PdbOwlVocabulary.ObjectProperty.hasRFreeSelectionDetails.property(), x);
 	}
@@ -577,8 +580,8 @@ public class RefineCategoryHandler extends ContentHandlerState {
 	private void createOverallFomWorkRSet(String value) {
 		Resource x = createResource(Bio2RdfPdbUriPattern.OVERALL_FOM_WORK_R_SET, pdbId);
 		getRdfModel().add(x, RDF.type, PdbOwlVocabulary.Class.OverallFOMWorkRSet.resource());
-		getRdfModel().add(x, RDFS.label, "Average figure of merit of phases of reflections included in the refinement.",
-				"en");
+		getRdfModel().add(x, RDFS.label,
+				"Average figure of merit of phases of reflections included in the refinement.", "en");
 		getRdfModel().add(x, PdbOwlVocabulary.DataProperty.hasValue.property(), createDecimalLiteral(value));
 		getRdfModel().add(refinement, PdbOwlVocabulary.ObjectProperty.hasOverallFOMWorkRSet.property(), x);
 	}
@@ -777,8 +780,8 @@ public class RefineCategoryHandler extends ContentHandlerState {
 						RDFS.label,
 						"Residual factor R for reflections that satisfy the resolution limits established by attribute ls_d_res_high in category refine and  attribute ls_d_res_low in category refine and the observation limit established by attribute observed_criterion in category reflns, and that were used as the working reflections (i.e. were included in the refinement)  when the refinement included the calculation of a R factor. ",
 						"en");
-		getRdfModel()
-				.add(lsRFactorRWork, PdbOwlVocabulary.DataProperty.hasValue.property(), createDecimalLiteral(value));
+		getRdfModel().add(lsRFactorRWork, PdbOwlVocabulary.DataProperty.hasValue.property(),
+				createDecimalLiteral(value));
 		getRdfModel().add(refinement, PdbOwlVocabulary.ObjectProperty.hasLsRFactorRWork.property(), lsRFactorRWork);
 	}
 
@@ -809,8 +812,8 @@ public class RefineCategoryHandler extends ContentHandlerState {
 						RDFS.label,
 						"Residual factor R for reflections that satisfy the resolution limits established by attribute ls_d_res_high in category refine and  attribute ls_d_res_low in category refine and the observation limit established by  attribute observed_criterion in category reflns, and that were used as the test  reflections (i.e. were excluded from the refinement) when the refinement included the calculation of a &apos;free&apos; R factor. Details of how reflections were assigned to the working and test sets are given in attribute R_free_details.",
 						"en");
-		getRdfModel()
-				.add(lsRFactorRFree, PdbOwlVocabulary.DataProperty.hasValue.property(), createDecimalLiteral(value));
+		getRdfModel().add(lsRFactorRFree, PdbOwlVocabulary.DataProperty.hasValue.property(),
+				createDecimalLiteral(value));
 		getRdfModel().add(refinement, PdbOwlVocabulary.ObjectProperty.hasLsRFactorRFree.property(), lsRFactorRFree);
 	}
 

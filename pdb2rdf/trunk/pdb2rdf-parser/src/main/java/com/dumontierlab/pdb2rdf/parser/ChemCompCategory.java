@@ -34,7 +34,6 @@ import com.dumontierlab.pdb2rdf.parser.vocabulary.uri.Bio2RdfPdbUriPattern;
 import com.dumontierlab.pdb2rdf.parser.vocabulary.uri.UriBuilder;
 import com.dumontierlab.pdb2rdf.util.UriUtil;
 import com.hp.hpl.jena.rdf.model.Resource;
-import com.hp.hpl.jena.vocabulary.OWL;
 import com.hp.hpl.jena.vocabulary.RDF;
 import com.hp.hpl.jena.vocabulary.RDFS;
 
@@ -117,8 +116,8 @@ public class ChemCompCategory extends ContentHandlerState {
 					residue.getURI());
 			getRdfModel().add(residue, PdbOwlVocabulary.ObjectProperty.hasNumberOfNonHydrogenAtoms.property(),
 					numberOfAtomsQuality);
-			getRdfModel()
-					.add(numberOfAtomsQuality, RDF.type, PdbOwlVocabulary.Class.NumberOfNonHydrogenAtoms.resource());
+			getRdfModel().add(numberOfAtomsQuality, RDF.type,
+					PdbOwlVocabulary.Class.NumberOfNonHydrogenAtoms.resource());
 			getRdfModel().add(numberOfAtomsQuality, PdbOwlVocabulary.DataProperty.hasValue.property(),
 					createDecimalLiteral(numberOfAtoms));
 		}
@@ -130,10 +129,10 @@ public class ChemCompCategory extends ContentHandlerState {
 			return;
 		}
 		for (Resource residue : residues.get(componentId)) {
-			Resource numberOfAtomsQuality = createResource(Bio2RdfPdbUriPattern.RESIDUE_NUMBER_OF_ATOMS, residue
-					.getURI());
-			getRdfModel()
-					.add(residue, PdbOwlVocabulary.ObjectProperty.hasNumberOfAtoms.property(), numberOfAtomsQuality);
+			Resource numberOfAtomsQuality = createResource(Bio2RdfPdbUriPattern.RESIDUE_NUMBER_OF_ATOMS,
+					residue.getURI());
+			getRdfModel().add(residue, PdbOwlVocabulary.ObjectProperty.hasNumberOfAtoms.property(),
+					numberOfAtomsQuality);
 			getRdfModel().add(numberOfAtomsQuality, RDF.type, PdbOwlVocabulary.Class.NumberOfAtoms.resource());
 			getRdfModel().add(numberOfAtomsQuality, PdbOwlVocabulary.DataProperty.hasValue.property(),
 					createDecimalLiteral(numberOfAtoms));
@@ -145,14 +144,16 @@ public class ChemCompCategory extends ContentHandlerState {
 		if (!residues.containsKey(componentId)) {
 			return;
 		}
-		componentType = ResidueTable.get(typeName).resource();
-		if(componentType == null){
-			componentType = createResource(Bio2RdfPdbUriPattern.RESIDUE_TYPE, UriUtil.urlEncode(UriUtil
-					.replacePrimes(UriUtil.toCamelCase(typeName))));
+		PdbOwlVocabulary.Class componentTypeClass = ResidueTable.get(typeName);
+		if (componentTypeClass != null) {
+			componentType = componentTypeClass.resource();
+		} else {
+			componentType = createResource(Bio2RdfPdbUriPattern.RESIDUE_TYPE,
+					UriUtil.urlEncode(UriUtil.replacePrimes(UriUtil.toCamelCase(typeName))));
 		}
 		for (Resource residue : residues.get(componentId)) {
 			getRdfModel().add(residue, RDF.type, componentType);
-			//getRdfModel().add(componentType, RDF.type, OWL.Class);
+			// getRdfModel().add(componentType, RDF.type, OWL.Class);
 			getRdfModel().add(residue, RDFS.label, typeName);
 		}
 	}
@@ -165,8 +166,8 @@ public class ChemCompCategory extends ContentHandlerState {
 			Resource formulaWeightQuality = createResource(Bio2RdfPdbUriPattern.RESIDUE_FORMULA_WEIGH, residue.getURI());
 			getRdfModel().add(residue, PdbOwlVocabulary.ObjectProperty.hasTheoreticalFormulaWeight.property(),
 					formulaWeightQuality);
-			getRdfModel()
-					.add(formulaWeightQuality, RDF.type, PdbOwlVocabulary.Class.TheoreticalFormulaWeight.resource());
+			getRdfModel().add(formulaWeightQuality, RDF.type,
+					PdbOwlVocabulary.Class.TheoreticalFormulaWeight.resource());
 			getRdfModel().add(formulaWeightQuality, PdbOwlVocabulary.DataProperty.hasValue.property(),
 					createDecimalLiteral(formulaWeight));
 		}

@@ -69,7 +69,7 @@ public class ClusterController extends HttpServlet {
 			}
 			LOG.info("Assigning input file to: " + req.getRemoteHost());
 			requestCount.incrementAndGet();
-			xmlStream = input.next().getByteStream();
+			xmlStream = input.next();
 		}
 		resp.setContentType("text/xml");
 		OutputStream out = resp.getOutputStream();

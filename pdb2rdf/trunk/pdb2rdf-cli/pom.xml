@@ -2,12 +2,12 @@
 	<parent>
 		<artifactId>pdb2rdf</artifactId>
 		<groupId>com.dumontierlab</groupId>
-		<version>0.0.9</version>
+		<version>0.0.10-SNAPSHOT</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.dumontierlab</groupId>
 	<artifactId>pdb2rdf-cli</artifactId>
-	<version>0.0.9</version>
+	<version>0.0.10-SNAPSHOT</version>
 
 	<dependencies>
 		<dependency>

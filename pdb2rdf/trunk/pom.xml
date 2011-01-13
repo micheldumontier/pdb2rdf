@@ -1,14 +1,10 @@
-<project
-	xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.dumontierlab</groupId>
 	<artifactId>pdb2rdf</artifactId>
 	<name>PDB Rdfizer</name>
-	<version>0.0.9-SNAPSHOT</version>
+	<version>0.0.9</version>
 	<packaging>pom</packaging>
 
 
@@ -19,9 +15,9 @@
 	</parent>
 
 	<scm>
-		<connection>scm:svn:https://pdb2rdf.googlecode.com/svn/pdb2rdf/trunk</connection>
-		<developerConnection>scm:svn:https://pdb2rdf.googlecode.com/svn/pdb2rdf/trunk</developerConnection>
-		<url>http://code.google.com/p/pdb2rdf/source/browse/#svn/pdb2rdf/trunk</url>
+		<connection>scm:svn:https://pdb2rdf.googlecode.com/svn/pdb2rdf/tags/pdb2rdf-0.0.9</connection>
+		<developerConnection>scm:svn:https://pdb2rdf.googlecode.com/svn/pdb2rdf/tags/pdb2rdf-0.0.9</developerConnection>
+		<url>http://code.google.com/p/pdb2rdf/source/browse/#svn/pdb2rdf/tags/pdb2rdf-0.0.9</url>
 	</scm>
 
 	<modules>

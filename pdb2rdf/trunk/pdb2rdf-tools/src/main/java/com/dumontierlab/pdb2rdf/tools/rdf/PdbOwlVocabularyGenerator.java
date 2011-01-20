@@ -22,10 +22,12 @@ package com.dumontierlab.pdb2rdf.tools.rdf;
 
 /**
  * @author Alexander De Leon
+ * @author Jose Cruz-Toledo
  */
 public class PdbOwlVocabularyGenerator {
 
 	public static void createResiduePdbOwlVocabularyLine(String residueName) {
+		
 
 	}
 

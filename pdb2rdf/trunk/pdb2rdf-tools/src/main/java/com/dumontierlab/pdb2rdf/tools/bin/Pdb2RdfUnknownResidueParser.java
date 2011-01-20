@@ -30,6 +30,7 @@ public class Pdb2RdfUnknownResidueParser {
 	 * Val: residue name
 	 */
 	HashMap<String, String> cleanUnkownResidues;
+	List <String> unknownResidues;
 	
 	public Pdb2RdfUnknownResidueParser(){
 		cleanUnkownResidues = new HashMap<String, String>();

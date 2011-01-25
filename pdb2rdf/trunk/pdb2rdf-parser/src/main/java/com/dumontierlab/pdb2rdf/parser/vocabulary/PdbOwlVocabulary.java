@@ -22,6 +22,7 @@ package com.dumontierlab.pdb2rdf.parser.vocabulary;
 
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter.DEFAULT;
 
+import com.dumontierlab.pdb2rdf.util.UriUtil;
 import com.hp.hpl.jena.ontology.AnnotationProperty;
 import com.hp.hpl.jena.ontology.DatatypeProperty;
 import com.hp.hpl.jena.ontology.OntClass;
@@ -446,7 +447,36 @@ public class PdbOwlVocabulary {
 		GuanosineFivePrimeDiphosphate(DEFAULT_NAMESPACE+ "GuanosineFivePrimeDiphosphate"),
 		FourRFourAlphaThiazolyBenzamide(DEFAULT_NAMESPACE +"FourRFourAlphaThiazolyBenzamide"),
 		ThreeCycloPentylNHydroxyPropanamide(DEFAULT_NAMESPACE + "ThreeCycloPentylNHydroxyPropanamide"),
-		SodiumIon(DEFAULT_NAMESPACE +"SodiumIon");
+		SodiumIon(DEFAULT_NAMESPACE +"SodiumIon"),
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		;
 		private final String uri;
 
 		private Class(String uri) {

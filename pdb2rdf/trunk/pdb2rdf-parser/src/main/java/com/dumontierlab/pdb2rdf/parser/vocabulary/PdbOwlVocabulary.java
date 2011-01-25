@@ -474,6 +474,7 @@ public class PdbOwlVocabulary {
 		
 		
 		
+		
 		;
 		// HASH(DEFAULT_NAMESPACE + "IUPAC NAME")
 		private final String uri;

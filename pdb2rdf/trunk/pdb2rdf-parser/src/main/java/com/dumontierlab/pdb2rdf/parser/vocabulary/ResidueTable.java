@@ -112,6 +112,22 @@ public class ResidueTable {
 		put("GLYCEROL", PdbOwlVocabulary.Class.Glycerol);
 		put("WATER", PdbOwlVocabulary.Class.Water);
 		put("UNKNOWN", PdbOwlVocabulary.Class.UnknownResidue);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
 	}
 

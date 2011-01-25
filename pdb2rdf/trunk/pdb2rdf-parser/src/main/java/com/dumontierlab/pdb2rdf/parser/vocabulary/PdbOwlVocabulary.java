@@ -450,9 +450,7 @@ public class PdbOwlVocabulary {
 		SodiumIon(DEFAULT_NAMESPACE +"SodiumIon"),
 		
 		
-		
-		
-		
+
 		
 		
 		
@@ -477,6 +475,7 @@ public class PdbOwlVocabulary {
 		
 		
 		;
+		// HASH(DEFAULT_NAMESPACE + "IUPAC NAME")
 		private final String uri;
 
 		private Class(String uri) {

@@ -139,7 +139,6 @@ public class PdbOwlVocabularyGenerator {
 		try {
 			FileUtils.writeLines(outputFile, aList);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

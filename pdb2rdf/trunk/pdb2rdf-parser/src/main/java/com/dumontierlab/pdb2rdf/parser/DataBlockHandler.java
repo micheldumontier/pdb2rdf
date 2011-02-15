@@ -22,20 +22,22 @@ package com.dumontierlab.pdb2rdf.parser;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 
+import com.dumontierlab.pdb2rdf.external.Pdb2Rdf2Uniprot;
 import com.dumontierlab.pdb2rdf.model.PdbRdfModel;
 import com.dumontierlab.pdb2rdf.parser.vocabulary.PdbOwlVocabulary;
 import com.dumontierlab.pdb2rdf.parser.vocabulary.PdbXmlVocabulary;
 import com.dumontierlab.pdb2rdf.parser.vocabulary.uri.Bio2RdfPdbUriPattern;
 import com.dumontierlab.pdb2rdf.parser.vocabulary.uri.UriBuilder;
 import com.hp.hpl.jena.rdf.model.Resource;
-import com.hp.hpl.jena.vocabulary.DCTerms;
 import com.hp.hpl.jena.vocabulary.DC_11;
 import com.hp.hpl.jena.vocabulary.RDF;
+import com.hp.hpl.jena.vocabulary.RDFS;
 
 /**
  * @author Alexander De Leon
@@ -101,7 +103,8 @@ public class DataBlockHandler extends ContentHandlerState {
 				|| localName.equals(PdbXmlVocabulary.ENTITY_SOURCE_NATURAL_CATEGORY)
 				|| localName.equals(PdbXmlVocabulary.ATOM_SITE_CATEGORY)
 				|| localName.equals(PdbXmlVocabulary.STRUCT_CONFIG_CATEGORY)
-				|| localName.equals(PdbXmlVocabulary.CELL_CATEGORY) || localName.equals(PdbXmlVocabulary.EXPTL_CATEGORY)
+				|| localName.equals(PdbXmlVocabulary.CELL_CATEGORY)
+				|| localName.equals(PdbXmlVocabulary.EXPTL_CATEGORY)
 				|| localName.equals(PdbXmlVocabulary.STRUCT_CATEGORY)
 				|| localName.equals(PdbXmlVocabulary.REFINE_CATEGORY)) {
 			setState(null);
@@ -116,8 +119,41 @@ public class DataBlockHandler extends ContentHandlerState {
 		// structure determination
 		Resource structureDetermination = createResource(Bio2RdfPdbUriPattern.STRUCTURE_DETERMINATION, pdbId);
 		getRdfModel().add(structureDetermination, RDF.type, PdbOwlVocabulary.Class.StructureDetermination.resource());
-		getRdfModel().add(experimentResource, PdbOwlVocabulary.ObjectProperty.hasPart.property(), structureDetermination);
+		getRdfModel().add(experimentResource, PdbOwlVocabulary.ObjectProperty.hasPart.property(),
+				structureDetermination);
+
+		// add link to uniprot
+		Pdb2Rdf2Uniprot uniprot = new Pdb2Rdf2Uniprot(pdbId);
+		List<String> uniprotMappings = uniprot.getUniprotMappings();
+		for (String uniprotId : uniprotMappings) {
+			getRdfModel().add(experimentResource, PdbOwlVocabulary.ObjectProperty.hasCrossReference.property(),
+					createUniprotResource(uniprotId));
+		}
+		List<String> goMappings = uniprot.getGoMappings();
+		for (String goId : goMappings) {
+			getRdfModel().add(experimentResource, PdbOwlVocabulary.ObjectProperty.hasCrossReference.property(),
+					createGoResource(goId));
+		}
 
 	}
 
+	private Resource createUniprotResource(String uniprotId) {
+		Resource uniprot = getRdfModel().createResource(
+				getUriBuilder().buildUri(Bio2RdfPdbUriPattern.UNIPROT_CROSS_REFERENCE, pdbId, uniprotId));
+		getRdfModel().add(uniprot, RDF.type, PdbOwlVocabulary.Class.UniprotCrossReference.resource());
+		getRdfModel().add(uniprot, PdbOwlVocabulary.DataProperty.hasValue.property(),
+				getRdfModel().createLiteral(uniprotId));
+		getRdfModel().add(uniprot, RDFS.seeAlso, getUriBuilder().buildUri(Bio2RdfPdbUriPattern.UNIPROT, uniprotId));
+		return uniprot;
+	}
+
+	private Resource createGoResource(String goId) {
+		Resource goResource = getRdfModel().createResource(
+				getUriBuilder().buildUri(Bio2RdfPdbUriPattern.GO_CROSS_REFERENCE, pdbId, goId));
+		getRdfModel().add(goResource, RDF.type, PdbOwlVocabulary.Class.GoCrossReference.resource());
+		getRdfModel().add(goResource, PdbOwlVocabulary.DataProperty.hasValue.property(),
+				getRdfModel().createLiteral(goId));
+		getRdfModel().add(goResource, RDFS.seeAlso, getUriBuilder().buildUri(Bio2RdfPdbUriPattern.GO, goId));
+		return goResource;
+	}
 }

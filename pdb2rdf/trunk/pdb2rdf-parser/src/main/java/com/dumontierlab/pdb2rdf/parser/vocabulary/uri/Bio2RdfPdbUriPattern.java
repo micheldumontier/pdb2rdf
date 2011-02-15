@@ -231,7 +231,12 @@ public enum Bio2RdfPdbUriPattern implements UriPattern, Bio2RdfPdbNamespace {
 	MAXIMUM_UPPER_DISTANCE_CONSTRAINT_VIOLATION(ENSEMBLE.pattern + "/maximumUpperDistanceConstraintViolation"),
 	REPRESENTATIVE_CONFORMER(ENSEMBLE.pattern + "/representativeConformer"),
 	TORSION_ANGLE_CONSTRAINT_VIOLATION_METHOD(ENSEMBLE.pattern + "/torsionAngleConstraintViolationMethod"),
-	COORDINATE(ATOM_SPATIAL_LOCATION.pattern + "/coordinate");
+	COORDINATE(ATOM_SPATIAL_LOCATION.pattern + "/coordinate"),
+
+	UNIPROT_CROSS_REFERENCE(DEFAULT_NAMESPACE + "{0}/crossreference/uniprot/{1}"),
+	UNIPROT("http://bio2rdf.org/uniprot:{0}"),
+	GO_CROSS_REFERENCE(DEFAULT_NAMESPACE + "{0}/crossreference/go/{1}"),
+	GO("http://bio2rdf.org/go:{0}");
 
 	private final String pattern;
 

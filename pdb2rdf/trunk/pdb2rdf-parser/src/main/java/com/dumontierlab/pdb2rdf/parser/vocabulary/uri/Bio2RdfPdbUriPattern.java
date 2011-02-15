@@ -72,6 +72,7 @@ public enum Bio2RdfPdbUriPattern implements UriPattern, Bio2RdfPdbNamespace {
 	CELL_TYPE(DEFAULT_NAMESPACE + "{0}"),
 	CELL_LINE(DEFAULT_NAMESPACE + "{0}"),
 	NCBI_TAXONOMY("http://bio2rdf.org/taxon:{0}"),
+	CHEBI("http://bio2rdf.org/chebi:{0}"),
 	ORGANISM(CHEMICAL_SUBSTANCE_EXTRACTION.pattern + "/source/organism"),
 	ORGAN(CHEMICAL_SUBSTANCE_EXTRACTION.pattern + "/source/organ"),
 	ORGAN_TYPE(DEFAULT_NAMESPACE + "{0}"),

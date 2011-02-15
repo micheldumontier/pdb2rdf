@@ -25,10 +25,6 @@ import com.hp.hpl.jena.rdf.model.Resource;
 public class Pdb2Rdf2Uniprot {
 	
 	/**
-	 * Uniprot Id to which the input PDB id maps to
-	 */
-	String uniprotId;
-	/**
 	 * The query PDBId
 	 */
 	String pdbId;
@@ -37,45 +33,62 @@ public class Pdb2Rdf2Uniprot {
 	 */
 	Model uniprotModel;
 	/**
-	 * A list of URLs to all of the GO mappings found in uniprot for a given PDB id
+	 * A list of Strings to all of the GO mappings found in uniprot for a given PDB id
 	 */
-	List<URL> goMappings; 
+	List<String> goMappings; 
 	
+	/**
+	 * A list of Strings to all of the Uniprot ids that map to the input PDBid
+	 */
+	List<String> uniprotMappings;
 
 	
 	public Pdb2Rdf2Uniprot(String aPdbId){
 		pdbId = aPdbId;
-		uniprotId = "";
 		uniprotModel = getUniprotModel();
 		goMappings = getGoMappings(uniprotModel);
+		uniprotMappings = getUniprotMappings(uniprotModel);
 	}
+	
+	private List<String> getUniprotMappings(Model aUpModel) {
+		QueryExecution ex = QueryExecutionFactory.create("SELECT ?x WHERE{?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.uniprot.org/core/Protein>}", aUpModel);
+		ResultSet rs = ex.execSelect();
+		List<String> returnMe = new ArrayList<String>();
+		while(rs.hasNext()){
+			QuerySolution sol = rs.next();
+			Resource r = sol.getResource("x");
+			String lPattern = "http:\\/\\/purl.uniprot.org\\/uniprot\\/(\\w+)";
+			Pattern p = Pattern.compile(lPattern);
+			Matcher m = p.matcher(r.getURI());
+			if(m.matches()){
+				returnMe.add(m.group(1).trim());
+			}
+		}
+		return returnMe;
+	}
+
 	
 	/**
 	 * Get the mappings to GO given a Uniprot RDF model
 	 * @param aUpModel a Model populated with an RDF representation of a Uniprot record
-	 * @return a list of URLs to GO annotations
+	 * @return a list of Strings to GO ids
 	 */
-	private List<URL> getGoMappings(Model aUpModel) {
+	private List<String> getGoMappings(Model aUpModel){
+		List<String> returnMe = new ArrayList();
 		QueryExecution ex = QueryExecutionFactory.create("SELECT ?z WHERE{_:x <http://purl.uniprot.org/core/classifiedWith> ?z}", aUpModel);
 		ResultSet rs = ex.execSelect();
-		List<URL> returnMe = new ArrayList<URL>();
 		while(rs.hasNext()){
 			QuerySolution sol = rs.next();
 			Resource r = sol.getResource("z");
 			//Check if the url is from go
-			String lPattern = "http:\\/\\/purl.uniprot.org\\/go\\/\\w+";
+			String lPattern = "http:\\/\\/purl.uniprot.org\\/go\\/(\\w+)";
 			Pattern p = Pattern.compile(lPattern);
 			Matcher m = p.matcher(r.getURI());
 			if(m.matches()){
-				try {
-					returnMe.add(new URL(m.group()));
-				} catch (MalformedURLException e) {
-					e.printStackTrace();
-				}
+				returnMe.add(m.group(1).trim());
 			}
 			
 		}
-		
 		return returnMe;
 	}
 
@@ -95,20 +108,7 @@ public class Pdb2Rdf2Uniprot {
 		}
 	}
 
-	/**
-	 * @return the uniprotId
-	 */
-	public String getUniprotId() {
-		return uniprotId;
-	}
-
-	/**
-	 * @param uniprotId the uniprotId to set
-	 */
-	public void setUniprotId(String uniprotId) {
-		this.uniprotId = uniprotId;
-	}
-
+	
 	/**
 	 * @return the pdbId
 	 */
@@ -123,18 +123,36 @@ public class Pdb2Rdf2Uniprot {
 		this.pdbId = pdbId;
 	}
 
+	
+
 	/**
 	 * @return the goMappings
 	 */
-	public List<URL> getGoMappings() {
+	public List<String> getGoMappings() {
 		return goMappings;
 	}
 
 	/**
 	 * @param goMappings the goMappings to set
 	 */
-	public void setGoMappings(List<URL> goMappings) {
+	public void setGoMappings(List<String> goMappings) {
 		this.goMappings = goMappings;
+	}
+
+	
+
+	/**
+	 * @return the uniprotMappings
+	 */
+	public List<String> getUniprotMappings() {
+		return uniprotMappings;
+	}
+
+	/**
+	 * @param uniprotMappings the uniprotMappings to set
+	 */
+	public void setUniprotMappings(List<String> uniprotMappings) {
+		this.uniprotMappings = uniprotMappings;
 	}
 
 	/**

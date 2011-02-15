@@ -43,4 +43,26 @@
 			<version>2.6.4</version>
 		</dependency>
   </dependencies>
+  
+  <build>
+  	<plugins>
+  		<plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>jaxws-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>wsimport</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <packageName>uk.ac.ebi.chebi</packageName>
+          <wsdlUrls>
+          	<wsdlUrl>http://www.ebi.ac.uk/webservices/chebi/2.0/webservice?wsdl</wsdlUrl>
+          </wsdlUrls>
+        </configuration>
+      </plugin>
+  	</plugins>
+  </build>
 </project>

@@ -4,64 +4,51 @@
  */
 package com.dumontierlab.pdb2rdf.tools.bin;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.commons.io.FileUtils;
-
 /**
- * @author Jose Cruz-Toledo 
- *
+ * @author Jose Cruz-Toledo
+ * 
  */
 public class Pdb2RdfUnknownResidueParser {
 	/**
 	 * The log file with the unknown residues
 	 */
-	File logFile;
-	
-	/**
-	 * Using a hashmap to keep residues unique in an easy manner :)
-	 * Key: residue name,
-	 * Val: residue name
-	 */
-	HashMap<String, String> cleanUnkownResidues;
-	List <String> unknownResidues;
-	
-	public Pdb2RdfUnknownResidueParser(){
-		cleanUnkownResidues = new HashMap<String, String>();
-	}
-	
-	public Pdb2RdfUnknownResidueParser(File aFile){
-		this();
+	private File logFile;
+
+	private final Set<String> cleanUnkownResidues;
+
+	public Pdb2RdfUnknownResidueParser(File aFile) {
 		logFile = aFile;
 		cleanUnkownResidues = cleanUnknownResidues(aFile);
 	}
-	
-	
+
 	/**
 	 * Populate the HashMap with the unique unknown residues
+	 * 
 	 * @param aFile
 	 * @return
 	 */
-	public HashMap<String, String> cleanUnknownResidues(File aFile){
-		HashMap<String, String> returnMe = new HashMap<String, String>();
+	public Set<String> cleanUnknownResidues(File aFile) {
+		HashSet<String> returnMe = new HashSet<String>();
 		try {
-			List<String> lines = FileUtils.readLines(aFile);
-			Iterator<String> itr = lines.iterator();
-			while(itr.hasNext()){
-				
-				String aLine = itr.next();
+			BufferedReader reader = new BufferedReader(new FileReader(aFile));
+			String aLine;
+			while ((aLine = reader.readLine()) != null) {
+
 				String linePattern = ".*type:\\s+(.*)";
 				Pattern lPattern = Pattern.compile(linePattern);
 				Matcher matches = lPattern.matcher(aLine);
-				if(matches.matches()){
-					returnMe.put(matches.group(1), matches.group(1));
-					
+				if (matches.matches()) {
+					returnMe.add(matches.group(1));
+
 				}
 			}
 		} catch (IOException e) {
@@ -78,7 +65,8 @@ public class Pdb2RdfUnknownResidueParser {
 	}
 
 	/**
-	 * @param logFile the logFile to set
+	 * @param logFile
+	 *            the logFile to set
 	 */
 	public void setLogFile(File logFile) {
 		this.logFile = logFile;
@@ -87,16 +75,8 @@ public class Pdb2RdfUnknownResidueParser {
 	/**
 	 * @return the cleanUnkownResidues
 	 */
-	public HashMap<String, String> getCleanUnkownResidues() {
+	public Set<String> getCleanUnkownResidues() {
 		return cleanUnkownResidues;
 	}
 
-	/**
-	 * @param cleanUnkownResidues the cleanUnkownResidues to set
-	 */
-	public void setCleanUnkownResidues(HashMap<String, String> cleanUnkownResidues) {
-		this.cleanUnkownResidues = cleanUnkownResidues;
-	}
-	
-	
 }

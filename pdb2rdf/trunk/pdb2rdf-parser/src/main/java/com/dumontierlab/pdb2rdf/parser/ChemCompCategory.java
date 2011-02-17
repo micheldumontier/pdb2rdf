@@ -29,7 +29,6 @@ import org.xml.sax.SAXException;
 import com.dumontierlab.pdb2rdf.model.PdbRdfModel;
 import com.dumontierlab.pdb2rdf.parser.vocabulary.PdbOwlVocabulary;
 import com.dumontierlab.pdb2rdf.parser.vocabulary.PdbXmlVocabulary;
-import com.dumontierlab.pdb2rdf.parser.vocabulary.ResidueTable;
 import com.dumontierlab.pdb2rdf.parser.vocabulary.uri.Bio2RdfPdbUriPattern;
 import com.dumontierlab.pdb2rdf.parser.vocabulary.uri.UriBuilder;
 import com.dumontierlab.pdb2rdf.util.UriUtil;
@@ -144,13 +143,9 @@ public class ChemCompCategory extends ContentHandlerState {
 		if (!residues.containsKey(componentId)) {
 			return;
 		}
-		PdbOwlVocabulary.Class componentTypeClass = ResidueTable.get(typeName);
-		if (componentTypeClass != null) {
-			componentType = componentTypeClass.resource();
-		} else {
-			componentType = createResource(Bio2RdfPdbUriPattern.RESIDUE_TYPE,
-					UriUtil.urlEncode(UriUtil.replacePrimes(UriUtil.toCamelCase(typeName))));
-		}
+
+		componentType = createResource(Bio2RdfPdbUriPattern.RESIDUE_TYPE, UriUtil.hash(typeName));
+
 		for (Resource residue : residues.get(componentId)) {
 			getRdfModel().add(residue, RDF.type, componentType);
 			// getRdfModel().add(componentType, RDF.type, OWL.Class);

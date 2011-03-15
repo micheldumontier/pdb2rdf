@@ -22,11 +22,13 @@ package com.dumontierlab.pdb2rdf.parser;
 
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 
+import com.dumontierlab.pdb2rdf.external.Pdb2Rdf2Uniprot;
 import com.dumontierlab.pdb2rdf.model.PdbRdfModel;
 import com.dumontierlab.pdb2rdf.parser.vocabulary.PdbOwlVocabulary;
 import com.dumontierlab.pdb2rdf.parser.vocabulary.PdbXmlVocabulary;
@@ -538,8 +540,8 @@ public class AtomSiteCategoryHandler extends ContentHandlerState {
 
 	private void createFormalCharge() {
 		Resource quality = createResource(Bio2RdfPdbUriPattern.FORMAL_CHARGE, pdbId, atomSiteId);
-		getRdfModel()
-				.add(getAtomLocationResource(), PdbOwlVocabulary.ObjectProperty.hasFormalCharge.property(), quality);
+		getRdfModel().add(getAtomLocationResource(), PdbOwlVocabulary.ObjectProperty.hasFormalCharge.property(),
+				quality);
 		getRdfModel().add(quality, PdbOwlVocabulary.DataProperty.hasValue.property(),
 				createDecimalLiteral(pdbxFormalCharge));
 		getRdfModel().add(quality, RDF.type, PdbOwlVocabulary.Class.PartialCharge.resource());
@@ -559,7 +561,8 @@ public class AtomSiteCategoryHandler extends ContentHandlerState {
 
 	private void createCartnZ() {
 		Resource quality = createResource(Bio2RdfPdbUriPattern.CARTN_Z, pdbId, atomSiteId);
-		getRdfModel().add(getAtomLocationResource(), PdbOwlVocabulary.ObjectProperty.hasZCoordinate.property(), quality);
+		getRdfModel()
+				.add(getAtomLocationResource(), PdbOwlVocabulary.ObjectProperty.hasZCoordinate.property(), quality);
 		getRdfModel().add(quality, PdbOwlVocabulary.DataProperty.hasValue.property(), createDecimalLiteral(cartnZ));
 		getRdfModel().add(quality, RDF.type, PdbOwlVocabulary.Class.ZCartesianCoordinate.resource());
 		if (cartnZEsd != null) {
@@ -570,7 +573,8 @@ public class AtomSiteCategoryHandler extends ContentHandlerState {
 
 	private void createCartnY() {
 		Resource quality = createResource(Bio2RdfPdbUriPattern.CARTN_Y, pdbId, atomSiteId);
-		getRdfModel().add(getAtomLocationResource(), PdbOwlVocabulary.ObjectProperty.hasYCoordinate.property(), quality);
+		getRdfModel()
+				.add(getAtomLocationResource(), PdbOwlVocabulary.ObjectProperty.hasYCoordinate.property(), quality);
 		getRdfModel().add(quality, PdbOwlVocabulary.DataProperty.hasValue.property(), createDecimalLiteral(cartnY));
 		getRdfModel().add(quality, RDF.type, PdbOwlVocabulary.Class.YCartesianCoordinate.resource());
 		if (cartnYEsd != null) {
@@ -581,7 +585,8 @@ public class AtomSiteCategoryHandler extends ContentHandlerState {
 
 	private void createCartnX() {
 		Resource quality = createResource(Bio2RdfPdbUriPattern.CARTN_X, pdbId, atomSiteId);
-		getRdfModel().add(getAtomLocationResource(), PdbOwlVocabulary.ObjectProperty.hasXCoordinate.property(), quality);
+		getRdfModel()
+				.add(getAtomLocationResource(), PdbOwlVocabulary.ObjectProperty.hasXCoordinate.property(), quality);
 		getRdfModel().add(quality, PdbOwlVocabulary.DataProperty.hasValue.property(), createDecimalLiteral(cartnX));
 		getRdfModel().add(quality, RDF.type, PdbOwlVocabulary.Class.XCartesianCoordinate.resource());
 		if (cartnXEsd != null) {
@@ -595,7 +600,8 @@ public class AtomSiteCategoryHandler extends ContentHandlerState {
 		Resource quality = createResource(Bio2RdfPdbUriPattern.B_ISO_OR_EQUIVALENT, pdbId, atomSiteId);
 		getRdfModel().add(getAtomLocationResource(),
 				PdbOwlVocabulary.ObjectProperty.hasIsotropicAtomicDisplacement.property(), quality);
-		getRdfModel().add(quality, PdbOwlVocabulary.DataProperty.hasValue.property(), createDecimalLiteral(bIsoOrEquiv));
+		getRdfModel()
+				.add(quality, PdbOwlVocabulary.DataProperty.hasValue.property(), createDecimalLiteral(bIsoOrEquiv));
 		getRdfModel().add(quality, RDF.type, PdbOwlVocabulary.Class.IsotropicAtomicDisplacement.resource());
 		if (bIsoOrEquivEsd != null) {
 			getRdfModel().add(quality, PdbOwlVocabulary.DataProperty.hasStandardDeviation.property(),
@@ -613,7 +619,8 @@ public class AtomSiteCategoryHandler extends ContentHandlerState {
 				if (groupPDB.equals(PdbXmlVocabulary.PDB_GROUP_ATOM_VALUE)) {
 					getRdfModel().add(getResidue(), PdbOwlVocabulary.ObjectProperty.hasPart.property(), atomResource);
 				} else {
-					getRdfModel().add(atomResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), getChemicalSubstanceResource());
+					getRdfModel().add(atomResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(),
+							getChemicalSubstanceResource());
 				}
 				getRdfModel().add(atomResource, RDFS.label, atomName);
 			}
@@ -641,16 +648,50 @@ public class AtomSiteCategoryHandler extends ContentHandlerState {
 				getRdfModel().add(modelResource, RDF.type, PdbOwlVocabulary.Class.Model.resource());
 				getRdfModel().add(modelResource, RDFS.label, "Model " + modelNumber);
 
+				// add link to uniprot
+				Pdb2Rdf2Uniprot uniprot = new Pdb2Rdf2Uniprot(pdbId);
+				List<String> uniprotMappings = uniprot.getUniprotMappings();
+				for (String uniprotId : uniprotMappings) {
+					getRdfModel().add(modelResource, PdbOwlVocabulary.ObjectProperty.hasCrossReference.property(),
+							createUniprotResource(uniprotId));
+				}
+				List<String> goMappings = uniprot.getGoMappings();
+				for (String goId : goMappings) {
+					getRdfModel().add(modelResource, PdbOwlVocabulary.ObjectProperty.hasCrossReference.property(),
+							createGoResource(goId));
+				}
+
 			}
 		}
 		return modelResource;
+	}
+
+	private Resource createUniprotResource(String uniprotId) {
+		Resource uniprot = getRdfModel().createResource(
+				getUriBuilder().buildUri(Bio2RdfPdbUriPattern.UNIPROT_CROSS_REFERENCE, pdbId, uniprotId));
+		getRdfModel().add(uniprot, RDF.type, PdbOwlVocabulary.Class.UniprotCrossReference.resource());
+		getRdfModel().add(uniprot, PdbOwlVocabulary.DataProperty.hasValue.property(),
+				getRdfModel().createLiteral(uniprotId));
+		getRdfModel().add(uniprot, RDFS.seeAlso, getUriBuilder().buildUri(Bio2RdfPdbUriPattern.UNIPROT, uniprotId));
+		return uniprot;
+	}
+
+	private Resource createGoResource(String goId) {
+		Resource goResource = getRdfModel().createResource(
+				getUriBuilder().buildUri(Bio2RdfPdbUriPattern.GO_CROSS_REFERENCE, pdbId, goId));
+		getRdfModel().add(goResource, RDF.type, PdbOwlVocabulary.Class.GoCrossReference.resource());
+		getRdfModel().add(goResource, PdbOwlVocabulary.DataProperty.hasValue.property(),
+				getRdfModel().createLiteral(goId));
+		getRdfModel().add(goResource, RDFS.seeAlso, getUriBuilder().buildUri(Bio2RdfPdbUriPattern.GO, goId));
+		return goResource;
 	}
 
 	private Resource getAtomLocationResource() {
 		assert modelNumber != null : "The model number is needed for creating this resource";
 		if (atomLocationResource == null) {
 			atomLocationResource = createResource(Bio2RdfPdbUriPattern.ATOM_SPATIAL_LOCATION, pdbId, atomSiteId);
-			getRdfModel().add(getModelResource(), PdbOwlVocabulary.ObjectProperty.hasPart.property(), atomLocationResource);
+			getRdfModel().add(getModelResource(), PdbOwlVocabulary.ObjectProperty.hasPart.property(),
+					atomLocationResource);
 			getRdfModel().add(getAtomResource(), PdbOwlVocabulary.ObjectProperty.hasSpatialLocation.property(),
 					atomLocationResource);
 			getRdfModel().add(atomLocationResource, RDF.type, PdbOwlVocabulary.Class.AtomSpatialLocation.resource());
@@ -676,7 +717,8 @@ public class AtomSiteCategoryHandler extends ContentHandlerState {
 							PdbOwlVocabulary.ObjectProperty.isImmediatelyBefore.property(), residueResource);
 				}
 
-				getRdfModel().add(residueResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), getChemicalSubstanceResource());
+				getRdfModel().add(residueResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(),
+						getChemicalSubstanceResource());
 
 				// Add its position on the chain
 				Resource chainPositionResource = createResource(Bio2RdfPdbUriPattern.CHAIN_POSITION, pdbId, chainId,
@@ -686,7 +728,8 @@ public class AtomSiteCategoryHandler extends ContentHandlerState {
 				getRdfModel().add(chainPositionResource, RDF.type, PdbOwlVocabulary.Class.ChainPosition.resource());
 				getRdfModel().add(chainPositionResource, PdbOwlVocabulary.DataProperty.hasValue.property(),
 						createLiteral(chainPosition, XSD.integer.getURI()));
-				getRdfModel().add(chainPositionResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(), getChain());
+				getRdfModel().add(chainPositionResource, PdbOwlVocabulary.ObjectProperty.isPartOf.property(),
+						getChain());
 				getRdfModel().add(chainPositionResource, RDFS.label,
 						"Position " + chainPosition + " on chain " + chainId);
 

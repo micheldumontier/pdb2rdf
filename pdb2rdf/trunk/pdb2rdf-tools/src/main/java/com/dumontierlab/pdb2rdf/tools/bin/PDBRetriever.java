@@ -20,32 +20,220 @@
  */
 package com.dumontierlab.pdb2rdf.tools.bin;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.URLEncoder;
+import java.nio.channels.FileChannel;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
+
 /**
- * This class queries the PDB for getting the records of a given type
+ * This class queries the PDB for getting the records of a given type Allowed
+ * types: DNA, RNA, Nucleic Acid
+ * 
  * @author "Jose Cruz-Toledo"
- *
+ * 
  */
 public class PDBRetriever {
-	
-	public PDBRetriever(){
-		
-	}
+	/**
+	 * Location of the PDB rest service
+	 */
+	public static final String SERVICELOCATION = "http://www.rcsb.org/pdb/rest/search";
+
+	/**
+	 * DNA only query
+	 */
+	public static final String DNAONLYQUERY = "<orgPdbQuery><queryType>org.pdb.query.simple.ChainTypeQuery</queryType><containsProtein>N</containsProtein><containsDna>?</containsDna><containsRna>N</containsRna><containsHybrid>N</containsHybrid></orgPdbQuery>";
+	/**
+	 * RNA only query
+	 */
+	public static final String RNAONLYQUERY = "<orgPdbQuery><queryType>org.pdb.query.simple.ChainTypeQuery</queryType><containsProtein>N</containsProtein><containsDna>N</containsDna><containsRna>?</containsRna><containsHybrid>N</containsHybrid></orgPdbQuery>";
+	/**
+	 * Nucleic acids query
+	 */
+	public static final String NUCLEICACIDONLYQUERY = "<orgPdbQuery><queryType>org.pdb.query.simple.ChainTypeQuery</queryType><containsProtein>N</containsProtein><containsDna>?</containsDna><containsRna>?</containsRna><containsHybrid>N</containsHybrid></orgPdbQuery>";
+	/**
+	 * A list with all of the PDBIds returned from the query
+	 */
+	List<String> pdbIds = new ArrayList<String>();
+
 	
 	/**
-	 * Return the pdbids of a given type.
-	 * Permitted parameters: "Nucleic Acid" or "Protein" or "Both"
-	 * @param aType
-	 * @return
+	 * Constructor. Pass in one of the allowed values i.e.: RNA, DNA or Nucleic acid
+	 * @param aQry
 	 */
-	public List<String> getPDBIdsByType(String aType){
+	public PDBRetriever(String aQry) {
+
+		if (aQry.equalsIgnoreCase("Nucleic Acid")) {
+			pdbIds = postQuery(NUCLEICACIDONLYQUERY);
+		} else if (aQry.equalsIgnoreCase("RNA")) {
+			pdbIds = postQuery(RNAONLYQUERY);
+		} else if (aQry.equalsIgnoreCase("DNA")) {
+			pdbIds = postQuery(DNAONLYQUERY);
+		}
+	}
+
+	/**
+	 * post am XML query (PDB XML query format) to the RESTful RCSB web service
+	 * 
+	 * @param xml
+	 * @return a list of PDB ids.
+	 */
+	public List<String> postQuery(String xml) {
+		URL u;
 		List<String> returnMe = new ArrayList<String>();
-		if(aType.equalsIgnoreCase("Nucleic Acid")){
-			
+		try {
+			u = new URL(SERVICELOCATION);
+			String encodedXML = URLEncoder.encode(xml, "UTF-8");
+			InputStream in = doPOST(u, encodedXML);
+			BufferedReader rd = new BufferedReader(new InputStreamReader(in));
+			String line;
+			while ((line = rd.readLine()) != null) {
+				returnMe.add(line);
+			}
+			rd.close();
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 		return returnMe;
 	}
-	
+
+	/**
+	 * do a POST to a URL and return the response stream for further processing
+	 * elsewhere.
+	 * 
+	 * 
+	 * @param url
+	 * @return
+	 * @throws IOException
+	 */
+	public static InputStream doPOST(URL url, String data) {
+		// Send data
+		URLConnection conn;
+		try {
+			conn = url.openConnection();
+			conn.setDoOutput(true);
+			OutputStreamWriter wr = new OutputStreamWriter(
+					conn.getOutputStream());
+			wr.write(data);
+			wr.flush();
+			// Get the response
+			return conn.getInputStream();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	/**
+	 * Iterates over the sourceDirectory in search for the pdb files
+	 * corresponding to someIds
+	 * 
+	 * @param sourceDirectory
+	 *            Directory that holds all of your PDB RDF files
+	 * @param someIds
+	 *            PDBIDs retrieved from PDB's REST service
+	 * @return A list of Files that correspond to the someIds parameter
+	 */
+	public List<File> getPDBRDFPaths(File sourceDirectory, List<String> someIds) {
+		List<File> returnMe = new ArrayList<File>();
+		Iterator<String> itr = someIds.iterator();
+		// Iterate over ids
+		while (itr.hasNext()) {
+			String anId = itr.next();
+			String middleLetters = getMiddleTwoLetters(anId);
+			if (middleLetters.length() == 2) {
+				String aFilePath = sourceDirectory.getAbsolutePath() + "/"
+						+ middleLetters + "/" + anId.toUpperCase() + ".rdf.gz";
+				File aFile = new File(aFilePath);
+				boolean exists = aFile.exists();
+				if (exists) {
+					returnMe.add(aFile);
+				}
+			}
+		}
+		return returnMe;
+	}
+
+	/**
+	 * Get a list of files that match the query posed to the PDB service
+	 * @param sourceDirectory directory where the RDF files exist
+	 * @return a list of files
+	 */
+	public List<File> getPDBRDFPaths(File sourceDirectory) {
+		List<File> returnMe = this.getPDBRDFPaths(sourceDirectory,
+				this.getPdbIds());
+		return returnMe;
+	}
+
+	/**
+	 * Iterate over source files and copy the files over to destination
+	 * directory
+	 * 
+	 * @param sourceFiles
+	 * @param destinationDirectory
+	 */
+	public void copyFiles(List<File> sourceFiles, File destinationDirectory) {
+		Iterator<File> itr = sourceFiles.iterator();
+		while (itr.hasNext()) {
+			File sourceFile = itr.next();
+			try {
+				System.out.println(destinationDirectory.getAbsolutePath() + "/"
+						+ sourceFile.getName());
+				FileUtils.copyFile(sourceFile,
+						new File(destinationDirectory.getAbsolutePath() + "/"
+								+ sourceFile.getName()));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+
+	}
+
+
+	/**
+	 * Return the middle two letters of a PDBID in Uppercase
+	 * 
+	 * @param anId
+	 * @return
+	 */
+	public String getMiddleTwoLetters(String anId) {
+		String returnMe = "";
+		returnMe = anId.substring(1, 3).toUpperCase();
+		return returnMe;
+	}
+
+	/**
+	 * @return the pdbIds
+	 */
+	public List<String> getPdbIds() {
+		return pdbIds;
+	}
+
+	/**
+	 * @param pdbIds
+	 *            the pdbIds to set
+	 */
+	public void setPdbIds(List<String> pdbIds) {
+		this.pdbIds = pdbIds;
+	}
+
 }

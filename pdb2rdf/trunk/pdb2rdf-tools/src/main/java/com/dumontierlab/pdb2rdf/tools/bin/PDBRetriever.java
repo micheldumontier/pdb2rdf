@@ -173,6 +173,33 @@ public class PDBRetriever {
 		return returnMe;
 	}
 
+	
+	public List<File> getPDBXMLPaths(File sourceDirectory, List<String> someIds){
+		List<File> returnMe = new ArrayList<File>();
+		Iterator<String> itr = someIds.iterator();
+		while(itr.hasNext()){
+			String anId = itr.next();
+			String middleLetters = getMiddleTwoLetters(anId);
+			if(middleLetters.length() == 2){
+				String aFP = sourceDirectory.getAbsolutePath() + "/"
+					+ middleLetters.toLowerCase() + "/" + anId.toLowerCase() + ".xml.gz";
+				File aFile = new File(aFP);
+				boolean e = aFile.exists();
+				if(e){
+					returnMe.add(aFile);
+				}
+			}
+		}
+		return returnMe; 
+	}
+	
+	
+	public List<File> getPDBXMLPaths(File sourceDirectory){
+		List<File> returnMe = this.getPDBXMLPaths(sourceDirectory,
+				this.getPdbIds());
+		return returnMe;
+	}
+	
 	/**
 	 * Get a list of files that match the query posed to the PDB service
 	 * @param sourceDirectory directory where the RDF files exist
@@ -196,8 +223,6 @@ public class PDBRetriever {
 		while (itr.hasNext()) {
 			File sourceFile = itr.next();
 			try {
-				System.out.println(destinationDirectory.getAbsolutePath() + "/"
-						+ sourceFile.getName());
 				FileUtils.copyFile(sourceFile,
 						new File(destinationDirectory.getAbsolutePath() + "/"
 								+ sourceFile.getName()));

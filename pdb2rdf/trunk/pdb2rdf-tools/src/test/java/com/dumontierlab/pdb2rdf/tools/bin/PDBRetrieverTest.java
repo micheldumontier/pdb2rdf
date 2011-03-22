@@ -34,33 +34,20 @@ import org.junit.Test;
  *
  */
 public class PDBRetrieverTest {
-	/*@Test
-	public void testOne(){
-		String type = "DNA";
-		List<String> strs = new ArrayList<String>();
-		PDBRetriever r = new PDBRetriever(type);
-		strs = r.getPdbIds();
-		Iterator<String> itr = strs.iterator();
-		while(itr.hasNext()){
-	//		System.out.println(itr.next());
-		}
-	}
-	@Test
-	public void testTwo(){
-		List<String> strs = new ArrayList<String>();
-		PDBRetriever r = new PDBRetriever("dna");
-		List<File> someFiles = r.getPDBRDFPaths(new File("/media/shelf/pdb/rdf/nocoord/"), r.getPdbIds());
-		Iterator<File> itr = someFiles.iterator();
-		while(itr.hasNext()){
-		//	System.out.println(itr.next().getAbsolutePath());
-		}
-	}*/
+
 	
 	@Test
 	public void testThree(){
-		PDBRetriever r = new PDBRetriever("dna");
+		PDBRetriever r = new PDBRetriever("nucleic acid");
 		List<File> files = r.getPDBRDFPaths(new File("/media/shelf/pdb/rdf/nocoord_all/"));
-		r.copyFiles(files, new File("/tmp/testDna/"));
+		r.copyFiles(files, new File("/tmp/testNA/"));
 		
+	}
+	
+	@Test
+	public void testFour(){
+		PDBRetriever r = new PDBRetriever("nucleic acid");
+		List<File> files = r.getPDBXMLPaths(new File("/media/shelf/pdb/xml/"));
+		r.copyFiles(files, new File("/tmp/xmlNa"));
 	}
 }

@@ -58,7 +58,6 @@ public class ChebiService {
 				return null;
 			}
 		} catch (ChebiWebServiceFault_Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;
 		}

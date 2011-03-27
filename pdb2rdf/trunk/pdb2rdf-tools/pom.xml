@@ -47,27 +47,77 @@
 			<artifactId>commons-io</artifactId>
 			<version>20030203.000550</version>
 		</dependency>
+		<dependency>
+		    <groupId>org.apache.cxf</groupId>
+		    <artifactId>cxf-rt-frontend-jaxws</artifactId>
+		    <version>2.3.1</version>
+		  </dependency>
+		  <dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-api</artifactId>
+		    <version>1.6.1</version>
+		  </dependency>
+		  <dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-log4j12</artifactId>
+		    <version>1.6.1</version>
+		  </dependency>
+		  <dependency>
+		    <groupId>org.apache.cxf</groupId>
+		    <artifactId>cxf-rt-transports-http</artifactId>
+		    <version>2.3.1</version>
+		  </dependency>
   </dependencies>
   
   <build>
   	<plugins>
-  		<plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>jaxws-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <goals>
-              <goal>wsimport</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <packageName>uk.ac.ebi.chebi</packageName>
-          <wsdlUrls>
-          	<wsdlUrl>http://www.ebi.ac.uk/webservices/chebi/2.0/webservice?wsdl</wsdlUrl>
-          </wsdlUrls>
-        </configuration>
-      </plugin>
+  	<plugin>
+      <groupId>org.apache.cxf</groupId>
+      <artifactId>cxf-codegen-plugin</artifactId>
+      <version>2.3.1</version>
+      <executions>
+        <execution>
+          <id>generate-sources</id>
+          <phase>generate-sources</phase>
+          <configuration>
+            <sourceRoot>${basedir}/src/main/java</sourceRoot>
+            <wsdlOptions>
+              <wsdlOption>
+                <wsdl>http://www.ebi.ac.uk/webservices/chebi/2.0/webservice?wsdl</wsdl>
+                <extraargs>
+                  <extraarg>-client</extraarg>
+                </extraargs>
+                <!-- <bindingFiles>
+                  <bindingFile>http://sadi-data.semanticscience.org/setup/bindings.xml</bindingFile>
+                </bindingFiles> -->
+              </wsdlOption>
+            </wsdlOptions>
+          </configuration>
+          <goals>
+            <goal>wsdl2java</goal>
+          </goals>
+        </execution>
+      </executions>
+    </plugin>
+  	 <plugin>
+      <groupId>org.codehaus.mojo</groupId>
+      <artifactId>build-helper-maven-plugin</artifactId>
+      <version>1.5</version>
+      <executions>
+        <execution>
+          <id>add-source</id>
+          <phase>generate-sources</phase>
+          <goals>
+            <goal>add-source</goal>
+          </goals>
+          <configuration>
+            <sources>
+              <source>${basedir}/target/generated/src/main/java</source>
+            </sources>
+          </configuration>
+        </execution>
+      </executions>
+    </plugin>
   	</plugins>
   </build>
 </project>

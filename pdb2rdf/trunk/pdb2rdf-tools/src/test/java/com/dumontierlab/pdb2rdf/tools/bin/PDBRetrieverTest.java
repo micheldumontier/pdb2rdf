@@ -28,26 +28,72 @@ import java.util.List;
 
 import org.junit.Test;
 
-
 /**
  * @author "Jose Cruz-Toledo"
- *
+ * 
  */
 public class PDBRetrieverTest {
 
-	
+	/*
+	 * @Test public void testThree(){ PDBRetriever r = new
+	 * PDBRetriever("nucleic acid"); List<File> files = r.getPDBRDFPaths(new
+	 * File("/media/shelf/pdb/rdf/nocoord_all/")); r.copyFiles(files, new
+	 * File("/tmp/testNA/"));
+	 * 
+	 * }
+	 * 
+	 * @Test public void testFour(){ PDBRetriever r = new
+	 * PDBRetriever("nucleic acid"); List<File> files = r.getPDBXMLPaths(new
+	 * File("/media/shelf/pdb/xml/")); r.copyFiles(files, new
+	 * File("/tmp/xmlNa")); }
+
 	@Test
-	public void testThree(){
+	public void testFive() {
 		PDBRetriever r = new PDBRetriever("nucleic acid");
-		List<File> files = r.getPDBRDFPaths(new File("/media/shelf/pdb/rdf/nocoord_all/"));
-		r.copyFiles(files, new File("/tmp/testNA/"));
-		
+		List<File> files = r.getPDBPaths(new File("/media/shelf/pdb/pdb/"));
+		r.copyFiles(files, new File("/media/shelf/NucleicAcidFun/xray/na"));
+	}
+	 */
+	@Test
+	public void testFivep2() {
+		PDBRetriever r = new PDBRetriever("nucleic acid xray");
+		List<File> files = r.getPDBPaths(new File("/media/shelf/pdb/pdb/"));
+		r.copyFiles(files, new File("/media/shelf/NucleicAcidFun/xray/na"));
 	}
 	
 	@Test
-	public void testFour(){
-		PDBRetriever r = new PDBRetriever("nucleic acid");
-		List<File> files = r.getPDBXMLPaths(new File("/media/shelf/pdb/xml/"));
-		r.copyFiles(files, new File("/tmp/xmlNa"));
+	public void testSix() {
+		PDBRetriever r = new PDBRetriever("nucleic acid high res");
+		List<File> files = r.getPDBPaths(new File("/media/shelf/pdb/pdb/"));
+		r.copyFiles(files, new File("/media/shelf/NucleicAcidFun/xray/nahr"));
 	}
+	
+	@Test
+	public void testSixp2() {
+		PDBRetriever r = new PDBRetriever("dna xray");
+		List<File> files = r.getPDBPaths(new File("/media/shelf/pdb/pdb/"));
+		r.copyFiles(files, new File("/media/shelf/NucleicAcidFun/xray/dna"));
+	}
+	
+	@Test
+	public void testSixp3() {
+		PDBRetriever r = new PDBRetriever("dna high res");
+		List<File> files = r.getPDBPaths(new File("/media/shelf/pdb/pdb/"));
+		r.copyFiles(files, new File("/media/shelf/NucleicAcidFun/xray/dnahr"));
+	}
+	
+	@Test
+	public void testSixp4() {
+		PDBRetriever r = new PDBRetriever("rna xray");
+		List<File> files = r.getPDBPaths(new File("/media/shelf/pdb/pdb/"));
+		r.copyFiles(files, new File("/media/shelf/NucleicAcidFun/xray/rna"));
+	}
+	
+	@Test
+	public void testSixp5() {
+		PDBRetriever r = new PDBRetriever("rna high res");
+		List<File> files = r.getPDBPaths(new File("/media/shelf/pdb/pdb/"));
+		r.copyFiles(files, new File("/media/shelf/NucleicAcidFun/xray/rnahr"));
+	}
+	
 }

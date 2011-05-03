@@ -96,4 +96,24 @@ public class PDBRetrieverTest {
 		r.copyFiles(files, new File("/media/shelf/NucleicAcidFun/xray/rnahr"));
 	}
 	
+	@Test
+	public void testSixp6() {
+		PDBRetriever r = new PDBRetriever("rna super high res");
+		List<File> files = r.getPDBPaths(new File("/media/shelf/pdb/pdb/"));
+		r.copyFiles(files, new File("/media/shelf/NucleicAcidFun/xray/rnashr"));
+	}
+	
+	@Test
+	public void testSixp7() {
+		PDBRetriever r = new PDBRetriever("dna super high res");
+		List<File> files = r.getPDBPaths(new File("/media/shelf/pdb/pdb/"));
+		r.copyFiles(files, new File("/media/shelf/NucleicAcidFun/xray/dnashr"));
+	}
+	
+	@Test
+	public void testSixp8() {
+		PDBRetriever r = new PDBRetriever("na super high res");
+		List<File> files = r.getPDBPaths(new File("/media/shelf/pdb/pdb/"));
+		r.copyFiles(files, new File("/media/shelf/NucleicAcidFun/xray/nashr"));
+	}
 }

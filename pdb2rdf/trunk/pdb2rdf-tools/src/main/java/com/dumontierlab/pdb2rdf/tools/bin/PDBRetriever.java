@@ -72,10 +72,20 @@ public class PDBRetriever {
 	 */
 	public static final String NUCLEICACIDONLYQRY_XRAY_0_10 = "<orgPdbCompositeQuery> <queryRefinement>  <queryRefinementLevel>0</queryRefinementLevel>  <orgPdbQuery>    <queryType>org.pdb.query.simple.ChainTypeQuery</queryType>    <containsProtein>N</containsProtein>    <containsDna>?</containsDna>    <containsRna>?</containsRna>    <containsHybrid>N</containsHybrid>  </orgPdbQuery> </queryRefinement> <queryRefinement>  <queryRefinementLevel>1</queryRefinementLevel>  <conjunctionType>and</conjunctionType>  <orgPdbQuery>    <queryType>org.pdb.query.simple.ResolutionQuery</queryType>    <refine.ls_d_res_high.comparator>between</refine.ls_d_res_high.comparator>    <refine.ls_d_res_high.min>0.0</refine.ls_d_res_high.min>    <refine.ls_d_res_high.max>10.0</refine.ls_d_res_high.max>  </orgPdbQuery> </queryRefinement></orgPdbCompositeQuery>";
 	/**
-	 * Nucleic acids query, only Xray between 0 and 10 A
+	 * Nucleic acids query, only Xray between 0 and 3.5 A
 	 */
 	public static final String NUCLEICACIDONLYQRY_XRAY_0_3p5 = "<orgPdbCompositeQuery> <queryRefinement>  <queryRefinementLevel>0</queryRefinementLevel>  <orgPdbQuery>    <queryType>org.pdb.query.simple.ChainTypeQuery</queryType>    <containsProtein>N</containsProtein>    <containsDna>?</containsDna>    <containsRna>?</containsRna>    <containsHybrid>N</containsHybrid>  </orgPdbQuery> </queryRefinement> <queryRefinement>  <queryRefinementLevel>1</queryRefinementLevel>  <conjunctionType>and</conjunctionType>  <orgPdbQuery>    <queryType>org.pdb.query.simple.ResolutionQuery</queryType>    <refine.ls_d_res_high.comparator>between</refine.ls_d_res_high.comparator>    <refine.ls_d_res_high.min>0.0</refine.ls_d_res_high.min>    <refine.ls_d_res_high.max>3.5</refine.ls_d_res_high.max>  </orgPdbQuery> </queryRefinement></orgPdbCompositeQuery>";
 	
+	/**
+	 * Nucleic acids query, only Xray between 0 and 2.5 A
+	 */
+	public static final String NUCLEICACIDONLYQRY_XRAY_0_2p5 = "<orgPdbCompositeQuery> <queryRefinement>  <queryRefinementLevel>0</queryRefinementLevel>  <orgPdbQuery>    <queryType>org.pdb.query.simple.ChainTypeQuery</queryType>    <containsProtein>N</containsProtein>    <containsDna>?</containsDna>    <containsRna>?</containsRna>    <containsHybrid>N</containsHybrid>  </orgPdbQuery> </queryRefinement> <queryRefinement>  <queryRefinementLevel>1</queryRefinementLevel>  <conjunctionType>and</conjunctionType>  <orgPdbQuery>    <queryType>org.pdb.query.simple.ResolutionQuery</queryType>    <refine.ls_d_res_high.comparator>between</refine.ls_d_res_high.comparator>    <refine.ls_d_res_high.min>0.0</refine.ls_d_res_high.min>    <refine.ls_d_res_high.max>2.5</refine.ls_d_res_high.max>  </orgPdbQuery> </queryRefinement></orgPdbCompositeQuery>";
+	
+	/**
+	 * RNA only Xray between 0 and 2.5 A
+	 */
+	public static final String RNAONLYQRY_XRAY_0_2p5 = "<orgPdbCompositeQuery> <queryRefinement>  <queryRefinementLevel>0</queryRefinementLevel>  <orgPdbQuery>    <queryType>org.pdb.query.simple.ChainTypeQuery</queryType>    <containsProtein>N</containsProtein>    <containsDna>N</containsDna>    <containsRna>?</containsRna>    <containsHybrid>N</containsHybrid>  </orgPdbQuery> </queryRefinement> <queryRefinement>  <queryRefinementLevel>1</queryRefinementLevel>  <conjunctionType>and</conjunctionType>  <orgPdbQuery>    <queryType>org.pdb.query.simple.ResolutionQuery</queryType>    <refine.ls_d_res_high.comparator>between</refine.ls_d_res_high.comparator>    <refine.ls_d_res_high.min>0.0</refine.ls_d_res_high.min>    <refine.ls_d_res_high.max>2.5</refine.ls_d_res_high.max>  </orgPdbQuery> </queryRefinement></orgPdbCompositeQuery>";
+
 	
 	/**
 	 * RNA only Xray between 0 and 3.5 A
@@ -87,6 +97,12 @@ public class PDBRetriever {
 	 */
 	public static final String RNAONLYQRY_XRAY_0_10 = "<orgPdbCompositeQuery> <queryRefinement>  <queryRefinementLevel>0</queryRefinementLevel>  <orgPdbQuery>    <queryType>org.pdb.query.simple.ChainTypeQuery</queryType>    <containsProtein>N</containsProtein>    <containsDna>N</containsDna>    <containsRna>?</containsRna>    <containsHybrid>N</containsHybrid>  </orgPdbQuery> </queryRefinement> <queryRefinement>  <queryRefinementLevel>1</queryRefinementLevel>  <conjunctionType>and</conjunctionType>  <orgPdbQuery>    <queryType>org.pdb.query.simple.ResolutionQuery</queryType>    <refine.ls_d_res_high.comparator>between</refine.ls_d_res_high.comparator>    <refine.ls_d_res_high.min>0.0</refine.ls_d_res_high.min>    <refine.ls_d_res_high.max>10.0</refine.ls_d_res_high.max>  </orgPdbQuery> </queryRefinement></orgPdbCompositeQuery>";
 
+	/**
+	 * DNA only Xray between 0 and 2.5 A
+	 */
+	public static final String DNAONLYQRY_XRAY_0_2p5 = "<orgPdbCompositeQuery> <queryRefinement>  <queryRefinementLevel>0</queryRefinementLevel><orgPdbQuery><queryType>org.pdb.query.simple.ChainTypeQuery</queryType><containsProtein>N</containsProtein><containsDna>?</containsDna><containsRna>N</containsRna><containsHybrid>N</containsHybrid>  </orgPdbQuery> </queryRefinement> <queryRefinement>  <queryRefinementLevel>1</queryRefinementLevel>  <conjunctionType>and</conjunctionType>  <orgPdbQuery>    <queryType>org.pdb.query.simple.ResolutionQuery</queryType>    <refine.ls_d_res_high.comparator>between</refine.ls_d_res_high.comparator>    <refine.ls_d_res_high.min>0.0</refine.ls_d_res_high.min>    <refine.ls_d_res_high.max>2.5</refine.ls_d_res_high.max>  </orgPdbQuery> </queryRefinement></orgPdbCompositeQuery>";
+	
+	
 	/**
 	 * DNA only Xray between 0 and 3.5 A
 	 */
@@ -130,6 +146,12 @@ public class PDBRetriever {
 			pdbIds = postQuery(NUCLEICACIDONLYQRY_XRAY_0_10);
 		} else if(aQry.equalsIgnoreCase("Nucleic acid high res")){
 			pdbIds = postQuery(NUCLEICACIDONLYQRY_XRAY_0_3p5);
+		} else if(aQry.equalsIgnoreCase("dna super high res")){
+			pdbIds = postQuery(DNAONLYQRY_XRAY_0_2p5);
+		} else if(aQry.equalsIgnoreCase("rna super high res")){
+			pdbIds = postQuery(RNAONLYQRY_XRAY_0_2p5);
+		} else if(aQry.equalsIgnoreCase("na super high res")){
+			pdbIds = postQuery(NUCLEICACIDONLYQRY_XRAY_0_2p5);
 		}
 	}
 

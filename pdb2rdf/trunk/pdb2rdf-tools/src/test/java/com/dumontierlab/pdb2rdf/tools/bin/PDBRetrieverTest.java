@@ -34,26 +34,13 @@ import org.junit.Test;
  */
 public class PDBRetrieverTest {
 
-	/*
-	 * @Test public void testThree(){ PDBRetriever r = new
-	 * PDBRetriever("nucleic acid"); List<File> files = r.getPDBRDFPaths(new
-	 * File("/media/shelf/pdb/rdf/nocoord_all/")); r.copyFiles(files, new
-	 * File("/tmp/testNA/"));
-	 * 
-	 * }
-	 * 
-	 * @Test public void testFour(){ PDBRetriever r = new
-	 * PDBRetriever("nucleic acid"); List<File> files = r.getPDBXMLPaths(new
-	 * File("/media/shelf/pdb/xml/")); r.copyFiles(files, new
-	 * File("/tmp/xmlNa")); }
-
 	@Test
-	public void testFive() {
-		PDBRetriever r = new PDBRetriever("nucleic acid");
-		List<File> files = r.getPDBPaths(new File("/media/shelf/pdb/pdb/"));
-		r.copyFiles(files, new File("/media/shelf/NucleicAcidFun/xray/na"));
+	public void getNucleicAcidXMLDocs(){
+		PDBRetriever r = new PDBRetriever("Nucleic Acid");
+		List<File> files = r.getPDBXMLPaths(new File("/media/shelf/pdb/xml/"));
+		r.copyFiles(files, new File("/media/shelf/NucleicAcidFun/nucleicAcids/xml/"));
 	}
-	 */
+	/*
 	@Test
 	public void testFivep2() {
 		PDBRetriever r = new PDBRetriever("nucleic acid xray");
@@ -116,4 +103,5 @@ public class PDBRetrieverTest {
 		List<File> files = r.getPDBPaths(new File("/media/shelf/pdb/pdb/"));
 		r.copyFiles(files, new File("/media/shelf/NucleicAcidFun/xray/nashr"));
 	}
+	*/
 }

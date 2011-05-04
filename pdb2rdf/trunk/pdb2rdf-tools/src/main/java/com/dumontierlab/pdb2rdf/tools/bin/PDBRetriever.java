@@ -66,7 +66,7 @@ public class PDBRetriever {
 	 * Nucleic acids query
 	 */
 	public static final String NUCLEICACIDONLYQUERY = "<orgPdbQuery><queryType>org.pdb.query.simple.ChainTypeQuery</queryType><containsProtein>N</containsProtein><containsDna>?</containsDna><containsRna>?</containsRna><containsHybrid>N</containsHybrid></orgPdbQuery>";
-	
+
 	/**
 	 * Nucleic acids query, only Xray between 0 and 10 A
 	 */
@@ -75,18 +75,17 @@ public class PDBRetriever {
 	 * Nucleic acids query, only Xray between 0 and 3.5 A
 	 */
 	public static final String NUCLEICACIDONLYQRY_XRAY_0_3p5 = "<orgPdbCompositeQuery> <queryRefinement>  <queryRefinementLevel>0</queryRefinementLevel>  <orgPdbQuery>    <queryType>org.pdb.query.simple.ChainTypeQuery</queryType>    <containsProtein>N</containsProtein>    <containsDna>?</containsDna>    <containsRna>?</containsRna>    <containsHybrid>N</containsHybrid>  </orgPdbQuery> </queryRefinement> <queryRefinement>  <queryRefinementLevel>1</queryRefinementLevel>  <conjunctionType>and</conjunctionType>  <orgPdbQuery>    <queryType>org.pdb.query.simple.ResolutionQuery</queryType>    <refine.ls_d_res_high.comparator>between</refine.ls_d_res_high.comparator>    <refine.ls_d_res_high.min>0.0</refine.ls_d_res_high.min>    <refine.ls_d_res_high.max>3.5</refine.ls_d_res_high.max>  </orgPdbQuery> </queryRefinement></orgPdbCompositeQuery>";
-	
+
 	/**
 	 * Nucleic acids query, only Xray between 0 and 2.5 A
 	 */
 	public static final String NUCLEICACIDONLYQRY_XRAY_0_2p5 = "<orgPdbCompositeQuery> <queryRefinement>  <queryRefinementLevel>0</queryRefinementLevel>  <orgPdbQuery>    <queryType>org.pdb.query.simple.ChainTypeQuery</queryType>    <containsProtein>N</containsProtein>    <containsDna>?</containsDna>    <containsRna>?</containsRna>    <containsHybrid>N</containsHybrid>  </orgPdbQuery> </queryRefinement> <queryRefinement>  <queryRefinementLevel>1</queryRefinementLevel>  <conjunctionType>and</conjunctionType>  <orgPdbQuery>    <queryType>org.pdb.query.simple.ResolutionQuery</queryType>    <refine.ls_d_res_high.comparator>between</refine.ls_d_res_high.comparator>    <refine.ls_d_res_high.min>0.0</refine.ls_d_res_high.min>    <refine.ls_d_res_high.max>2.5</refine.ls_d_res_high.max>  </orgPdbQuery> </queryRefinement></orgPdbCompositeQuery>";
-	
+
 	/**
 	 * RNA only Xray between 0 and 2.5 A
 	 */
 	public static final String RNAONLYQRY_XRAY_0_2p5 = "<orgPdbCompositeQuery> <queryRefinement>  <queryRefinementLevel>0</queryRefinementLevel>  <orgPdbQuery>    <queryType>org.pdb.query.simple.ChainTypeQuery</queryType>    <containsProtein>N</containsProtein>    <containsDna>N</containsDna>    <containsRna>?</containsRna>    <containsHybrid>N</containsHybrid>  </orgPdbQuery> </queryRefinement> <queryRefinement>  <queryRefinementLevel>1</queryRefinementLevel>  <conjunctionType>and</conjunctionType>  <orgPdbQuery>    <queryType>org.pdb.query.simple.ResolutionQuery</queryType>    <refine.ls_d_res_high.comparator>between</refine.ls_d_res_high.comparator>    <refine.ls_d_res_high.min>0.0</refine.ls_d_res_high.min>    <refine.ls_d_res_high.max>2.5</refine.ls_d_res_high.max>  </orgPdbQuery> </queryRefinement></orgPdbCompositeQuery>";
 
-	
 	/**
 	 * RNA only Xray between 0 and 3.5 A
 	 */
@@ -101,20 +100,17 @@ public class PDBRetriever {
 	 * DNA only Xray between 0 and 2.5 A
 	 */
 	public static final String DNAONLYQRY_XRAY_0_2p5 = "<orgPdbCompositeQuery> <queryRefinement>  <queryRefinementLevel>0</queryRefinementLevel><orgPdbQuery><queryType>org.pdb.query.simple.ChainTypeQuery</queryType><containsProtein>N</containsProtein><containsDna>?</containsDna><containsRna>N</containsRna><containsHybrid>N</containsHybrid>  </orgPdbQuery> </queryRefinement> <queryRefinement>  <queryRefinementLevel>1</queryRefinementLevel>  <conjunctionType>and</conjunctionType>  <orgPdbQuery>    <queryType>org.pdb.query.simple.ResolutionQuery</queryType>    <refine.ls_d_res_high.comparator>between</refine.ls_d_res_high.comparator>    <refine.ls_d_res_high.min>0.0</refine.ls_d_res_high.min>    <refine.ls_d_res_high.max>2.5</refine.ls_d_res_high.max>  </orgPdbQuery> </queryRefinement></orgPdbCompositeQuery>";
-	
-	
+
 	/**
 	 * DNA only Xray between 0 and 3.5 A
 	 */
 	public static final String DNAONLYQRY_XRAY_0_3p5 = "<orgPdbCompositeQuery> <queryRefinement>  <queryRefinementLevel>0</queryRefinementLevel><orgPdbQuery><queryType>org.pdb.query.simple.ChainTypeQuery</queryType><containsProtein>N</containsProtein><containsDna>?</containsDna><containsRna>N</containsRna><containsHybrid>N</containsHybrid>  </orgPdbQuery> </queryRefinement> <queryRefinement>  <queryRefinementLevel>1</queryRefinementLevel>  <conjunctionType>and</conjunctionType>  <orgPdbQuery>    <queryType>org.pdb.query.simple.ResolutionQuery</queryType>    <refine.ls_d_res_high.comparator>between</refine.ls_d_res_high.comparator>    <refine.ls_d_res_high.min>0.0</refine.ls_d_res_high.min>    <refine.ls_d_res_high.max>3.5</refine.ls_d_res_high.max>  </orgPdbQuery> </queryRefinement></orgPdbCompositeQuery>";
-	
-	
+
 	/**
 	 * DNA only Xray between 0 and 10 A
 	 */
 	public static final String DNAONLYQRY_XRAY_0_10 = "<orgPdbCompositeQuery> <queryRefinement>  <queryRefinementLevel>0</queryRefinementLevel><orgPdbQuery><queryType>org.pdb.query.simple.ChainTypeQuery</queryType><containsProtein>N</containsProtein><containsDna>?</containsDna><containsRna>N</containsRna><containsHybrid>N</containsHybrid>  </orgPdbQuery> </queryRefinement> <queryRefinement>  <queryRefinementLevel>1</queryRefinementLevel>  <conjunctionType>and</conjunctionType>  <orgPdbQuery>    <queryType>org.pdb.query.simple.ResolutionQuery</queryType>    <refine.ls_d_res_high.comparator>between</refine.ls_d_res_high.comparator>    <refine.ls_d_res_high.min>0.0</refine.ls_d_res_high.min>    <refine.ls_d_res_high.max>10.0</refine.ls_d_res_high.max>  </orgPdbQuery> </queryRefinement></orgPdbCompositeQuery>";
-	
-	
+
 	/**
 	 * A list with all of the PDBIds returned from the query
 	 */
@@ -134,23 +130,23 @@ public class PDBRetriever {
 			pdbIds = postQuery(RNAONLYQUERY);
 		} else if (aQry.equalsIgnoreCase("DNA")) {
 			pdbIds = postQuery(DNAONLYQUERY);
-		}else if(aQry.equalsIgnoreCase("RNA xray")){
+		} else if (aQry.equalsIgnoreCase("RNA xray")) {
 			pdbIds = postQuery(RNAONLYQRY_XRAY_0_10);
-		} else if(aQry.equalsIgnoreCase("RNA high res")){
+		} else if (aQry.equalsIgnoreCase("RNA high res")) {
 			pdbIds = postQuery(RNAONLYQRY_XRAY_0_3p5);
-		} else if (aQry.equalsIgnoreCase("DNA xray")){
+		} else if (aQry.equalsIgnoreCase("DNA xray")) {
 			pdbIds = postQuery(DNAONLYQRY_XRAY_0_10);
-		} else if (aQry.equalsIgnoreCase("DNA high res")){
+		} else if (aQry.equalsIgnoreCase("DNA high res")) {
 			pdbIds = postQuery(DNAONLYQRY_XRAY_0_3p5);
-		} else if (aQry.equalsIgnoreCase("Nucleic Acid xray")){
+		} else if (aQry.equalsIgnoreCase("Nucleic Acid xray")) {
 			pdbIds = postQuery(NUCLEICACIDONLYQRY_XRAY_0_10);
-		} else if(aQry.equalsIgnoreCase("Nucleic acid high res")){
+		} else if (aQry.equalsIgnoreCase("Nucleic acid high res")) {
 			pdbIds = postQuery(NUCLEICACIDONLYQRY_XRAY_0_3p5);
-		} else if(aQry.equalsIgnoreCase("dna super high res")){
+		} else if (aQry.equalsIgnoreCase("dna super high res")) {
 			pdbIds = postQuery(DNAONLYQRY_XRAY_0_2p5);
-		} else if(aQry.equalsIgnoreCase("rna super high res")){
+		} else if (aQry.equalsIgnoreCase("rna super high res")) {
 			pdbIds = postQuery(RNAONLYQRY_XRAY_0_2p5);
-		} else if(aQry.equalsIgnoreCase("na super high res")){
+		} else if (aQry.equalsIgnoreCase("na super high res")) {
 			pdbIds = postQuery(NUCLEICACIDONLYQRY_XRAY_0_2p5);
 		}
 	}
@@ -261,6 +257,17 @@ public class PDBRetriever {
 		return returnMe;
 	}
 
+	/**
+	 * 
+	 * Get a list of files of the PDB files found in the sourceDirectory given a
+	 * list of PDBIds
+	 * 
+	 * @param sourceDirectory
+	 *            the directory where the PDB files are located
+	 * @param someIds
+	 *            a list of PDBIds
+	 * @return the list of PDB files corresponding to someIds
+	 */
 	public List<File> getPDBPaths(File sourceDirectory, List<String> someIds) {
 		List<File> returnMe = new ArrayList<File>();
 		Iterator<String> itr = someIds.iterator();
@@ -282,12 +289,26 @@ public class PDBRetriever {
 		return returnMe;
 	}
 
+	/**
+	 * Get a list of files of the PDB files found in the sourceDirectory
+	 * 
+	 * @param sourceDirectory
+	 *            the directory where the PDB files are located
+	 * @return a list of PDB Files
+	 */
 	public List<File> getPDBPaths(File sourceDirectory) {
 		List<File> returnMe = this.getPDBPaths(sourceDirectory,
 				this.getPdbIds());
 		return returnMe;
 	}
 
+	/**
+	 * Get a list of files of the PDBML files found in the sourceDirectory
+	 * 
+	 * @param sourceDirectory
+	 *            the directory where the PDBML files are located
+	 * @return a list of PDBML Files
+	 */
 	public List<File> getPDBXMLPaths(File sourceDirectory) {
 		List<File> returnMe = this.getPDBXMLPaths(sourceDirectory,
 				this.getPdbIds());
@@ -330,8 +351,8 @@ public class PDBRetriever {
 	}
 
 	/**
-	 * Return the middle two letters of a PDBID in Uppercase
-	 * 2j0s.xml.gz
+	 * Return the middle two letters of a PDBID in Uppercase 2j0s.xml.gz
+	 * 
 	 * @param anId
 	 * @return
 	 */
@@ -342,16 +363,17 @@ public class PDBRetriever {
 	}
 
 	/**
-	 * Return the middle two letters of a PDBID in Uppercase
-	 * pdb2gu5.ent.gz
+	 * Return the middle two letters of a PDBID in Uppercase pdb2gu5.ent.gz
+	 * 
 	 * @param anId
 	 * @return
 	 */
-	public String getEntFileMiddleTwoLetters(String anId){
-		String returnMe ="";
+	public String getEntFileMiddleTwoLetters(String anId) {
+		String returnMe = "";
 		returnMe = anId.substring(4, 6).toLowerCase();
 		return returnMe;
 	}
+
 	/**
 	 * @return the pdbIds
 	 */

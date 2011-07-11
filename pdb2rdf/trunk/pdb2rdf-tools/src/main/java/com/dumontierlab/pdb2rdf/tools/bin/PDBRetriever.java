@@ -95,6 +95,12 @@ public class PDBRetriever {
 	 * RNA only Xray between 0 and 10 A
 	 */
 	public static final String RNAONLYQRY_XRAY_0_10 = "<orgPdbCompositeQuery> <queryRefinement>  <queryRefinementLevel>0</queryRefinementLevel>  <orgPdbQuery>    <queryType>org.pdb.query.simple.ChainTypeQuery</queryType>    <containsProtein>N</containsProtein>    <containsDna>N</containsDna>    <containsRna>?</containsRna>    <containsHybrid>N</containsHybrid>  </orgPdbQuery> </queryRefinement> <queryRefinement>  <queryRefinementLevel>1</queryRefinementLevel>  <conjunctionType>and</conjunctionType>  <orgPdbQuery>    <queryType>org.pdb.query.simple.ResolutionQuery</queryType>    <refine.ls_d_res_high.comparator>between</refine.ls_d_res_high.comparator>    <refine.ls_d_res_high.min>0.0</refine.ls_d_res_high.min>    <refine.ls_d_res_high.max>10.0</refine.ls_d_res_high.max>  </orgPdbQuery> </queryRefinement></orgPdbCompositeQuery>";
+	
+	/**
+	 * Protein only Xray between 0 and 1 A
+	 */
+	
+	public static final String PROTEINONLYQRY_XRAY_0_1 = "<orgPdbCompositeQuery > <queryRefinement>  <queryRefinementLevel>0</queryRefinementLevel>  <orgPdbQuery>    <version>head</version>   <queryType>org.pdb.query.simple.ChainTypeQuery</queryType>    <containsProtein>Y</containsProtein>    <containsDna>N</containsDna>    <containsRna>N</containsRna>    <containsHybrid>N</containsHybrid>  </orgPdbQuery> </queryRefinement> <queryRefinement>  <queryRefinementLevel>1</queryRefinementLevel> <conjunctionType>and</conjunctionType>  <orgPdbQuery>    <version>head</version>    <queryType>org.pdb.query.simple.ExpTypeQuery</queryType>    <mvStructure.expMethod.value>X-RAY</mvStructure.expMethod.value>  </orgPdbQuery> </queryRefinement> <queryRefinement>  <queryRefinementLevel>2</queryRefinementLevel>  <conjunctionType>and</conjunctionType>  <orgPdbQuery>    <version>head</version>    <queryType>org.pdb.query.simple.ResolutionQuery</queryType>    <refine.ls_d_res_high.comparator>between</refine.ls_d_res_high.comparator>    <refine.ls_d_res_high.min>0.0</refine.ls_d_res_high.min>    <refine.ls_d_res_high.max>1.0</refine.ls_d_res_high.max>  </orgPdbQuery> </queryRefinement></orgPdbCompositeQuery>";
 
 	/**
 	 * DNA only Xray between 0 and 2.5 A
@@ -148,6 +154,8 @@ public class PDBRetriever {
 			pdbIds = postQuery(RNAONLYQRY_XRAY_0_2p5);
 		} else if (aQry.equalsIgnoreCase("na super high res")) {
 			pdbIds = postQuery(NUCLEICACIDONLYQRY_XRAY_0_2p5);
+		} else if (aQry.equals("protein super high res")){
+			pdbIds= postQuery(PROTEINONLYQRY_XRAY_0_1);
 		}
 	}
 

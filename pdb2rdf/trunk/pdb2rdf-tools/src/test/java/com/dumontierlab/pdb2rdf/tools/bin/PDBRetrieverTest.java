@@ -33,13 +33,20 @@ import org.junit.Test;
  * 
  */
 public class PDBRetrieverTest {
+	@Test
+	public void getProteinHighRes(){
+		PDBRetriever r = new PDBRetriever("protein super high res");
+		List<File> files = r.getPDBXMLPaths(new File("/media/shelf/pdb/xml/"));
+		r.copyFiles(files, new File("/media/shelf2/pdb/xml/proteins/high_res/"));
+	}
+	
 	/*@Test
 	public void getRNARDFDocs(){
 		PDBRetriever r = new PDBRetriever("rna");
 		List<File> files = r.getPDBRDFPaths(new File("/media/shelf/pdb/rdf/coord_na/"));
 		r.copyFiles(files, new File("/media/shelf2/pdb/rdf/rna/coord/all/"));
 	}
-	*/
+	
 	@Test
 	public void getRNARDFXrayDocs(){
 		PDBRetriever r = new PDBRetriever("rna xray");
@@ -53,7 +60,7 @@ public class PDBRetrieverTest {
 		List<File> files = r.getPDBRDFPaths(new File("/media/shelf/pdb/rdf/coord_na/"));
 		r.copyFiles(files, new File("/media/shelf2/pdb/rdf/rna/coord/nmr/"));
 	}
-/*
+
 	@Test
 	public void getNucleicAcidXMLDocs(){
 		PDBRetriever r = new PDBRetriever("Nucleic Acid");

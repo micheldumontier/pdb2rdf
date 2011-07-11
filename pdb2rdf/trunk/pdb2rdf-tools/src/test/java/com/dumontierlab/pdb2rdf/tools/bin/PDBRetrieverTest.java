@@ -33,14 +33,34 @@ import org.junit.Test;
  * 
  */
 public class PDBRetrieverTest {
-
+	/*@Test
+	public void getRNARDFDocs(){
+		PDBRetriever r = new PDBRetriever("rna");
+		List<File> files = r.getPDBRDFPaths(new File("/media/shelf/pdb/rdf/coord_na/"));
+		r.copyFiles(files, new File("/media/shelf2/pdb/rdf/rna/coord/all/"));
+	}
+	*/
+	@Test
+	public void getRNARDFXrayDocs(){
+		PDBRetriever r = new PDBRetriever("rna xray");
+		List<File> files = r.getPDBRDFPaths(new File("/media/shelf/pdb/rdf/coord_na/"));
+		r.copyFiles(files, new File("/media/shelf2/pdb/rdf/rna/coord/xray/"));
+	}
+	
+	@Test
+	public void getRNARDFNMRDocs(){
+		PDBRetriever r = new PDBRetriever("rna nmr");
+		List<File> files = r.getPDBRDFPaths(new File("/media/shelf/pdb/rdf/coord_na/"));
+		r.copyFiles(files, new File("/media/shelf2/pdb/rdf/rna/coord/nmr/"));
+	}
+/*
 	@Test
 	public void getNucleicAcidXMLDocs(){
 		PDBRetriever r = new PDBRetriever("Nucleic Acid");
 		List<File> files = r.getPDBXMLPaths(new File("/media/shelf/pdb/xml/"));
 		r.copyFiles(files, new File("/media/shelf/NucleicAcidFun/nucleicAcids/xml/"));
 	}
-	/*
+	
 	@Test
 	public void testFivep2() {
 		PDBRetriever r = new PDBRetriever("nucleic acid xray");

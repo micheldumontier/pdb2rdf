@@ -225,12 +225,23 @@ public class PDBRetriever {
 			String anId = itr.next();
 			String middleLetters = getMiddleTwoLetters(anId);
 			if (middleLetters.length() == 2) {
+				String aFilePathCompressed = sourceDirectory.getAbsolutePath()
+						+ "/" + middleLetters + "/" + anId.toUpperCase()
+						+ ".rdf.gz";
 				String aFilePath = sourceDirectory.getAbsolutePath() + "/"
-						+ middleLetters + "/" + anId.toUpperCase() + ".rdf.gz";
+						+ middleLetters + "/" + anId.toUpperCase() + ".rdf";
+
+				File aCompressedFile = new File(aFilePathCompressed);
 				File aFile = new File(aFilePath);
-				boolean exists = aFile.exists();
+				boolean exists = aCompressedFile.exists();
+				boolean b = aFile.exists();
+
 				if (exists) {
+					returnMe.add(aCompressedFile);
+				} else if (b) {
+					// files were not compressed
 					returnMe.add(aFile);
+
 				}
 			}
 		}

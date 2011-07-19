@@ -16,4 +16,9 @@ public class NCBITaxonomyDbLoaderTest {
 		NCBITaxonomyDbLoader aLoader = new NCBITaxonomyDbLoader(new File("/home/jose/tmp/ncbi_taxdmp/names.dmp"),new File("/home/jose/tmp/ncbi_taxdmp/nodes.dmp"),new File("/home/jose/tmp/ncbi_taxdmp/citations.dmp"),new File("/home/jose/tmp/ncbi_taxdmp/division.dmp"));
 		aLoader.populateNodes();
 	}
+	/*@Test
+	public void testingLoadingOfCitations(){
+		NCBITaxonomyDbLoader aLoader = new NCBITaxonomyDbLoader(new File("/home/jose/tmp/ncbi_taxdmp/names.dmp"),new File("/home/jose/tmp/ncbi_taxdmp/nodes.dmp"),new File("/home/jose/tmp/ncbi_taxdmp/citations.dmp"),new File("/home/jose/tmp/ncbi_taxdmp/division.dmp"));
+		aLoader.populateCitations();
+	}*/
 }

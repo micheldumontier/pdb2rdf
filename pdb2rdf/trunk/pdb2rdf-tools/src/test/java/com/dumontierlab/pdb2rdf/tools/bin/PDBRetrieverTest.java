@@ -21,9 +21,6 @@
 package com.dumontierlab.pdb2rdf.tools.bin;
 
 import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import org.junit.Test;
@@ -33,20 +30,20 @@ import org.junit.Test;
  * 
  */
 public class PDBRetrieverTest {
-	@Test
+	/*@Test
 	public void getProteinHighRes(){
 		PDBRetriever r = new PDBRetriever("protein super high res");
 		List<File> files = r.getPDBXMLPaths(new File("/media/shelf/pdb/xml/"));
 		r.copyFiles(files, new File("/media/shelf2/pdb/xml/proteins/high_res/"));
-	}
+	}*/
 	
-	/*@Test
+	@Test
 	public void getRNARDFDocs(){
 		PDBRetriever r = new PDBRetriever("rna");
 		List<File> files = r.getPDBRDFPaths(new File("/media/shelf/pdb/rdf/coord_na/"));
 		r.copyFiles(files, new File("/media/shelf2/pdb/rdf/rna/coord/all/"));
 	}
-	
+	/*
 	@Test
 	public void getRNARDFXrayDocs(){
 		PDBRetriever r = new PDBRetriever("rna xray");

@@ -38,12 +38,21 @@ public class PDBRetrieverTest {
 	}*/
 	
 	@Test
+	public void testingRetriever(){
+		PDBRetriever r = new PDBRetriever("rna");
+		List<String> ids = r.getPdbIds();
+		List<File> files = r.getPDBXMLPaths(new File("/tmp/pdbml/"), ids);
+		System.out.println(files);
+		
+	}
+	
+	/*@Test
 	public void getRNARDFDocs(){
 		PDBRetriever r = new PDBRetriever("rna");
 		List<File> files = r.getPDBRDFPaths(new File("/media/shelf/pdb/rdf/coord_na/"));
 		r.copyFiles(files, new File("/media/shelf2/pdb/rdf/rna/coord/all/"));
 	}
-	/*
+	
 	@Test
 	public void getRNARDFXrayDocs(){
 		PDBRetriever r = new PDBRetriever("rna xray");

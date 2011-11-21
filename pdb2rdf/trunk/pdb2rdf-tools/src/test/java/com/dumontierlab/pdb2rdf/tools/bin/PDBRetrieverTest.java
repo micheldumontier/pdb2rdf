@@ -41,7 +41,7 @@ public class PDBRetrieverTest {
 	public void testingRetriever(){
 		PDBRetriever r = new PDBRetriever("rna");
 		List<String> ids = r.getPdbIds();
-		List<File> files = r.getPDBXMLPaths(new File("/tmp/pdbml/"), ids);
+		List<File> files = r.getPDBXMLPaths(new File("/home/jose/Desktop/pdbml"), ids);
 		System.out.println(files);
 		
 	}

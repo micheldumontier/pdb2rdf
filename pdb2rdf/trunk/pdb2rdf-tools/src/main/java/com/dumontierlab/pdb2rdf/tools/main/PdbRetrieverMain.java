@@ -303,7 +303,7 @@ public class PdbRetrieverMain {
 				.withArgName("recordType")
 				.hasArg(true)
 				.withDescription(
-						"The type of PDB record that you wish to retrieve. Allowed values: DNA, RNA, Nucleic Acid, RNA xray, DNA xray")
+						"The type of PDB record that you wish to retrieve. Allowed values: DNA, RNA, Nucleic Acid, rna_super_high_res")
 				.create("recordType");
 
 		Option outputRDFDirectory = OptionBuilder
@@ -369,7 +369,7 @@ public class PdbRetrieverMain {
 	private static boolean checkRecordType(String aRecordType) {
 		if (aRecordType.equalsIgnoreCase("rna")
 				|| aRecordType.equalsIgnoreCase("dna")
-				|| aRecordType.equalsIgnoreCase("nucleic acid")) {
+				|| aRecordType.equalsIgnoreCase("nucleic acid") || aRecordType.equalsIgnoreCase ("rna_super_high_res")) {
 			return true;
 		} else {
 			return false;

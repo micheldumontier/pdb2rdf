@@ -22,9 +22,6 @@ package com.dumontierlab.pdb2rdf.tools.bin;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -34,7 +31,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
-import java.nio.channels.FileChannel;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -150,7 +146,7 @@ public class PDBRetriever {
 			pdbIds = postQuery(NUCLEICACIDONLYQRY_XRAY_0_3p5);
 		} else if (aQry.equalsIgnoreCase("dna super high res")) {
 			pdbIds = postQuery(DNAONLYQRY_XRAY_0_2p5);
-		} else if (aQry.equalsIgnoreCase("rna super high res")) {
+		} else if (aQry.equalsIgnoreCase("rna super high res") || aQry.equalsIgnoreCase("rna_super_high_res")) {
 			pdbIds = postQuery(RNAONLYQRY_XRAY_0_2p5);
 		} else if (aQry.equalsIgnoreCase("na super high res")) {
 			pdbIds = postQuery(NUCLEICACIDONLYQRY_XRAY_0_2p5);

@@ -48,11 +48,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetCompleteEntity }
+     * Create an instance of {@link GetCompleteEntityByListResponse }
      * 
      */
-    public GetCompleteEntity createGetCompleteEntity() {
-        return new GetCompleteEntity();
+    public GetCompleteEntityByListResponse createGetCompleteEntityByListResponse() {
+        return new GetCompleteEntityByListResponse();
     }
 
     /**
@@ -64,115 +64,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ChebiWebServiceFault }
-     * 
-     */
-    public ChebiWebServiceFault createChebiWebServiceFault() {
-        return new ChebiWebServiceFault();
-    }
-
-    /**
-     * Create an instance of {@link LiteEntityList }
-     * 
-     */
-    public LiteEntityList createLiteEntityList() {
-        return new LiteEntityList();
-    }
-
-    /**
-     * Create an instance of {@link GetAllOntologyChildrenInPathResponse }
-     * 
-     */
-    public GetAllOntologyChildrenInPathResponse createGetAllOntologyChildrenInPathResponse() {
-        return new GetAllOntologyChildrenInPathResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetCompleteEntityByListResponse }
-     * 
-     */
-    public GetCompleteEntityByListResponse createGetCompleteEntityByListResponse() {
-        return new GetCompleteEntityByListResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetOntologyParents }
-     * 
-     */
-    public GetOntologyParents createGetOntologyParents() {
-        return new GetOntologyParents();
-    }
-
-    /**
-     * Create an instance of {@link GetOntologyParentsResponse }
-     * 
-     */
-    public GetOntologyParentsResponse createGetOntologyParentsResponse() {
-        return new GetOntologyParentsResponse();
-    }
-
-    /**
-     * Create an instance of {@link DataItem }
-     * 
-     */
-    public DataItem createDataItem() {
-        return new DataItem();
-    }
-
-    /**
-     * Create an instance of {@link GetOntologyChildrenResponse }
-     * 
-     */
-    public GetOntologyChildrenResponse createGetOntologyChildrenResponse() {
-        return new GetOntologyChildrenResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetAllOntologyChildrenInPath }
-     * 
-     */
-    public GetAllOntologyChildrenInPath createGetAllOntologyChildrenInPath() {
-        return new GetAllOntologyChildrenInPath();
-    }
-
-    /**
-     * Create an instance of {@link GetCompleteEntityResponse }
-     * 
-     */
-    public GetCompleteEntityResponse createGetCompleteEntityResponse() {
-        return new GetCompleteEntityResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetOntologyChildren }
-     * 
-     */
-    public GetOntologyChildren createGetOntologyChildren() {
-        return new GetOntologyChildren();
-    }
-
-    /**
      * Create an instance of {@link StructureDataItem }
      * 
      */
     public StructureDataItem createStructureDataItem() {
         return new StructureDataItem();
-    }
-
-    /**
-     * Create an instance of {@link GetLiteEntityResponse }
-     * 
-     */
-    public GetLiteEntityResponse createGetLiteEntityResponse() {
-        return new GetLiteEntityResponse();
-    }
-
-    /**
-     * Create an instance of {@link Entity }
-     * 
-     */
-    public Entity createEntity() {
-        return new Entity();
     }
 
     /**
@@ -184,35 +80,51 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetStructureSearchResponse }
+     * Create an instance of {@link GetOntologyParentsResponse }
      * 
      */
-    public GetStructureSearchResponse createGetStructureSearchResponse() {
-        return new GetStructureSearchResponse();
+    public GetOntologyParentsResponse createGetOntologyParentsResponse() {
+        return new GetOntologyParentsResponse();
     }
 
     /**
-     * Create an instance of {@link CommentDataItem }
+     * Create an instance of {@link GetCompleteEntity }
      * 
      */
-    public CommentDataItem createCommentDataItem() {
-        return new CommentDataItem();
+    public GetCompleteEntity createGetCompleteEntity() {
+        return new GetCompleteEntity();
     }
 
     /**
-     * Create an instance of {@link OntologyDataItemList }
+     * Create an instance of {@link Entity }
      * 
      */
-    public OntologyDataItemList createOntologyDataItemList() {
-        return new OntologyDataItemList();
+    public Entity createEntity() {
+        return new Entity();
     }
 
     /**
-     * Create an instance of {@link GetCompleteEntityByList }
+     * Create an instance of {@link OntologyDataItem }
      * 
      */
-    public GetCompleteEntityByList createGetCompleteEntityByList() {
-        return new GetCompleteEntityByList();
+    public OntologyDataItem createOntologyDataItem() {
+        return new OntologyDataItem();
+    }
+
+    /**
+     * Create an instance of {@link LiteEntityList }
+     * 
+     */
+    public LiteEntityList createLiteEntityList() {
+        return new LiteEntityList();
+    }
+
+    /**
+     * Create an instance of {@link GetOntologyChildren }
+     * 
+     */
+    public GetOntologyChildren createGetOntologyChildren() {
+        return new GetOntologyChildren();
     }
 
     /**
@@ -224,11 +136,99 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link OntologyDataItem }
+     * Create an instance of {@link GetCompleteEntityResponse }
      * 
      */
-    public OntologyDataItem createOntologyDataItem() {
-        return new OntologyDataItem();
+    public GetCompleteEntityResponse createGetCompleteEntityResponse() {
+        return new GetCompleteEntityResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetAllOntologyChildrenInPath }
+     * 
+     */
+    public GetAllOntologyChildrenInPath createGetAllOntologyChildrenInPath() {
+        return new GetAllOntologyChildrenInPath();
+    }
+
+    /**
+     * Create an instance of {@link OntologyDataItemList }
+     * 
+     */
+    public OntologyDataItemList createOntologyDataItemList() {
+        return new OntologyDataItemList();
+    }
+
+    /**
+     * Create an instance of {@link GetOntologyChildrenResponse }
+     * 
+     */
+    public GetOntologyChildrenResponse createGetOntologyChildrenResponse() {
+        return new GetOntologyChildrenResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetStructureSearchResponse }
+     * 
+     */
+    public GetStructureSearchResponse createGetStructureSearchResponse() {
+        return new GetStructureSearchResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetAllOntologyChildrenInPathResponse }
+     * 
+     */
+    public GetAllOntologyChildrenInPathResponse createGetAllOntologyChildrenInPathResponse() {
+        return new GetAllOntologyChildrenInPathResponse();
+    }
+
+    /**
+     * Create an instance of {@link DataItem }
+     * 
+     */
+    public DataItem createDataItem() {
+        return new DataItem();
+    }
+
+    /**
+     * Create an instance of {@link GetOntologyParents }
+     * 
+     */
+    public GetOntologyParents createGetOntologyParents() {
+        return new GetOntologyParents();
+    }
+
+    /**
+     * Create an instance of {@link GetCompleteEntityByList }
+     * 
+     */
+    public GetCompleteEntityByList createGetCompleteEntityByList() {
+        return new GetCompleteEntityByList();
+    }
+
+    /**
+     * Create an instance of {@link GetLiteEntityResponse }
+     * 
+     */
+    public GetLiteEntityResponse createGetLiteEntityResponse() {
+        return new GetLiteEntityResponse();
+    }
+
+    /**
+     * Create an instance of {@link ChebiWebServiceFault }
+     * 
+     */
+    public ChebiWebServiceFault createChebiWebServiceFault() {
+        return new ChebiWebServiceFault();
+    }
+
+    /**
+     * Create an instance of {@link CommentDataItem }
+     * 
+     */
+    public CommentDataItem createCommentDataItem() {
+        return new CommentDataItem();
     }
 
     /**

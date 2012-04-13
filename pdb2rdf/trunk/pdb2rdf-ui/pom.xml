@@ -8,7 +8,7 @@
   <groupId>com.dumontierlab</groupId>
   <artifactId>pdb2rdf-ui</artifactId>
   <packaging>war</packaging>
-  <version>0.0.10-SNAPSHOT</version>
+  <version>0.0.10</version>
   
   <dependencies>
 		<dependency>

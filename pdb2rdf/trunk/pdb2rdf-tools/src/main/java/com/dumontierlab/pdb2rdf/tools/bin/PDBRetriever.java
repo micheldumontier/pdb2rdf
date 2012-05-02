@@ -251,7 +251,12 @@ public class PDBRetriever {
 		}
 		return returnMe;
 	}
-
+	/**
+	 * Search the sourceDirectory for the PDBML records in someIds 
+	 * @param sourceDirectory 
+	 * @param someIds
+	 * @return a list of files that matches someIds
+	 */
 	public List<File> getPDBXMLPaths(File sourceDirectory, List<String> someIds) {
 		List<File> returnMe = new ArrayList<File>();
 		Iterator<String> itr = someIds.iterator();

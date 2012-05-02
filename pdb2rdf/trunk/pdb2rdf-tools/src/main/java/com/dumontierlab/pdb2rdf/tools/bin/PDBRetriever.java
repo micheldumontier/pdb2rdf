@@ -161,7 +161,7 @@ public class PDBRetriever {
 	 * @param xml
 	 * @return a list of PDB ids.
 	 */
-	public List<String> postQuery(String xml) {
+	private List<String> postQuery(String xml) {
 		URL u;
 		List<String> returnMe = new ArrayList<String>();
 		try {

@@ -1,3 +1,4 @@
+package com.dumontierlab.pdb2rdf.tools;
 import org.apache.commons.cli.Options;
 import org.apache.log4j.Logger;
 

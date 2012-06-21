@@ -32,7 +32,7 @@ import com.hp.hpl.jena.rdf.model.ModelFactory;
  */
 public class PdbOwlVocabulary {
 
-	public static final String DEFAULT_NAMESPACE = "http://bio2rdf.org/pdb:";
+	public static final String DEFAULT_NAMESPACE = "http://bio2rdf.org/pdb_vocabulary:";
 
 	private static final OntModel model = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
 	static {

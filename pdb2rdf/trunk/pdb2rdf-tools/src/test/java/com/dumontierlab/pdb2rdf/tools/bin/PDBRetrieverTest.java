@@ -39,10 +39,10 @@ public class PDBRetrieverTest {
 	
 	@Test
 	public void testingRetriever(){
-		PDBRetriever r = new PDBRetriever("rna");
+		PDBRetriever r = new PDBRetriever("rna high res");
 		List<String> ids = r.getPdbIds();
 		List<File> files =r.getPDBPaths(new File("/media/threetwenty/pdb/pdb"), ids);
-		r.copyFiles(files, new File("/media/threetwenty/pdb/rna"));
+		r.copyFiles(files, new File("/media/threetwenty/pdb/rna_high_res"));
 		
 		/*List<File> files = r.getPDBXMLPaths(new File("/home/jose/Desktop/pdbml"), ids);
 		System.out.println(files);*/
